@@ -67,6 +67,8 @@ kubeit-app-of-apps:
         repoURL: "https://dnv-gssit.github.io/kubeit-charts/"
         name: kubeit-secrets-chart
         targetRevision: 1.0.4
+      valueFilesRepoUrl: "https://github.com/dnv-gssit/kubeit-app-of-apps"
+      valueFilesRepoBranch: "main"
       environments:
           - name: nonprod
             namespaces:
@@ -108,6 +110,8 @@ kubeit-app-of-apps:
         repoURL: "https://dnv-gssit.github.io/kubeit-charts/"
         name: kubeit-deployment-chart
         targetRevision: 1.0.13
+      valueFilesRepoUrl: "https://github.com/dnv-gssit/kubeit-app-of-apps"
+      valueFilesRepoBranch: "main"
       environments:
           - name: nonprod
             namespaces:
@@ -142,6 +146,8 @@ kubeit-app-of-apps:
         repoURL: "https://dnv-gssit.github.io/kubeit-charts/"
         name: kubeit-deployment-chart
         targetRevision: 1.0.13
+      valueFilesRepoUrl: "https://github.com/dnv-gssit/kubeit-app-of-apps"
+      valueFilesRepoBranch: "main"
       environments:
           - name: nonprod
             namespaces:
@@ -175,6 +181,8 @@ kubeit-app-of-apps:
         ignoreMissingValueFiles: true
         path: "kubeit-redis-chart"
       containerOS: linux
+      valueFilesRepoUrl: "https://github.com/dnv-gssit/kubeit-app-of-apps"
+      valueFilesRepoBranch: "main"
       environments:
           - name: nonprod
             namespaces:
@@ -205,6 +213,8 @@ kubeit-app-of-apps:
               - aux052
     - name: win-standard-workload
       containerOS: linux
+      valueFilesRepoUrl: "https://github.com/dnv-gssit/kubeit-app-of-apps"
+      valueFilesRepoBranch: "main"
       environments:
           - name: nonprod
             namespaces:
