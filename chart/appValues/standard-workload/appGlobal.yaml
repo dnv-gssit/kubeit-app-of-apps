@@ -1,6 +1,6 @@
 ---
 unique: true
-kubeitDeploymentChart: |
+kubeitdeploymentchart: |
   # Application name
   app: standard-workload    # Required
   

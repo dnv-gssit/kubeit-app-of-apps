@@ -7,5 +7,5 @@ version: 0.1.0
 appVersion: 0.1.0
 dependencies:
   - name: kubeit-app-of-apps
-    version: 0.1.18
+    version: 0.1.19
     repository: "https://dnv-gssit.github.io/kubeit-charts/"
