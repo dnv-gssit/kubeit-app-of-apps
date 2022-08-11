@@ -24,6 +24,8 @@ kubeit-app-of-apps:
         repoURL: "https://dnv-gssit.github.io/kubeit-charts/"
         name: kubeit-deployment-chart
         targetRevision: 1.0.13
+      valueFilesRepoUrl: "https://github.com/dnv-gssit/kubeit-app-of-apps"
+      valueFilesRepoBranch: "main"
       environments:
           - name: nonprod
             namespaces:
