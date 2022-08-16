@@ -91,7 +91,7 @@ kubeit-app-of-apps:
     #         clusterColour:
     #           - blue
     #           - green
-    #           - aux052
+    #           - aux011
     - name: onegateway-workload
       containerOS: linux
       # chart:
@@ -127,7 +127,7 @@ kubeit-app-of-apps:
               - westeurope
             clusterColour:
               - blue
-              - aux052
+              - aux011
     - name: onegateway-sessionmanager
       containerOS: linux
       # chart:
@@ -163,7 +163,7 @@ kubeit-app-of-apps:
               - westeurope
             clusterColour:
               - blue
-              - aux052
+              - aux011
     - name: onegateway-redis
       chart:
         ignoreMissingValueFiles: true
@@ -198,7 +198,7 @@ kubeit-app-of-apps:
               - westeurope
             clusterColour:
               - blue
-              - aux052
+              - aux011
     - name: win-standard-workload
       containerOS: linux
       # valueFilesRepoUrl: "https://github.com/dnv-gssit/kubeit-app-of-apps"
@@ -235,4 +235,4 @@ kubeit-app-of-apps:
             clusterColour:
               - blue
               - green
-              - aux052
+              - aux011
