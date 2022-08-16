@@ -5,8 +5,11 @@ globals:
     # repoURL: "https://dnv-gssit.github.io/kubeit-charts/"
     # name: kubeit-deployment-chart
     # targetRevision: 1.0.13
-    repoURL: "git@github.com:dnv-gssit/kubeit-app-of-apps.git"
-    path: kubeit-charts/charts/kubeit-deployment-chart
+    # repoURL: "git@github.com:dnv-gssit/kubeit-app-of-apps.git"
+    # path: kubeit-charts/charts/kubeit-deployment-chart
+    # targetRevision: main
+    repoURL: "https://github.com/dnv-gssit/kubeit-charts.git"
+    path: charts/kubeit-deployment-chart
     targetRevision: main
     ignoreMissingValueFiles: true
     skipCrds: true
