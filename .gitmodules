@@ -1,0 +1,3 @@
+[submodule "kubeit-charts"]
+	path = kubeit-charts
+	url = https://github.com/dnv-gssit/kubeit-charts
