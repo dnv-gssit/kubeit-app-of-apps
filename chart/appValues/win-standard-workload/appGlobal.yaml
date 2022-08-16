@@ -1,9 +1,6 @@
 ---
 # https://kubernetes.io/docs/setup/production-environment/windows/user-guide-windows-containers/
 
-# Application name
-app: win-standard-workload    # Required
-
 # Workload info
 workload:
   type: standard      # Required - standard or onegateway

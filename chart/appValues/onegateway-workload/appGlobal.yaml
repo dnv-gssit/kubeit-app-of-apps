@@ -1,7 +1,4 @@
 ---
-# Application name
-app: onegateway-workload    # Required
-
 # Workload info
 workload:
   type: onegateway      # Required - standard or onegateway

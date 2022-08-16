@@ -1,7 +1,4 @@
 ---
-# Application name
-app: onegateway-sessionmanager    # Required
-
 # Workload info
 workload:
   type: onegateway      # Required - standard or onegateway
