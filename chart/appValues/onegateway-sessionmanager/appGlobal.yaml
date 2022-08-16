@@ -7,7 +7,7 @@ workload:
 sessionManagerDeployment: true
 
 image:
-  repository: "voakpglobalsvcprodacrwe.azurecr.io/test/ancris3/sessionmanager"
+  repository: "kubeitglobalsvcauxacrwe.azurecr.io/test/sessionmanager"
   tag: "07102021"
   containerPort: 8000
 
