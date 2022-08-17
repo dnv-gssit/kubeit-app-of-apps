@@ -2,7 +2,6 @@
 globals:
   chart:
     ignoreMissingValueFiles: true
-    skipCrds: true
 
 applications:
   - name: standard-workload
