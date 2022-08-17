@@ -1,0 +1,14 @@
+---
+env: aux
+region: westeurope
+dnsDomain: "kubeit.test.com"
+clusterSubdomain: "aux011"
+clusterColour: "aux011"
+ingressType: "external"
+shortRegion: we
+tenantName: tenant2
+targetRevision: feature/migration_kubeit
+repoURL: git@github.com:dnv-gssit/kubeit-app-of-apps.git
+networkPlugin: azure
+tenantPodIdentityName: "test-identity"
+tenantMultiRegion: false
