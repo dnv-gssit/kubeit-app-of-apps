@@ -1,14 +1,11 @@
 ---
-# Application name
-app: onegateway-workload    # Required
-
 # Workload info
 workload:
   type: onegateway      # Required - standard or onegateway
   state: stateless      # Required - stateful or stateless, for stateless mounting extra volumes is blocked (besides keyvault)
 
 image:
-  repository: "voakpglobalsvcprodacrwe.azurecr.io/test/ancris3/ancris3"
+  repository: "kubeitglobalsvcauxacrwe.azurecr.io/test/ancris3"
   tag: "main-20210805.6"
   containerPort: 8050
 

@@ -1,10 +1,10 @@
 ---
 defaultRouting:
   hosts:
-    - "ancris3-tenant2.stg.kubeit.dnv.com"
+    - "ancris3.aux.kubeit.dnv.com"
 
 env:
-  CLIENT_ID: a5b67334-627a-43ca-87a3-73662f5ff44f
+  CLIENT_ID: cd628d9c-abcd-4043-9e96-55cabcd284ae
 
 keyVaultSecrets:
-  globalKeyVaultName: "VoAKP-STG-KV-SH-WE"
+  globalKeyVaultName: "KubeIT-AUX-KV-SH-WE"
