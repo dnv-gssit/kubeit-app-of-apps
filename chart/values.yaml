@@ -1,7 +1,9 @@
 ---
 globals:
   chart:
+    path: kubeit-charts/charts/kubeit-deployment-chart
     ignoreMissingValueFiles: true
+    skipCrds: true
 
 applications:
   - name: standard-workload
