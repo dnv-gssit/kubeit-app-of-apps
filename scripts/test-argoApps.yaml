@@ -27,3 +27,14 @@ kubeit-app-of-apps:
   networkPlugin: azure
   tenantPodIdentityName: "test-identity"
   tenantMultiRegion: false
+
+# Issues:
+# https://github.com/helm/helm/issues/4994
+# https://github.com/helm/helm/issues/6699
+
+# existingSecret: &sharedExistingSecret a-secret
+
+# postgresql:
+#   existingSecret: *sharedExistingSecret
+# redis:
+#   existingSecret: *sharedExistingSecret
