@@ -17,3 +17,6 @@ helm template --dependency-update --render-subchart-notes .  \
   --output-dir $RENDERED_CHART_PATH --debug
 
 yamllint -c $SCRIPT_PATH/../.yamllint -s $RENDERED_CHART_PATH
+
+# code /tmp/rendered_chart/kubeit-app-of-apps-values-chart/templates/applications.yaml
+# code /tmp/rendered_chart/kubeit-app-of-apps-values-chart/charts/kubeit-app-of-apps/templates/applications.yaml
