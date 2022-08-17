@@ -1,0 +1,30 @@
+---
+env: nonprod
+region: westeurope
+dnsDomain: "kubeit.dnv.com"
+clusterSubdomain: "nonprod001"
+clusterColour: "blue"
+ingressType: "external"
+shortRegion: we
+tenantName: tenant2
+targetRevision: feature/migration_kubeit
+repoURL: git@ssh.dev.azure.com:v3/dnvgl-gssit/Kubernetes%20Platform/voa-tenant-app-example
+networkPlugin: azure
+tenantPodIdentityName: "admin-pod-identity"
+tenantMultiRegion: false
+
+# TODO: add in bootstrap-tenants-apps-aux those values
+kubeit-app-of-apps:
+  env: nonprod
+  region: westeurope
+  dnsDomain: "kubeit.dnv.com"
+  clusterSubdomain: "nonprod001"
+  clusterColour: "blue"
+  ingressType: "external"
+  shortRegion: we
+  tenantName: tenant2
+  targetRevision: feature/migration_kubeit
+  repoURL: git@ssh.dev.azure.com:v3/dnvgl-gssit/Kubernetes%20Platform/voa-tenant-app-example
+  networkPlugin: azure
+  tenantPodIdentityName: "admin-pod-identity"
+  tenantMultiRegion: false
