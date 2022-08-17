@@ -2,7 +2,7 @@
 globals:
   valuesPath: "../../chart/appValues"  # Required: Provide path to directory with Helm values files, relative to the chart
   chart:
-    repoURL: "https://github.com/dnv-gssit/kubeit-charts.git"
+    repoURL: "https://github.com/dnv-gssit/kubeit-app-of-apps.git"
     path: charts/kubeit-deployment-chart
     targetRevision: feature/migration_kubeit
     # targetRevision: main
