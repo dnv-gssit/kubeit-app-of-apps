@@ -11,8 +11,8 @@ additionalPodAnnotations:
   sidecar.istio.io/inject: "false"
 
 image:
-  repository: "mcr.microsoft.com/windows/servercore"
-  tag: "ltsc2019"
+  repository: "mcr.microsoft.com/windows/servercore/iis"
+  tag: "windowsservercore-ltsc2019"
   containerPort: 80
 
 command:
@@ -29,6 +29,10 @@ defaultRouting:
   allHosts: false
   redirectOnNoTrailingSlash: false
   catchAll: true
+
+# Windows workloads has no istio sidecar support which is responsible for tls traffic inside istio service mesh
+tls:
+  mode: DISABLE
 
 serviceAccount:
   # Specifies whether a ServiceAccount should be created
