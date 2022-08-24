@@ -11,8 +11,10 @@ additionalPodAnnotations:
   sidecar.istio.io/inject: "false"
 
 image:
-  repository: "mcr.microsoft.com/windows/servercore/iis"
-  tag: "windowsservercore-ltsc2019"
+  # repository: "mcr.microsoft.com/windows/servercore/iis"
+  # tag: "windowsservercore-ltsc2019"
+  repository: "microsoft/aspnet"
+  tag: "4.8"
   containerPort: 80
 
 defaultRouting:
