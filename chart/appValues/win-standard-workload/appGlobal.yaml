@@ -24,10 +24,9 @@ defaultRouting:
   allHosts: false
   redirectOnNoTrailingSlash: false
   catchAll: true
-
-# Windows workloads has no istio sidecar support which is responsible for tls traffic inside istio service mesh
-tls:
-  mode: DISABLE
+  # Windows workloads has no istio sidecar support which is responsible for tls traffic inside istio service mesh
+  tls:
+    mode: DISABLE
 
 serviceAccount:
   # Specifies whether a ServiceAccount should be created
