@@ -13,8 +13,8 @@ additionalPodAnnotations:
 image:
   # repository: "mcr.microsoft.com/windows/servercore/iis"
   # tag: "windowsservercore-ltsc2019"
-  repository: "mcr.microsoft.com/dotnet/framework/aspnet"
-  tag: "4.8"
+  repository: "mcr.microsoft.com/dotnet/framework/samples:aspnetapp"
+  tag: "latest"
   containerPort: 80
 
 defaultRouting:
