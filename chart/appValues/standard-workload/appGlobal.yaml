@@ -42,3 +42,7 @@ containerSecurityContext:
       - ALL
   readOnlyRootFilesystem: true
   runAsNonRoot: true
+
+# https://github.com/paulbouwer/hello-kubernetes/tree/main/src/app
+env:
+  MESSAGE: "Hello on standard workload!"
