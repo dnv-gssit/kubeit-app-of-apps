@@ -11,6 +11,9 @@ image:
   tag: "07102021"
   containerPort: 8000
 
+kubeit:
+  gatewayEnabled: true
+
 defaultRouting:
   enabled: true
   kubeitDefaultHosts:
@@ -84,6 +87,3 @@ keyVaultSecrets:
           k8sSecret: enabled
           k8sSecretName: ancris3-session-manager
           k8sSecretKey: client-secret
-
-kubeit:
-  gatewayEnabled: true
