@@ -99,7 +99,7 @@ applications:
           - aux011
   - name: onegateway-redis
     chart:
-      path: "kubeit-redis-chart"
+      path: "kubeit-charts/charts/kubeit-redis-chart"
     containerOS: linux
     environments:
       - name: nonprod
