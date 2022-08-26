@@ -12,7 +12,7 @@ applications:
       - name: nonprod
         namespaces:
           - standard
-          - standard-nonprod
+          - standard-test
         region:
           - westeurope
           - eastus2
@@ -23,7 +23,7 @@ applications:
       - name: prod
         namespaces:
           - standard
-          - standard-prod
+          - standard-test
         region:
           - westeurope
           - eastus2
@@ -34,44 +34,7 @@ applications:
       - name: aux
         namespaces:
           - standard
-          - standard-aux
-        region:
-          - westeurope
-          - eastus2
-          - southeastasia
-        clusterColour:
-          - blue
-          - green
-          - aux011
-  - name: shared-secrets
-    containerOS: linux
-    environments:
-      - name: nonprod
-        namespaces:
-          - standard
-          - standard-nonprod
-        region:
-          - westeurope
-          - eastus2
-          - southeastasia
-        clusterColour:
-          - blue
-          - green
-      - name: prod
-        namespaces:
-          - standard
-          - standard-prod
-        region:
-          - westeurope
-          - eastus2
-          - southeastasia
-        clusterColour:
-          - blue
-          - green
-      - name: aux
-        namespaces:
-          - standard
-          - standard-aux
+          - standard-test
         region:
           - westeurope
           - eastus2
@@ -86,7 +49,6 @@ applications:
       - name: nonprod
         namespaces:
           - onegateway
-          - onegateway-nonprod
         region:
           - westeurope
         clusterColour:
@@ -95,7 +57,6 @@ applications:
       - name: prod
         namespaces:
           - onegateway
-          - onegateway-prod
         region:
           - westeurope
         clusterColour:
@@ -104,7 +65,6 @@ applications:
       - name: aux
         namespaces:
           - onegateway
-          - onegateway-aux
         region:
           - westeurope
         clusterColour:
@@ -116,7 +76,6 @@ applications:
       - name: nonprod
         namespaces:
           - onegateway
-          - onegateway-nonprod
         region:
           - westeurope
         clusterColour:
@@ -125,7 +84,6 @@ applications:
       - name: prod
         namespaces:
           - onegateway
-          - onegateway-prod
         region:
           - westeurope
         clusterColour:
@@ -134,7 +92,6 @@ applications:
       - name: aux
         namespaces:
           - onegateway
-          - onegateway-aux
         region:
           - westeurope
         clusterColour:
@@ -148,7 +105,6 @@ applications:
       - name: nonprod
         namespaces:
           - onegateway
-          - onegateway-nonprod
         region:
           - westeurope
         clusterColour:
@@ -157,7 +113,6 @@ applications:
       - name: prod
         namespaces:
           - onegateway
-          - onegateway-prod
         region:
           - westeurope
         clusterColour:
@@ -166,7 +121,6 @@ applications:
       - name: aux
         namespaces:
           - onegateway
-          - onegateway-aux
         region:
           - westeurope
         clusterColour:
@@ -177,7 +131,6 @@ applications:
       - name: nonprod
         namespaces:
           - win-standard-workload
-          - win-standard-workload-nonprod
         region:
           - westeurope
           - eastus2
@@ -188,7 +141,6 @@ applications:
       - name: prod
         namespaces:
           - win-standard-workload
-          - win-standard-workload-prod
         region:
           - westeurope
           - eastus2
@@ -199,7 +151,6 @@ applications:
       - name: aux
         namespaces:
           - win-standard-workload
-          - win-standard-workload-aux
         region:
           - westeurope
         clusterColour:
