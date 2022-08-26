@@ -125,6 +125,7 @@ applications:
           - westeurope
         clusterColour:
           - blue
+          - aux011
   - name: win-standard-workload
     containerOS: linux
     environments:
