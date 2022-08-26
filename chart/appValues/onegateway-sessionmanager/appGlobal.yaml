@@ -77,15 +77,8 @@ keyVaultSecrets:
   enabled: true
   tenantId: "adf10e2b-b6e9-41d6-be2f-c12bb566019c"
   keyVaults:
-    - keyVaultName: "VoAKP-PROD-KV-GL-WE"
+    - keyVaultName: "KubeIT-AUX-KV-SH-WE"
       namespace: onegateway
-      secrets:
-        - keyVaultSecretName: ancris3-client-secret
-          k8sSecret: enabled
-          k8sSecretName: ancris3-session-manager
-          k8sSecretKey: client-secret
-    - keyVaultName: "VoAKP-PROD-KV-GL-WE"
-      namespace: onegateway-standard
       secrets:
         - keyVaultSecretName: ancris3-client-secret
           k8sSecret: enabled
