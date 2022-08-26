@@ -40,6 +40,8 @@ requestAuthentication:
 # TODO: add volumes
 # volumes:
 
+# TODO: add keyvault secrets
+
 # Be Aware! Security contexts configuration is specific to Docker Image, if your workload is not spinning up try disabling settings below and after check what needs to be changed.
 securityContext:
   # fsGroup: 1000  #Not supported on windows
