@@ -11,10 +11,8 @@ additionalPodAnnotations:
   sidecar.istio.io/inject: "false"
 
 image:
-  # repository: "mcr.microsoft.com/windows/servercore/iis"
-  # tag: "windowsservercore-ltsc2019"
-  repository: "mcr.microsoft.com/dotnet/framework/samples"
-  tag: "aspnetapp"
+  repository: "mcr.microsoft.com/windows/servercore/iis"
+  tag: "windowsservercore-ltsc2019"
   containerPort: 80
 
 defaultRouting:
@@ -62,3 +60,11 @@ tolerations:
   - key: "sku"
     value: "Windows"
     effect: "NoSchedule"
+
+resources:
+  limits:
+    cpu: 300m
+    memory: 256Mi
+  requests:
+    cpu: 100m
+    memory: 256Mi
