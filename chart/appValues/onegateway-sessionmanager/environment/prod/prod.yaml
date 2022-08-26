@@ -7,4 +7,11 @@ env:
   CLIENT_ID: f99b7b32-5bd7-4216-9b53-af12be344da3
 
 keyVaultSecrets:
-  globalKeyVaultName: "KubeIT-PROD-KV-SH-WE"
+  keyVaults:
+    - keyVaultName: "KubeIT-PROD-KV-SH-WE"
+      namespace: onegateway
+      secrets:
+        - keyVaultSecretName: ancris3-client-secret
+          k8sSecret: enabled
+          k8sSecretName: ancris3-session-manager
+          k8sSecretKey: client-secret

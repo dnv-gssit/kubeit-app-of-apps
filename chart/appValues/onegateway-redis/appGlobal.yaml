@@ -1,1 +1,3 @@
 ---
+redis:
+  fullnameOverride: "onegateway-redis"

@@ -13,6 +13,9 @@ additionalPodLabels:
   session-management: frontend
   session-manager-name: onegateway-sessionmanager
 
+kubeit:
+  gatewayEnabled: true
+
 defaultRouting:
   catchAll: true
   kubeitDefaultHosts:
