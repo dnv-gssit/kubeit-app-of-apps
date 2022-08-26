@@ -67,7 +67,7 @@ env:
   REDIS_PASSWORD:
     valueFrom:
       secretKeyRef:
-        name: onegateway-redis-onegateway-aux011
+        name: onegateway-redis
         key: redis-password
   LOGIN_LANDING_URL: "/"
   LOGOUT_ENDPOINT: https://www.veracity.com/auth/logout
