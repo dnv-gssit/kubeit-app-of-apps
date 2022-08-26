@@ -84,3 +84,6 @@ keyVaultSecrets:
           k8sSecret: enabled
           k8sSecretName: ancris3-session-manager
           k8sSecretKey: client-secret
+
+kubeit:
+  gatewayEnabled: true
