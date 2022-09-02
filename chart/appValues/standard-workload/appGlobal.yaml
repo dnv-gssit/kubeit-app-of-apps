@@ -68,6 +68,8 @@ affinity:
               - solarfarmer
 
 hpa:
-  enabled: true
+  enabled: false
   maxReplicas: 100
   minReplicas: 1
+
+replicaCount: 100
