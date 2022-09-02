@@ -72,4 +72,4 @@ hpa:
   maxReplicas: 100
   minReplicas: 1
 
-replicaCount: 100
+replicaCount: 1
