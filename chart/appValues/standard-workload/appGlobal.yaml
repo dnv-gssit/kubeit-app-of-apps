@@ -63,5 +63,6 @@ affinity:
       nodeSelectorTerms:
         - matchExpressions:
           - key: tenant
-            operator: equal
-            value: solarfarmer
+            operator: In
+            values:
+              - solarfarmer
