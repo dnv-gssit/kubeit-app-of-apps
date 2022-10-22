@@ -126,6 +126,18 @@ applications:
         clusterColour:
           - blue
           - aux011
+  - name: onegateway-reverseproxy-workload
+    containerOS: linux
+    environments:
+      - name: aux
+        namespaces:
+          - onegateway
+        region:
+          - westeurope
+        clusterColour:
+          - blue
+          - green
+          - aux011
   - name: win-standard-workload
     containerOS: linux
     environments:
