@@ -83,7 +83,7 @@ keyVaultSecrets:
     - keyVaultName: "KubeIT-AUX-KV-SH-WE"
       namespace: onegateway
       secrets:
-        - keyVaultSecretName: ancris3-client-secret
+        - keyVaultSecretName: ancris3-pioszu-client-secret
           k8sSecret: enabled
           k8sSecretName: ancris3-session-manager
           k8sSecretKey: client-secret
