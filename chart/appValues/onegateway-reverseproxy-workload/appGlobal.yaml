@@ -17,7 +17,7 @@ additionalPodLabels:
   session-manager-name: onegateway-sessionmanager
 
 env:
-  proxy_pass_host: win-standard-workload.win-standard-workload.svc.cluster.local
+  PROXY_PASS_HOST: win-standard-workload.win-standard-workload.svc.cluster.local
 
 kubeit:
   gatewayEnabled: true
