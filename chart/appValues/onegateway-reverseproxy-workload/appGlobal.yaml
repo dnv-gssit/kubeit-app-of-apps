@@ -27,7 +27,7 @@ defaultRouting:
   kubeitDefaultHosts:
     enabled: false
   hosts:
-    - "onegateway-reverseproxy-workload-tenant2.aux016.kubeit.dnv.com"
+    - "onegateway-reverseproxy.aux016.kubeit.dnv.com"
 
 resources:
   requests:
