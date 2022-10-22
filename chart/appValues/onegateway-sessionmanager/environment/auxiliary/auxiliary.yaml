@@ -1,10 +1,10 @@
 ---
 defaultRouting:
   hosts:
-    - "onegateway-reverseproxy.aux016.kubeit.dnv.com"
+    - "ancris3.aux.kubeit.dnv.com"
 
 env:
-  CLIENT_ID: dd3fabfd-fb4b-4ca3-b079-d45341a56fd3
+  CLIENT_ID: cd628d9c-abcd-4043-9e96-55cabcd284ae
 
 keyVaultSecrets:
   globalKeyVaultName: "KubeIT-AUX-KV-SH-WE"
