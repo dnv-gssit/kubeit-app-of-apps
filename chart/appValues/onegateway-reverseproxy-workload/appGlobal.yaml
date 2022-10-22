@@ -17,7 +17,7 @@ additionalPodLabels:
   session-manager-name: onegateway-sessionmanager
 
 env:
-  PROXY_PASS_HOST: win-standard-workload.win-standard-workload.svc.cluster.local
+  PROXY_PASS_HOST: win-standard-workload.win-standard-workload.svc.cluster.local #change to your workload service, which to be proxied to
 
 kubeit:
   gatewayEnabled: true
@@ -27,7 +27,7 @@ defaultRouting:
   kubeitDefaultHosts:
     enabled: false
   hosts:
-    - "onegateway-reverseproxy.aux016.kubeit.dnv.com"
+    - "onegateway-win-workload.kubeit.dnv.com" #change to your veracity app fqdn
 
 resources:
   requests:
