@@ -7,6 +7,7 @@ workload:
   type: onegateway      # Required - standard or onegateway
   state: stateless      # Required - stateful or stateless, for stateless mounting extra volumes is blocked (besides keyvault)
 
+# This is example nginx image with simplest config to be able to proxy_pass a requests to windows workloads
 image:
   repository: "kubeitglobalsvcauxacrwe.azurecr.io/test/nginx-reverseproxy"
   tag: "main"
