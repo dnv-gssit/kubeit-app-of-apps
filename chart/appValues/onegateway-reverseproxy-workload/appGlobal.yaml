@@ -27,7 +27,7 @@ configMap:
     default.conf.template: |
       server {
         listen 80;
-        server_name defaulttest;
+        server_name default;
         location / {
           proxy_set_header        Host $host;
           proxy_set_header        X-Real-IP $remote_addr;
