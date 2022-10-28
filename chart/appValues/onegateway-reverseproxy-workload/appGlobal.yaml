@@ -9,8 +9,8 @@ workload:
 
 # This is example nginx image with simplest config to be able to proxy_pass a requests to windows workloads
 image:
-  repository: "kubeitglobalsvcauxacrwe.azurecr.io/test/nginx-reverseproxy"
-  tag: "main"
+  repository: "nginx"
+  tag: "1.23.2"
   containerPort: 80
 
 additionalPodLabels:
@@ -19,6 +19,31 @@ additionalPodLabels:
 
 env:
   PROXY_PASS_HOST: win-standard-workload.win-standard-workload.svc.cluster.local #change to your workload service, which to be proxied to
+
+# Reverse proxy config
+configMap: 
+  enabled: true
+  data: |
+    default.conf.template: |
+      server {
+        listen 80;
+        server_name defaulttest;
+        location / {
+          proxy_set_header        Host $host;
+          proxy_set_header        X-Real-IP $remote_addr;
+          proxy_set_header        X-Forwarded-Host $http_host;
+          proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
+          proxy_set_header        X-Forwarded-Proto $scheme;
+          proxy_pass http://${PROXY_PASS_HOST}/;
+        }
+      }
+volumes:
+ - name: configmap-volume
+   mountPath: /etc/nginx/templates/default.conf.template
+   subPath: default.conf.template
+   volumeDefinition: |
+    configMap:
+      name: onegateway-reverseproxy-workload-config-map 
 
 kubeit:
   gatewayEnabled: true
