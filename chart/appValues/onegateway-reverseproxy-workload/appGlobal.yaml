@@ -20,7 +20,7 @@ additionalPodLabels:
 env:
   PROXY_PASS_HOST: win-standard-workload.win-standard-workload.svc.cluster.local #change to your workload service, which to be proxied to
 
-# Reverse proxy config
+# Simplests reverse proxy config - to be updated with security configs
 configMap: 
   enabled: true
   data: |
