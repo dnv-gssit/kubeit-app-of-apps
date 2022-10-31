@@ -37,6 +37,7 @@ configMap:
           proxy_pass http://${PROXY_PASS_HOST}/;
         }
       }
+      
 volumes:
  - name: configmap-volume
    mountPath: /etc/nginx/templates/default.conf.template
