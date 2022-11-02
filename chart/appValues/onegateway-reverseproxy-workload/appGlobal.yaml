@@ -9,9 +9,9 @@ workload:
 
 # This is example nginx image with simplest config to be able to proxy_pass a requests to windows workloads
 image:
-  repository: "nginx"
+  repository: "nginxinc/nginx-unprivileged"
   tag: "1.23.2"
-  containerPort: 80
+  containerPort: 8080
 
 additionalPodLabels:
   session-management: frontend
@@ -26,7 +26,7 @@ configMap:
   data: |
     default.conf.template: |
       server {
-        listen 80;
+        listen 8080;
         server_name default;
         location / {
           proxy_set_header        Host $host;
