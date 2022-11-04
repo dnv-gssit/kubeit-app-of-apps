@@ -183,13 +183,3 @@ applications:
         clusterColour:
           - blue
           - green
-      - name: prod
-        namespaces:
-          - win-api-workload
-        region:
-          - westeurope
-          - eastus2
-          - southeastasia
-        clusterColour:
-          - blue
-          - green
