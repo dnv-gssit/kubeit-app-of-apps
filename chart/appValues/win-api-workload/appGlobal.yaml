@@ -13,7 +13,7 @@ additionalPodAnnotations:
 image:
   repository: "kubeitglobalsvcauxacrwe.azurecr.io/test/webapplication"
   tag: "latest"
-  containerPort: 5274
+  containerPort: 80
 
 defaultRouting:
   enabled: true
