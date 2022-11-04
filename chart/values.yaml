@@ -175,7 +175,7 @@ applications:
     environments:
       - name: nonprod
         namespaces:
-          - win-api-workload
+          - win-standard-workload
         region:
           - westeurope
           - eastus2
