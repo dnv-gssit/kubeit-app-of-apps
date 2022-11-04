@@ -170,3 +170,16 @@ applications:
           - blue
           - green
           - aux011
+  - name: win-api-workload
+    containerOS: linux
+    environments:
+      - name: nonprod
+        namespaces:
+          - win-api-workload
+        region:
+          - westeurope
+          - eastus2
+          - southeastasia
+        clusterColour:
+          - blue
+          - green

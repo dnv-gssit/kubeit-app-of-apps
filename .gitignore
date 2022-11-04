@@ -2,3 +2,4 @@
 # Chart dependencies
 *.tgz
 Chart.lock
+/.project
