@@ -43,6 +43,7 @@ applications:
           - blue
           - green
           - aux011
+          - aux033
   - name: onegateway-workload
     containerOS: linux
     environments:
@@ -138,6 +139,7 @@ applications:
           - blue
           - green
           - aux011
+          - aux033
   - name: win-standard-workload
     containerOS: linux
     environments:
@@ -170,6 +172,7 @@ applications:
           - blue
           - green
           - aux011
+          - aux033
   - name: win-api-workload
     containerOS: linux
     environments:
