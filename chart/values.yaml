@@ -87,7 +87,6 @@ applications:
         region:
           - westeurope
         clusterColour:
-          - blue
           - dev011
   - name: onegateway-sessionmanager
     containerOS: linux
@@ -122,7 +121,6 @@ applications:
         region:
           - westeurope
         clusterColour:
-          - blue
           - dev011
   - name: onegateway-redis
     chart:
@@ -159,7 +157,6 @@ applications:
         region:
           - westeurope
         clusterColour:
-          - blue
           - dev011
   - name: onegateway-reverseproxy-workload
     containerOS: linux
@@ -180,8 +177,6 @@ applications:
         region:
           - westeurope
         clusterColour:
-          - blue
-          - green
           - dev011
           - dev033
   - name: win-standard-workload
