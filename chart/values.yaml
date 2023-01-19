@@ -44,6 +44,16 @@ applications:
           - green
           - aux011
           - aux033
+      - name: dev
+        namespaces:
+          - standard
+          - standard-test
+        region:
+          - westeurope
+        clusterColour:
+          - dev001
+          - dev011
+          - dev033
   - name: onegateway-workload
     containerOS: linux
     environments:
@@ -71,6 +81,13 @@ applications:
         clusterColour:
           - blue
           - aux011
+      - name: dev
+        namespaces:
+          - onegateway
+        region:
+          - westeurope
+        clusterColour:
+          - dev011
   - name: onegateway-sessionmanager
     containerOS: linux
     environments:
@@ -98,6 +115,13 @@ applications:
         clusterColour:
           - blue
           - aux011
+      - name: dev
+        namespaces:
+          - onegateway
+        region:
+          - westeurope
+        clusterColour:
+          - dev011
   - name: onegateway-redis
     chart:
       path: "kubeit-charts/charts/kubeit-redis-chart"
@@ -127,6 +151,13 @@ applications:
         clusterColour:
           - blue
           - aux011
+      - name: dev
+        namespaces:
+          - onegateway
+        region:
+          - westeurope
+        clusterColour:
+          - dev011
   - name: onegateway-reverseproxy-workload
     containerOS: linux
     environments:
@@ -140,6 +171,14 @@ applications:
           - green
           - aux011
           - aux033
+      - name: dev
+        namespaces:
+          - onegateway
+        region:
+          - westeurope
+        clusterColour:
+          - dev011
+          - dev033
   - name: win-standard-workload
     containerOS: linux
     environments:
@@ -173,6 +212,17 @@ applications:
           - green
           - aux011
           - aux033
+      - name: dev
+        namespaces:
+          - win-standard-workload
+        region:
+          - westeurope
+        clusterColour:
+          - blue
+          - green
+          - dev001
+          - dev011
+          - dev033
   - name: win-api-workload
     containerOS: linux
     environments:
