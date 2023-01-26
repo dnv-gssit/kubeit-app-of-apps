@@ -96,7 +96,7 @@ spec:
       targetRevision: "{{ ($app.chart | default dict ).targetRevision | default $.Values.globals.chart.targetRevision }}"
       {{- end }}
       {{- if hasKey ($app.chart | default dict) "name" }}
-      chart: "{{ $app.chart.name }}"
+      chart: "{{ $app.chart.name | default $.Values.globals.chart.name }}"
       {{- else }}
       path: "{{ ($app.chart | default dict ).path | default $.Values.globals.chart.path }}"
       {{- end }}
