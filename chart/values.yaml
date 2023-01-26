@@ -1,7 +1,9 @@
 ---
 globals:
   chart:
+    name: kubeit-deployment-chart
     repoURL: https://dnv-gssit.github.io/kubeit-charts
+    targetRevision: 1.0.3
     ignoreMissingValueFiles: true
     skipCrds: true
 
