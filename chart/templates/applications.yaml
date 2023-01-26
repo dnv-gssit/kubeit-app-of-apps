@@ -87,19 +87,16 @@ spec:
     server: 'https://kubernetes.default.svc'
   project: "{{ $.Values.tenantName }}"
   source:
-    # - repoURL: "{{ $.Values.repoURL }}"
-    #   targetRevision: "{{ $.Values.targetRevision }}"
-    #   ref: values
+    - repoURL: "{{ $.Values.repoURL }}"
+      targetRevision: "{{ $.Values.targetRevision }}"
+      ref: values
     - repoURL: "{{ ($app.chart | default dict ).repoURL | default $.Values.globals.chart.repoURL }}"
       {{- if and (hasKey ($app.chart | default dict) "targetRevision") (eq ($app.chart | default dict ).targetRevision "latest") }}
       {{- else }}
       targetRevision: "{{ ($app.chart | default dict ).targetRevision | default $.Values.globals.chart.targetRevision }}"
       {{- end }}
-      {{- if hasKey ($app.chart | default dict) "name" }}
       chart: "{{ $app.chart.name | default $.Values.globals.chart.name }}"
-      {{- else }}
       path: "{{ ($app.chart | default dict ).path | default $.Values.globals.chart.path }}"
-      {{- end }}
       helm:
         ignoreMissingValueFiles: {{ ($app.chart | default dict ).ignoreMissingValueFiles | default $.Values.globals.chart.ignoreMissingValueFiles }}
         skipCrds: {{ ($app.chart | default dict ).skipCrds | default $.Values.globals.chart.skipCrds }}

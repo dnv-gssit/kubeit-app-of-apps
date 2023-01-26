@@ -6,6 +6,7 @@ globals:
     targetRevision: 1.0.3
     ignoreMissingValueFiles: true
     skipCrds: true
+    path: null
 
 applications:
   - name: standard-workload
