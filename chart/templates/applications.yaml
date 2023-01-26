@@ -96,7 +96,7 @@ spec:
       targetRevision: "{{ ($app.chart | default dict ).targetRevision | default $.Values.globals.chart.targetRevision }}"
       {{- end }}
       chart: "{{ ($app.chart | default dict ).name | default $.Values.globals.chart.name }}"
-      path: "{{ ($app.chart | default dict ).path | default $.Values.globals.chart.path }}"
+      # path: "{{ ($app.chart | default dict ).path | default $.Values.globals.chart.path }}"
       helm:
         ignoreMissingValueFiles: {{ ($app.chart | default dict ).ignoreMissingValueFiles | default $.Values.globals.chart.ignoreMissingValueFiles }}
         skipCrds: {{ ($app.chart | default dict ).skipCrds | default $.Values.globals.chart.skipCrds }}
