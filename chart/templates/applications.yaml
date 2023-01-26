@@ -87,9 +87,9 @@ spec:
     server: 'https://kubernetes.default.svc'
   project: "{{ $.Values.tenantName }}"
   source:
-    - repoURL: "{{ $.Values.repoURL }}"
-      targetRevision: "{{ $.Values.targetRevision }}"
-      ref: values
+    # - repoURL: "{{ $.Values.repoURL }}"
+    #   targetRevision: "{{ $.Values.targetRevision }}"
+    #   ref: values
     - repoURL: "{{ ($app.chart | default dict ).repoURL | default $.Values.globals.chart.repoURL }}"
       {{- if and (hasKey ($app.chart | default dict) "targetRevision") (eq ($app.chart | default dict ).targetRevision "latest") }}
       {{- else }}
