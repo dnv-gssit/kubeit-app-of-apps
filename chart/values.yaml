@@ -42,7 +42,7 @@ applications:
         clusterColour:
           - blue
           - green
-          - aux011
+          - aux002
           - aux033
       - name: dev
         namespaces:
