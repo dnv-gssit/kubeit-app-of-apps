@@ -53,7 +53,6 @@ applications:
         clusterColour:
           - dev001
           - dev011
-          - dev033
   - name: onegateway-workload
     containerOS: linux
     environments:
@@ -170,7 +169,6 @@ applications:
           - blue
           - green
           - aux011
-          - aux033
       - name: dev
         namespaces:
           - onegateway
@@ -178,7 +176,6 @@ applications:
           - westeurope
         clusterColour:
           - dev011
-          - dev033
   - name: win-standard-workload
     containerOS: linux
     environments:
