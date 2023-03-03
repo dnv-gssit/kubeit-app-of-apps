@@ -208,7 +208,6 @@ applications:
           - blue
           - green
           - aux011
-          - aux033
       - name: dev
         namespaces:
           - win-standard-workload
@@ -230,3 +229,10 @@ applications:
         clusterColour:
           - blue
           - green
+      - name: dev
+        namespaces:
+          - win-standard-workload
+        region:
+          - westeurope
+        clusterColour:
+          - dev033
