@@ -6,12 +6,14 @@ defaultRouting:
 env:
   CLIENT_ID: f99b7b32-5bd7-4216-9b53-af12be344da3
 
-keyVaultSecrets:
-  keyVaults:
-    - keyVaultName: "KubeIT-PROD-KV-SH-WE"
-      namespace: onegateway
+
+azureKeyVaultSecrets:
+  type: csi-keyvault
+  tenantId: "adf10e2b-b6e9-41d6-be2f-c12bb566019c"
+  azureKeyVaults:
+    - azureKeyVaultName: "KubeIT-PROD-KV-SH-WE"
       secrets:
-        - keyVaultSecretName: ancris3-client-secret
-          k8sSecret: enabled
-          k8sSecretName: ancris3-session-manager
-          k8sSecretKey: client-secret
+        - k8sSecretName: ancris3-session-manager
+          data:
+            - k8sSecretKey: client-secret
+              azureKeyVaultSecretName: ancris3-client-secret

@@ -1,14 +1,8 @@
 ---
-defaultRouting:
-  hosts:
-    - "ancris3.aux.kubeit.dnv.com"
-
-env:
-  CLIENT_ID: cd628d9c-abcd-4043-9e96-55cabcd284ae
-
 azureKeyVaultSecrets:
   type: csi-keyvault
   tenantId: "adf10e2b-b6e9-41d6-be2f-c12bb566019c"
+  clientId: "adf10e2b-b6e9-41d6-be2f-c12bb566019c"
   azureKeyVaults:
     - azureKeyVaultName: "KubeIT-AUX-KV-SH-WE"
       secrets:

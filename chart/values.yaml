@@ -176,6 +176,27 @@ applications:
           - westeurope
         clusterColour:
           - dev011
+  - name: onegateway-secrets
+    chart:
+      path: "kubeit-charts/charts/kubeit-secrets"
+    containerOS: linux
+    environments:
+      - name: aux
+        namespaces:
+          - onegateway
+        region:
+          - westeurope
+        clusterColour:
+          - blue
+          - green
+          - aux011
+      - name: dev
+        namespaces:
+          - onegateway
+        region:
+          - westeurope
+        clusterColour:
+          - dev011
   - name: win-standard-workload
     containerOS: linux
     environments:

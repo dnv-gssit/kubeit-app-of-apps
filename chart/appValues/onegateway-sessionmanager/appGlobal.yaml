@@ -76,14 +76,14 @@ env:
   LOGOUT_ENDPOINT: https://www.veracity.com/auth/logout
   REPLY_URL_SUFFIX: veracity
 
-keyVaultSecrets:
-  enabled: true
+azureKeyVaultSecrets:
+  type: csi-keyvault
   tenantId: "adf10e2b-b6e9-41d6-be2f-c12bb566019c"
-  keyVaults:
-    - keyVaultName: "KubeIT-AUX-KV-SH-WE"
-      namespace: onegateway
+  clientId: "adf10e2b-b6e9-41d6-be2f-c12bb566019c"
+  azureKeyVaults:
+    - azureKeyVaultName: "KubeIT-AUX-KV-SH-WE"
       secrets:
-        - keyVaultSecretName: ancris3-client-secret
-          k8sSecret: enabled
-          k8sSecretName: ancris3-session-manager
-          k8sSecretKey: client-secret
+        - k8sSecretName: ancris3-session-manager
+          data:
+            - k8sSecretKey: client-secret
+              azureKeyVaultSecretName: ancris3-client-secret

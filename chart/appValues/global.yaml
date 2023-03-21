@@ -1,7 +1,8 @@
 ---
 # Global values for all environments
-keyVaultSecrets:
+azurekeyVaultSecrets:
   tenantId: "adf10e2b-b6e9-41d6-be2f-c12bb566019c"
+  clientId: "" # Used for external-secrets provider
 
 # Only defined per application!
 # ArgoCD Image Updater Variables
