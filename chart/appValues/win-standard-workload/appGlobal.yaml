@@ -12,7 +12,7 @@ additionalPodAnnotations:
 
 image:
   repository: "mcr.microsoft.com/windows/servercore/iis"
-  tag: "windowsservercore-ltsc2019"
+  tag: "windowsservercore-ltsc2022"
   containerPort: 80
 
 defaultRouting:
