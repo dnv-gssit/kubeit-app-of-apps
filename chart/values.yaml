@@ -200,16 +200,6 @@ applications:
   - name: win-standard-workload
     containerOS: linux
     environments:
-      - name: nonprod
-        namespaces:
-          - win-standard-workload
-        region:
-          - westeurope
-          - eastus2
-          - southeastasia
-        clusterColour:
-          - blue
-          - green
       - name: prod
         namespaces:
           - win-standard-workload
@@ -240,16 +230,6 @@ applications:
   - name: win-api-workload
     containerOS: linux
     environments:
-      - name: nonprod
-        namespaces:
-          - win-standard-workload
-        region:
-          - westeurope
-          - eastus2
-          - southeastasia
-        clusterColour:
-          - blue
-          - green
       - name: dev
         namespaces:
           - win-standard-workload
