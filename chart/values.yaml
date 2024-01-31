@@ -50,9 +50,11 @@ applications:
           - standard-test
         region:
           - westeurope
+          - eastus2
         clusterColour:
           - dev001
           - dev011
+          - dev017
   - name: onegateway-workload
     containerOS: linux
     environments:
