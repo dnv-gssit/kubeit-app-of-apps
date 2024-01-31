@@ -54,7 +54,6 @@ applications:
         clusterColour:
           - dev001
           - dev011
-          - dev017
   - name: onegateway-workload
     containerOS: linux
     environments:
@@ -124,7 +123,6 @@ applications:
           - eastus2
         clusterColour:
           - dev011
-          - dev017
   - name: onegateway-redis
     chart:
       path: "kubeit-charts/charts/kubeit-redis-chart"
