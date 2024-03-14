@@ -124,6 +124,7 @@ applications:
           - eastus2
         clusterColour:
           - dev011
+          - dev017
   - name: onegateway-redis
     chart:
       path: "kubeit-charts/charts/kubeit-redis-chart"
