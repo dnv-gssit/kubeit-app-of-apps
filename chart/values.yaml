@@ -213,15 +213,13 @@ applications:
         clusterColour:
           - blue
           - green
-      - name: aux
+      - name: nonprod
         namespaces:
           - win-standard-workload
         region:
           - westeurope
         clusterColour:
           - blue
-          - green
-          - aux011
       - name: dev
         namespaces:
           - win-standard-workload
@@ -240,3 +238,10 @@ applications:
           - westeurope
         clusterColour:
           - dev033
+      - name: nonprod
+        namespaces:
+          - win-standard-workload
+        region:
+          - westeurope
+        clusterColour:
+          - blue
