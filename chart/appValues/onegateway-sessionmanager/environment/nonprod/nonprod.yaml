@@ -4,4 +4,4 @@ defaultRouting:
     - "ancris3.dev001.kubeit.dnv.com"
 
 env:
-  CLIENT_ID: a5b67334-627a-43ca-87a3-73662f5ff44f
+  CLIENT_ID: dd3fabfd-fb4b-4ca3-b079-d45341a56fd3

@@ -60,6 +60,7 @@ env:
   SESSION_MANAGER_ID: ancris3
   AUTHORITY: https://login.veracity.com/te/dnvglb2cprod.onmicrosoft.com/B2C_1A_SignInWithADFSIdp/v2.0
   SCOPE: https://dnvglb2cprod.onmicrosoft.com/83054ebf-1d7b-43f5-82ad-b2bde84d7b75/user_impersonation
+  CLIENT_ID: dd3fabfd-fb4b-4ca3-b079-d45341a56fd3
   CLIENT_SECRET:
     valueFrom:
       secretKeyRef:
