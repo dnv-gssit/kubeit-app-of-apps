@@ -187,6 +187,14 @@ applications:
       path: "kubeit-charts/charts/kubeit-secrets"
     containerOS: linux
     environments:
+      - name: nonprod
+        namespaces:
+          - onegateway
+        region:
+          - westeurope
+        clusterColour:
+          - blue
+          - green
       - name: aux
         namespaces:
           - onegateway
