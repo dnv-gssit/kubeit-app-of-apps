@@ -58,22 +58,6 @@ applications:
   - name: onegateway-workload
     containerOS: linux
     environments:
-      - name: nonprod
-        namespaces:
-          - onegateway
-        region:
-          - westeurope
-        clusterColour:
-          - blue
-          - green
-      - name: prod
-        namespaces:
-          - onegateway
-        region:
-          - westeurope
-        clusterColour:
-          - blue
-          - green
       - name: aux
         namespaces:
           - onegateway
@@ -93,22 +77,6 @@ applications:
   - name: onegateway-sessionmanager
     containerOS: linux
     environments:
-      - name: nonprod
-        namespaces:
-          - onegateway
-        region:
-          - westeurope
-        clusterColour:
-          - blue
-          - green
-      - name: prod
-        namespaces:
-          - onegateway
-        region:
-          - westeurope
-        clusterColour:
-          - blue
-          - green
       - name: aux
         namespaces:
           - onegateway
@@ -131,22 +99,6 @@ applications:
       path: "kubeit-charts/charts/kubeit-redis-chart"
     containerOS: linux
     environments:
-      - name: nonprod
-        namespaces:
-          - onegateway
-        region:
-          - westeurope
-        clusterColour:
-          - blue
-          - green
-      - name: prod
-        namespaces:
-          - onegateway
-        region:
-          - westeurope
-        clusterColour:
-          - blue
-          - green
       - name: aux
         namespaces:
           - onegateway
@@ -187,23 +139,6 @@ applications:
       path: "kubeit-charts/charts/kubeit-secrets"
     containerOS: linux
     environments:
-      - name: nonprod
-        namespaces:
-          - onegateway
-        region:
-          - westeurope
-        clusterColour:
-          - blue
-          - green
-      - name: aux
-        namespaces:
-          - onegateway
-        region:
-          - westeurope
-        clusterColour:
-          - blue
-          - green
-          - aux011
       - name: dev
         namespaces:
           - onegateway
