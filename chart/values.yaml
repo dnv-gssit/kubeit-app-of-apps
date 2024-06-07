@@ -204,6 +204,13 @@ applications:
         clusterColour:
           - dev011
           - dev001
+      - name: nonprod
+        namespaces:
+          - onegateway
+        region:
+          - westeurope
+        clusterColour:
+          - dev001
   - name: win-standard-workload
     containerOS: linux
     environments:
