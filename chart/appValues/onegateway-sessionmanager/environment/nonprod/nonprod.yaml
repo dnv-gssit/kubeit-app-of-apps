@@ -5,14 +5,3 @@ defaultRouting:
 
 env:
   CLIENT_ID: a5b67334-627a-43ca-87a3-73662f5ff44f
-
-azureKeyVaultSecrets:
-  type: csi-keyvault
-  tenantId: "adf10e2b-b6e9-41d6-be2f-c12bb566019c"
-  azureKeyVaults:
-    - azureKeyVaultName: "KubeIT-NONPROD-KV-SH-WE"
-      secrets:
-        - k8sSecretName: ancris3-session-manager
-          data:
-            - k8sSecretKey: client-secret
-              azureKeyVaultSecretName: ancris3-client-secret
