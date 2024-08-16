@@ -75,7 +75,6 @@ applications:
         clusterColour:
           - dev011
           - dev001
-          - dev018
   - name: onegateway-sessionmanager
     containerOS: linux
     environments:
@@ -96,6 +95,7 @@ applications:
         clusterColour:
           - dev011
           - dev001
+          - dev018
   - name: onegateway-redis
     chart:
       path: "kubeit-charts/charts/kubeit-redis-chart"
