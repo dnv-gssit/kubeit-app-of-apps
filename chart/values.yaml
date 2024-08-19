@@ -72,6 +72,7 @@ applications:
           - onegateway
         region:
           - westeurope
+          - eastus2
         clusterColour:
           - dev011
           - dev001
@@ -115,6 +116,7 @@ applications:
           - onegateway
         region:
           - westeurope
+          - eastus2
         clusterColour:
           - dev011
           - dev001
@@ -136,6 +138,7 @@ applications:
           - onegateway
         region:
           - westeurope
+          - eastus2
         clusterColour:
           - dev011
           - dev018
