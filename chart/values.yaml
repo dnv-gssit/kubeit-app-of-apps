@@ -189,9 +189,11 @@ applications:
           - win-standard-workload
         region:
           - westeurope
+          - eastus2
         clusterColour:
           - blue
           - green
+          - dev018
   - name: win-api-workload
     containerOS: linux
     environments:
@@ -200,8 +202,10 @@ applications:
           - win-standard-workload
         region:
           - westeurope
+          - eastus2
         clusterColour:
           - dev033
+          - dev018
       - name: nonprod
         namespaces:
           - win-standard-workload
