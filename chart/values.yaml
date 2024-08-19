@@ -193,7 +193,6 @@ applications:
         clusterColour:
           - blue
           - green
-          - dev018
   - name: win-api-workload
     containerOS: linux
     environments:
@@ -205,7 +204,6 @@ applications:
           - eastus2
         clusterColour:
           - dev033
-          - dev018
       - name: nonprod
         namespaces:
           - win-standard-workload
