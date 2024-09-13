@@ -77,14 +77,14 @@ env:
   LOGOUT_ENDPOINT: https://www.veracity.com/auth/logout
   REPLY_URL_SUFFIX: veracity
 
-azureKeyVaultSecrets:
-  type: external-secrets
-  tenantId: "adf10e2b-b6e9-41d6-be2f-c12bb566019c"
-  clientId: "adf10e2b-b6e9-41d6-be2f-c12bb566019c"
-  azureKeyVaults:
-    - azureKeyVaultName: "KubeIT-AUX-KV-SH-WE"
-      secrets:
-        - k8sSecretName: ancris3-session-manager
-          data:
-            - k8sSecretKey: client-secret
-              azureKeyVaultSecretName: ancris3-client-secret
+#azureKeyVaultSecrets:
+#  type: external-secrets
+#  tenantId: "adf10e2b-b6e9-41d6-be2f-c12bb566019c"
+#  clientId: "adf10e2b-b6e9-41d6-be2f-c12bb566019c"
+#  azureKeyVaults:
+#    - azureKeyVaultName: "KubeIT-AUX-KV-SH-WE"
+#      secrets:
+#        - k8sSecretName: ancris3-session-manager
+#          data:
+#            - k8sSecretKey: client-secret
+#              azureKeyVaultSecretName: ancris3-client-secret
