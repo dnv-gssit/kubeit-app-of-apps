@@ -144,7 +144,6 @@ applications:
           - eastus2
         clusterColour:
           - dev011
-          - dev023
   - name: onegateway-secrets
     chart:
       path: "kubeit-charts/charts/kubeit-secrets"
