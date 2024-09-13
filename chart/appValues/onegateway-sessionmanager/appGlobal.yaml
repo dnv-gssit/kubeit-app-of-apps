@@ -78,7 +78,7 @@ env:
   REPLY_URL_SUFFIX: veracity
 
 azureKeyVaultSecrets:
-  type: csi-keyvault
+  type: external-secrets
   tenantId: "adf10e2b-b6e9-41d6-be2f-c12bb566019c"
   clientId: "adf10e2b-b6e9-41d6-be2f-c12bb566019c"
   azureKeyVaults:
