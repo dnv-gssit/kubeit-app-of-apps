@@ -192,6 +192,7 @@ applications:
           - blue
           - green
           - dev022
+          - dev018
   - name: win-api-workload
     containerOS: linux
     environments:
