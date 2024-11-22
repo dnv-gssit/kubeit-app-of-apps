@@ -54,6 +54,7 @@ applications:
         clusterColour:
           - dev001
           - dev011
+          - dev022
           - dev023
           - dev024
   - name: onegateway-workload
