@@ -55,7 +55,7 @@ applications:
           - dev001
           - dev011
           - dev023
-          - dev018
+          - dev024
           - dev016
   - name: onegateway-workload
     containerOS: linux
@@ -145,6 +145,7 @@ applications:
           - eastus2
         clusterColour:
           - dev011
+          - dev018
   - name: onegateway-secrets
     chart:
       path: "kubeit-charts/charts/kubeit-secrets"
@@ -197,6 +198,8 @@ applications:
         clusterColour:
           - blue
           - green
+          - dev022
+          - dev018
   - name: win-api-workload
     containerOS: linux
     environments:

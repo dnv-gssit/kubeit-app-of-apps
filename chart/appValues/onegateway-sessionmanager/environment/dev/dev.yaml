@@ -1,3 +1,15 @@
 ---
 env:
   CLIENT_ID: a5b67334-627a-43ca-87a3-73662f5ff44f
+
+azureKeyVaultSecrets:
+  type: external-secrets
+  tenantId: "adf10e2b-b6e9-41d6-be2f-c12bb566019c"
+  clientId: "894da582-54c8-4283-9b2c-0bb51e44ddc1"
+  azureKeyVaults:
+    - azureKeyVaultName: "KubeIT-DEV-KV-SH-WE"
+      secrets:
+        - k8sSecretName: ancris3-session-manager
+          data:
+            - k8sSecretKey: client-secret
+              azureKeyVaultSecretName: ancris3-client-secret

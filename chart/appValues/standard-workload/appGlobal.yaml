@@ -47,3 +47,11 @@ containerSecurityContext:
 # https://github.com/paulbouwer/hello-kubernetes/tree/main/src/app
 env:
   MESSAGE: "Hello on standard workload!"
+
+resources:
+  requests:
+    cpu: 50m
+    memory: 64Mi
+  limits:
+    cpu: 300m
+    memory: 128Mi
