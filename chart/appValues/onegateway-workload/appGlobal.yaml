@@ -31,6 +31,9 @@ resources:
     cpu: 500m
     memory: 6Gi
 
+env: 
+  CLIENT_ID: "dd3fabfd-fb4b-4ca3-b079-d45341a56fd3"
+
 requestAuthentication:
   enabled: true
   jwtRules:
