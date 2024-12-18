@@ -9,4 +9,4 @@ azureKeyVaultSecrets:
         - k8sSecretName: ancris3-session-manager
           data:
             - k8sSecretKey: client-secret
-              azureKeyVaultSecretName: ancris3-client-secret
+              azureKeyVaultSecretName: ancris3-dev016-client-secret

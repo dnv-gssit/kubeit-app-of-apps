@@ -161,6 +161,7 @@ applications:
           - dev011
           - dev001
           - dev018
+          - dev016
       - name: nonprod
         namespaces:
           - onegateway
