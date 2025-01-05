@@ -18,6 +18,8 @@ defaultRouting:
   enabled: true
   kubeitDefaultHosts:
     enabled: false
+  hosts:
+    - "ancris3.dev016.kubeit.dnv.com"
   rewriteUrlPrefix:
     enabled: false
   urlPrefixes:
