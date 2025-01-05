@@ -19,10 +19,7 @@ kubeit:
 defaultRouting:
   catchAll: true
   kubeitDefaultHosts:
-    enabled: false
-  hosts:
-    - "ancris3.dev016.kubeit.dnv.com"
-
+    enabled: true
 resources:
   requests:
     cpu: 100m
