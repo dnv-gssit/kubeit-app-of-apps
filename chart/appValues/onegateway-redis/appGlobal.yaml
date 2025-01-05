@@ -11,7 +11,7 @@ redis:
         limits:
           cpu: 200m
           memory: 256Mi
-  volumePermissions:
+  sysctl:
     resources:
       requests:
         cpu: 100m
