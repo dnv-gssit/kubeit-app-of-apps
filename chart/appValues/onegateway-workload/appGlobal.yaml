@@ -21,7 +21,7 @@ defaultRouting:
   kubeitDefaultHosts:
     enabled: false
   hosts:
-    - "ancris3.kubeit.dnv.com"
+    - "ancris3-test.dev016.kubeit.dnv.com"
 
 resources:
   requests:
@@ -31,6 +31,9 @@ resources:
     cpu: 500m
     memory: 6Gi
 
+env: 
+  CLIENT_ID: "dd3fabfd-fb4b-4ca3-b079-d45341a56fd3"
+
 requestAuthentication:
   enabled: true
   jwtRules:
@@ -38,3 +41,6 @@ requestAuthentication:
       jwksUri: "https://login.veracity.com/te/a68572e3-63ce-4bc1-acdc-b64943502e9d/b2c_1a_signinwithadfsidp/discovery/v2.0/keys"
       audiences: [83054ebf-1d7b-43f5-82ad-b2bde84d7b75]
       forwardOriginalToken: true
+
+authorizationPolicy:
+  enabled: false

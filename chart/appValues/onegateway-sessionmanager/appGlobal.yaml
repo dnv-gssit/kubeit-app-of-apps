@@ -18,6 +18,9 @@ defaultRouting:
   enabled: true
   kubeitDefaultHosts:
     enabled: false
+  hosts:
+    "ancris3-test.dev016.kubeit.dnv.com"
+
   rewriteUrlPrefix:
     enabled: false
   urlPrefixes:
@@ -88,3 +91,11 @@ env:
 #          data:
 #            - k8sSecretKey: client-secret
 #              azureKeyVaultSecretName: ancris3-client-secret
+
+resources: 
+ requests:
+   cpu: 250m
+   memory: 64Mi
+ limits:
+   cpu: 500m
+   memory: 128Mi
