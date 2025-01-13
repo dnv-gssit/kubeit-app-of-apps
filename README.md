@@ -1,2 +1,16 @@
 # kubeit-app-of-apps
-Internal example repository demonstrating app-of-apps deployments in ArgoCD
+Internal example repository demonstrating app-of-apps deployments in ArgoCD.
+kubeit-app-of-apps repo is strictly connected with kubeit-charts repo.
+
+How to use it in kubeit dev cluster:
+1. Create working branch of kubeit-app-of-apps.
+2. Update reference in voa-platform-apps/argocd/env-config/values-minimal-dev.yaml to point to this branch instead of main.
+3. Add your dev cluster in appropriate section in chart/values.yaml depending on which app you intend to deploy.
+4. Open kubeit-charts repo, and follow the README instructions.
+
+## Session manager
+To use examples with session manager follow procedure:
+https://github.com/dnv-gssit/wiki/blob/main/kubeit/procedures/test-session-manager.md
+
+## Workload identity
+To disable workload identity, go to chart/templates/applications.yaml and switch workloadIdentity to "false".
