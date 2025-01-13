@@ -4,7 +4,7 @@ kubeit-app-of-apps repo is strictly connected with kubeit-charts repo.
 
 How to use it in kubeit dev cluster:
 1. Create working branch of kubeit-app-of-apps.
-2. Update reference in voa-platform-apps/argocd/env-config/values-minimal-dev.yaml to point to this branch instead of main.
+2. Update reference in voa-platform-apps/argocd/env-config/values-minimal-dev.yaml (or values-dev.yaml depending on situation) to point to this branch instead of main.
 3. Add your dev cluster in appropriate section in chart/values.yaml depending on which app you intend to deploy.
 4. Open kubeit-charts repo, and follow the README instructions.
 
