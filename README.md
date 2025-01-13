@@ -1,6 +1,6 @@
 # kubeit-app-of-apps
 Internal example repository demonstrating app-of-apps deployments in ArgoCD.
-kubeit-app-of-apps repo is strictly connected with kubeit-charts repo.
+kubeit-app-of-apps repo is strictly connected with kubeit-charts repo (both repositories must have feature branches and require modifications to run examples for tenant2).
 
 How to use it in kubeit dev cluster:
 1. Create working branch of kubeit-app-of-apps.
