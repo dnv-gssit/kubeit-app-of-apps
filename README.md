@@ -11,6 +11,3 @@ How to use it in kubeit development cluster:
 ## Session manager
 To use examples with session manager follow procedure:
 https://github.com/dnv-gssit/wiki/blob/main/kubeit/procedures/test-session-manager.md
-
-## Workload identity
-To disable workload identity, go to kubeit-charts/charts/kubeit-app-of-apps/templates/applications.yaml and switch workloadIdentity to "false".
