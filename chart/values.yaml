@@ -188,7 +188,6 @@ applications:
         clusterColour:
           - blue
           - green
-          - dev022
   - name: win-api-workload
     containerOS: linux
     environments:
