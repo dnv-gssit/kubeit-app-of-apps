@@ -1,15 +1,15 @@
 ---
-repoURL: https://github.com/dnv-gssit/kubeit-charts.git
-targetRevision: feature/repo-cleaning
-
 globals:
   chart:
-    path: charts/kubeit-deployment-chart
     ignoreMissingValueFiles: true
     skipCrds: true
 
 applications:
   - name: standard-workload
+    chart:
+      path: "charts/kubeit-deployment-chart"
+      targetRevision: feature/repo-cleaning
+      repoURL: https://github.com/dnv-gssit/kubeit-charts.git
     containerOS: linux
     environments:
       - name: nonprod

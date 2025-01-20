@@ -1,10 +1,6 @@
 ---
-repoURL: https://github.com/dnv-gssit/kubeit-charts.git
-targetRevision: feature/repo-cleaning
-
 globals:
   chart:
-    path: charts/kubeit-deployment-chart
     # General
     ignoreMissingValueFiles: false
     skipCrds: true
