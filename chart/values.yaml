@@ -1,7 +1,10 @@
 ---
+repoURL: https://github.com/dnv-gssit/kubeit-charts.git
+targetRevision: feature/repo-cleaning
+
 globals:
   chart:
-    path: kubeit-charts/charts/kubeit-deployment-chart
+    path: charts/kubeit-deployment-chart
     ignoreMissingValueFiles: true
     skipCrds: true
 
@@ -98,7 +101,7 @@ applications:
           - dev001
   - name: onegateway-redis
     chart:
-      path: "kubeit-charts/charts/kubeit-redis-chart"
+      path: "charts/kubeit-redis-chart"
     containerOS: linux
     environments:
       - name: aux
@@ -140,7 +143,7 @@ applications:
           - dev011
   - name: onegateway-secrets
     chart:
-      path: "kubeit-charts/charts/kubeit-secrets"
+      path: "charts/kubeit-secrets"
     containerOS: linux
     environments:
       - name: dev
