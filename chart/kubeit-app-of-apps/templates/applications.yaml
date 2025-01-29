@@ -86,45 +86,48 @@ spec:
     namespace: "{{ . }}"
     server: 'https://kubernetes.default.svc'
   project: "{{ $.Values.tenantName }}"
-  source:
-    repoURL: "{{ ($app.chart | default dict ).repoURL | default $.Values.repoURL }}"
-    {{- if and (hasKey ($app.chart | default dict) "targetRevision") (eq ($app.chart | default dict ).targetRevision "latest") }}
-    {{- else }}
-    targetRevision: "{{ ($app.chart | default dict ).targetRevision | default $.Values.targetRevision }}"
-    {{- end }}
-    {{- if hasKey ($app.chart | default dict) "name" }}
-    chart: "{{ $app.chart.name }}"
-    {{- else }}
-    path: "{{ ($app.chart | default dict ).path | default $.Values.globals.chart.path }}"
-    {{- end }}
-    helm:
-      ignoreMissingValueFiles: {{ ($app.chart | default dict ).ignoreMissingValueFiles | default $.Values.globals.chart.ignoreMissingValueFiles }}
-      skipCrds: {{ ($app.chart | default dict ).skipCrds | default $.Values.globals.chart.skipCrds }}
-      valueFiles:
-        - ../../../chart/appValues/global.yaml
-        - ../../../chart/appValues/{{ $app.name }}/appGlobal.yaml
-        - ../../../chart/appValues/{{ $app.name }}/environment/{{ $envDirectory }}/{{ $envDirectory }}.yaml
-        - ../../../chart/appValues/{{ $app.name }}/environment/{{ $envDirectory }}/region/{{ $.Values.region }}/{{ $.Values.region }}.yaml
-        - ../../../chart/appValues/{{ $app.name }}/environment/{{ $envDirectory }}/region/{{ $.Values.region }}/cluster/{{ $.Values.clusterColour }}.yaml
-        - ../../../chart/appValues/{{ $app.name }}/environment/{{ $envDirectory }}/region/{{ $.Values.region }}/cluster/namespaces/{{ . }}.yaml
-      values: |
-        app: {{ $app.name }}
-        namespace: {{ . }}
-        gateway:
-          name: istio-system/global-https-{{ $.Values.ingressType }}-default-gateway
-        defaultRouting:
-          kubeitDefaultHosts:
-            dnsDomain: "{{ $.Values.dnsDomain }}"
-            tenantMultiRegion: "{{ $.Values.tenantMultiRegion }}"
-        kubeit:
-          region: "{{ $.Values.region }}"
-          namespace: "{{ . }}"
-          clusterSubdomain: "{{ $.Values.clusterSubdomain }}"
-          clusterColour: "{{ $.Values.clusterColour }}"
-          ingressType: "{{ $.Values.ingressType }}"
-          shortRegion: "{{ $.Values.shortRegion }}"
-          tenantName: "{{ $.Values.tenantName }}"
-          environmentName: "{{ $.Values.env }}"
+  sources:
+    - repoURL: "{{ ($app.chart | default dict ).repoURL | default $.Values.globals.chart.repoURL }}"
+      {{- if and (hasKey ($app.chart | default dict) "targetRevision") (eq ($app.chart | default dict ).targetRevision "latest") }}
+      {{- else }}
+      targetRevision: "{{ ($app.chart | default dict ).targetRevision | default $.Values.globals.chart.targetRevision }}"
+      {{- end }}
+      {{- if hasKey ($app.chart | default dict) "name" }}
+      chart: "{{ $app.chart.name }}"
+      {{- else }}
+      path: "{{ ($app.chart | default dict ).path | default $.Values.globals.chart.path }}"
+      {{- end }}
+      helm:
+        ignoreMissingValueFiles: {{ ($app.chart | default dict ).ignoreMissingValueFiles | default $.Values.globals.chart.ignoreMissingValueFiles }}
+        skipCrds: {{ ($app.chart | default dict ).skipCrds | default $.Values.globals.chart.skipCrds }}
+        valueFiles:
+          - $values/appValues/global.yaml
+          - $values/appValues/{{ $app.name }}/appGlobal.yaml
+          - $values/appValues/{{ $app.name }}/environment/{{ $envDirectory }}/{{ $envDirectory }}.yaml
+          - $values/appValues/{{ $app.name }}/environment/{{ $envDirectory }}/region/{{ $.Values.region }}/{{ $.Values.region }}.yaml
+          - $values/appValues/{{ $app.name }}/environment/{{ $envDirectory }}/region/{{ $.Values.region }}/cluster/{{ $.Values.clusterColour }}.yaml
+          - $values/appValues/{{ $app.name }}/environment/{{ $envDirectory }}/region/{{ $.Values.region }}/cluster/namespaces/{{ . }}.yaml
+        values: |
+          app: {{ $app.name }}
+          namespace: {{ . }}
+          gateway:
+            name: istio-system/global-https-{{ $.Values.ingressType }}-default-gateway
+          defaultRouting:
+            kubeitDefaultHosts:
+              dnsDomain: "{{ $.Values.dnsDomain }}"
+              tenantMultiRegion: "{{ $.Values.tenantMultiRegion }}"
+          kubeit:
+            region: "{{ $.Values.region }}"
+            namespace: "{{ . }}"
+            clusterSubdomain: "{{ $.Values.clusterSubdomain }}"
+            clusterColour: "{{ $.Values.clusterColour }}"
+            ingressType: "{{ $.Values.ingressType }}"
+            shortRegion: "{{ $.Values.shortRegion }}"
+            tenantName: "{{ $.Values.tenantName }}"
+            environmentName: "{{ $.Values.env }}"
+    - repoURL: "{{ $.Values.repoURL }}"
+      targetRevision: "{{ $.Values.targetRevision }}"
+      refs: values
   {{- if ($app.ignoreReplicasOnSync | default false) }}
   ignoreDifferences:
   - group: "apps"
