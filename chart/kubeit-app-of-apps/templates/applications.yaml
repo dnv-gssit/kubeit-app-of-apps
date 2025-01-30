@@ -127,7 +127,7 @@ spec:
             environmentName: "{{ $.Values.env }}"
     - repoURL: "{{ $.Values.repoURL }}"
       targetRevision: "{{ $.Values.targetRevision }}"
-      refs: values
+      ref: values
   {{- if ($app.ignoreReplicasOnSync | default false) }}
   ignoreDifferences:
   - group: "apps"
