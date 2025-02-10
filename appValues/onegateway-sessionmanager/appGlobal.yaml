@@ -19,7 +19,9 @@ defaultRouting:
   kubeitDefaultHosts:
     enabled: false
   hosts:
-    "ancris3-test.dev016.kubeit.dnv.com"
+   - "ancris3-test.dev016.kubeit.dnv.com"
+   - "ancris3-test.dev033.kubeit.dnv.com"
+   - "ancris3-test.dev001.kubeit.dnv.com"
 
   rewriteUrlPrefix:
     enabled: false
