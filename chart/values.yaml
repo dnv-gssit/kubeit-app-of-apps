@@ -3,7 +3,7 @@ globals:
   chart:
     repoURL: https://github.com/dnv-gssit/kubeit-charts.git
     path: charts/kubeit-deployment-chart
-    targetRevision: feature/define-client-id
+    targetRevision: main
     ignoreMissingValueFiles: true
     skipCrds: true
 
