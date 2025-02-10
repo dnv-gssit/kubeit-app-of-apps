@@ -33,14 +33,6 @@ applications:
         clusterColour:
           - blue
           - green
-      - name: aux
-        namespaces:
-          - standard
-          - standard-test
-        region:
-          - westeurope
-          - eastus2
-          - southeastasia
         clusterColour:
           - blue
           - green
@@ -59,17 +51,10 @@ applications:
           - dev023
           - dev024
           - dev022
+          - dev033
   - name: onegateway-workload
     containerOS: linux
     environments:
-      - name: aux
-        namespaces:
-          - onegateway
-        region:
-          - westeurope
-        clusterColour:
-          - blue
-          - aux011
       - name: dev
         namespaces:
           - onegateway
@@ -79,17 +64,10 @@ applications:
         clusterColour:
           - dev011
           - dev001
+          - dev033
   - name: onegateway-sessionmanager
     containerOS: linux
     environments:
-      - name: aux
-        namespaces:
-          - onegateway
-        region:
-          - westeurope
-        clusterColour:
-          - blue
-          - aux011
       - name: dev
         namespaces:
           - onegateway
@@ -99,19 +77,12 @@ applications:
         clusterColour:
           - dev011
           - dev001
+          - dev033
   - name: onegateway-redis
     chart:
       path: "charts/kubeit-redis-chart"
     containerOS: linux
     environments:
-      - name: aux
-        namespaces:
-          - onegateway
-        region:
-          - westeurope
-        clusterColour:
-          - blue
-          - aux011
       - name: dev
         namespaces:
           - onegateway
@@ -121,18 +92,10 @@ applications:
         clusterColour:
           - dev011
           - dev001
+          - dev033
   - name: onegateway-reverseproxy-workload
     containerOS: linux
     environments:
-      - name: aux
-        namespaces:
-          - onegateway
-        region:
-          - westeurope
-        clusterColour:
-          - blue
-          - green
-          - aux011
       - name: dev
         namespaces:
           - onegateway
@@ -141,6 +104,7 @@ applications:
           - eastus2
         clusterColour:
           - dev011
+          - dev033
   - name: onegateway-secrets
     chart:
       path: "charts/kubeit-secrets"
@@ -155,6 +119,7 @@ applications:
         clusterColour:
           - dev011
           - dev001
+          - dev033
       - name: nonprod
         namespaces:
           - onegateway
