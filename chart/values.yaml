@@ -53,6 +53,7 @@ applications:
           - dev022
           - dev033
           - dev044
+          - dev018
   - name: onegateway-workload
     containerOS: linux
     environments:
