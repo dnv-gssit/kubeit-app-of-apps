@@ -1,0 +1,3 @@
+# values for dev logical env for this app for team1
+# or do it via folders as well per team
+# or drop it at all and keep values in envs/team1/dev.yaml only 

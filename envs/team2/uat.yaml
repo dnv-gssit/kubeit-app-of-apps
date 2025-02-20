@@ -1,0 +1,7 @@
+---
+defaultRouting:
+  hosts:
+    - "ancris3.aux.kubeit.dnv.com"
+
+env:
+  CLIENT_ID: cd628d9c-abcd-4043-9e96-55cabcd284ae
