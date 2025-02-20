@@ -3,6 +3,20 @@
 applications:
  - name: onegateway-redis
    namespace: onegateway
+   targetClusters:
+     envs: # representing KubeIT environements nonprod/prod
+       - nonprod
+       - prod
+     colors:
+       - blue
+       - green
  - name: standard-workload
-   namespace: standard
+   namespace: standard # optional, may be part of apps values
+   targetClusters:
+     envs:
+       - nonprod
+       - prod
+     colors:
+       - blue
+       - green
  
