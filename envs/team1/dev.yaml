@@ -1,2 +1,8 @@
 ---
 # list of aplications for dev logical env
+applications:
+ - name: onegateway-redis
+   namespace: onegateway
+ - name: standard-workload
+   namespace: standard
+ 
