@@ -1,13 +1,58 @@
 ---
 # here should be list of teams and their logical envs
 teams:
- - name: team1
-   envs:
-     - dev
-     - qa
-     - uat
-     - prod
- - name: team2
-   envs:
-     - dev
-     - qa
+  - name: team1
+    envs:
+      # logical env target Kubeit clusters
+      - name: dev
+        targetClusters:
+          nonprod:
+            regions:
+              we:
+                colours:
+                  blue: true
+                  green: true
+              eus2:
+                colours:
+                  blue: false
+                  green: false
+      - name: qa
+        targetClusters:
+          nonprod:
+            regions:
+              we:
+                colours:
+                  blue: false
+                  green: true
+              eus2:
+                colours:
+                  blue: false
+                  green: true
+              sea:
+                colours:
+                  blue: false
+                  green: true
+          prod:
+            regions:
+              we:
+                colours:
+                  blue: true
+                  green: false
+  - name: team2
+    envs:
+      - name: prod
+        targetClusters:
+          prod:
+            regions:
+              we:
+                colours:
+                  blue: true
+                  green: true
+              eus2:
+                colours:
+                  blue: false
+                  green: false
+              sea:
+                colours:
+                  blue: false
+                  green: false

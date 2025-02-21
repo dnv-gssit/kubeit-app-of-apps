@@ -1,27 +1,12 @@
-#
-targetClusters:
-  envs: # representing KubeIT environements nonprod/prod
-    nonprod:
-      regions:
-        we:
-          colours:
-            blue: true
-            green: true
-        eus2:
-          colours:
-            blue: false
-            green: false
-        sea:
-          colours:
-            blue: false
-            green: false
+# global values for logical env
+# all of them can be override by region and/or color values
 
 repoURL:
 targetRevision:
 path:
 
 # sequence values
-global.yaml
-region.yaml
-blue/green.yaml
+# - global.yaml # global values
+# - we.yaml / eus2.yaml / sea.yaml # region values
+# - blue.yaml / green.yaml # color values
 
