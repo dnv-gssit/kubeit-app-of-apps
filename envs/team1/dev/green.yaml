@@ -1,0 +1,8 @@
+applications:
+ - name: app1
+   repoURL: 
+   targetRevision: 
+   image:
+     tag:
+   values:
+     

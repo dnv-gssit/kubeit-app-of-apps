@@ -1,0 +1,27 @@
+#
+targetClusters:
+  envs: # representing KubeIT environements nonprod/prod
+    nonprod:
+      regions:
+        we:
+          colours:
+            blue: true
+            green: true
+        eus2:
+          colours:
+            blue: false
+            green: false
+        sea:
+          colours:
+            blue: false
+            green: false
+
+repoURL:
+targetRevision:
+path:
+
+# sequence values
+global.yaml
+region.yaml
+blue/green.yaml
+
