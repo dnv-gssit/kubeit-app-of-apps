@@ -55,7 +55,8 @@ applications:
           - dev044
           - dev018
           - dev034
-          - dev005
+          - blue
+          - green
   - name: onegateway-workload
     containerOS: linux
     environments:
@@ -70,7 +71,8 @@ applications:
           - dev001
           - dev033
           - dev034
-          - dev005
+          - blue
+          - green
   - name: onegateway-sessionmanager
     containerOS: linux
     environments:
@@ -85,7 +87,8 @@ applications:
           - dev001
           - dev033
           - dev034
-          - dev005
+          - blue
+          - green
   - name: onegateway-redis
     chart:
       path: "charts/kubeit-redis-chart"
@@ -102,7 +105,8 @@ applications:
           - dev001
           - dev033
           - dev034
-          - dev005
+          - blue
+          - green
   - name: onegateway-reverseproxy-workload
     containerOS: linux
     environments:
@@ -116,7 +120,8 @@ applications:
           - dev011
           - dev033
           - dev034
-          - dev005
+          - blue
+          - green
   - name: onegateway-secrets
     chart:
       path: "charts/kubeit-secrets"
@@ -133,14 +138,8 @@ applications:
           - dev001
           - dev033
           - dev034
-          - dev005
-      - name: nonprod
-        namespaces:
-          - onegateway
-        region:
-          - westeurope
-        clusterColour:
-          - dev001
+          - blue
+          - green
   - name: win-standard-workload
     containerOS: linux
     environments:
@@ -184,7 +183,8 @@ applications:
         clusterColour:
           - dev033
           - dev034
-          - dev005
+          - blue
+          - green
       - name: nonprod
         namespaces:
           - win-standard-workload
