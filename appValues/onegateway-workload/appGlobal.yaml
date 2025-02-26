@@ -22,6 +22,7 @@ defaultRouting:
     enabled: false
   hosts:
     - "ancris3-test.dev016.kubeit.dnv.com"
+    - "ancris3-test.dev005.kubeit.dnv.com"
 
 resources:
   requests:
