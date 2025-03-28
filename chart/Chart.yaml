@@ -4,7 +4,7 @@ name: deploy
 description: Deployment tenant's apps using app-of-apps
 type: application
 version: 0.0.1
-dependencies:
-- name: kubeit-app-of-apps
-  version: "0.1.32"
-  repository: "https://dnv-gssit.github.io/kubeit-charts"
+#dependencies:
+#- name: kubeit-app-of-apps
+#  version: "0.1.32"
+#  repository: "https://dnv-gssit.github.io/kubeit-charts"

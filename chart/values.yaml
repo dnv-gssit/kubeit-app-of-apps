@@ -6,7 +6,7 @@ teams:
       # logical env target Kubeit clusters
       - name: dev
         targetClusters:
-          nonprod:
+          dev:
             regions:
               we:
                 colours:
@@ -14,15 +14,29 @@ teams:
                   green: true
               eus2:
                 colours:
-                  blue: false
-                  green: false
-      - name: qa
-        targetClusters:
+                  blue: true
+                  green: true
+              sea:
+                colours:
+                  blue: true
+                  green: true
           nonprod:
             regions:
               we:
                 colours:
                   blue: false
+                  green: false
+              eus2:
+                colours:
+                  blue: false
+                  green: false
+      - name: qa
+        targetClusters:
+          dev:
+            regions:
+              we:
+                colours:
+                  blue: true
                   green: true
               eus2:
                 colours:
@@ -40,9 +54,10 @@ teams:
                   green: false
   - name: team2
     envs:
-      - name: prod
+      # logical env target Kubeit clusters
+      - name: dev
         targetClusters:
-          prod:
+          dev:
             regions:
               we:
                 colours:
@@ -50,9 +65,30 @@ teams:
                   green: true
               eus2:
                 colours:
-                  blue: false
-                  green: false
+                  blue: true
+                  green: true
               sea:
                 colours:
-                  blue: false
-                  green: false
+                  blue: true
+                  green: true
+
+# injected by KubeIT
+env: dev
+region: westeurope
+dnsDomain: "kubeit.dnv.com"
+internalDnsDomain: "kubeit-int.dnv.com"
+clusterSubdomain: "dev001"
+clusterColour: "blue"
+ingressType: "internal"
+shortRegion: we
+tenantName: tenant2
+targetRevision: main
+repoURL: git@ssh.dev.azure.com:v3/dnvgl-one/PlatformTeam/commonspace-tenant-configrepo
+networkPlugin: azure
+tenantMultiRegion: false
+managementNamespace: "management-tenant2"
+
+# values on logical chart level
+AppOfApps:
+  repo: apps-in-logical-env
+  version: 
