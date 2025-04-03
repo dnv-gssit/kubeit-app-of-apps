@@ -1,0 +1,17 @@
+# injected by KubeIT - to update in bootstrap-tenant-apps
+# do not found way to pass 
+global:
+  env: dev
+  region: westeurope
+  dnsDomain: "kubeit.dnv.com"
+  internalDnsDomain: "kubeit-int.dnv.com"
+  clusterSubdomain: "dev001"
+  clusterColour: "blue"
+  ingressType: "internal"
+  shortRegion: we
+  tenantName: tenant2
+  targetRevision: main
+  repoURL: git@ssh.dev.azure.com:v3/dnvgl-one/PlatformTeam/commonspace-tenant-configrepo
+  networkPlugin: azure
+  tenantMultiRegion: false
+  managementNamespace: "management-tenant2"

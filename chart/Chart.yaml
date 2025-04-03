@@ -1,10 +1,11 @@
 ---
 apiVersion: v2
 name: deploy
-description: Deployment tenant's apps using app-of-apps
+description: Deployment tenant's logical env apps using kubeit-logical-envs
 type: application
 version: 0.0.1
-#dependencies:
-#- name: kubeit-app-of-apps
-#  version: "0.1.32"
-#  repository: "https://dnv-gssit.github.io/kubeit-charts"
+dependencies:
+- name: kubeit-logical-envs
+  version: 0.1.0
+  repository: file:///mnt/c/git/kubeit-charts/charts/kubeit-logical-envs
+  # "https://dnv-gssit.github.io/kubeit-charts"
