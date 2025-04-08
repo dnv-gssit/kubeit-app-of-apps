@@ -2,10 +2,13 @@
 # app-of-apps chart to use to generate application within one logical env
 global:
   appOfApps:
-    repoURL: example
-    targetRevision: 1.1.1
+    repoURL: https://dnv-gssit.github.io/kubeit-charts
+    chart: apps-in-logical-env
+    targetRevision: 0.0.1
 
 # here should be list of teams and their logical envs
+# for each team/logcal env enabled, folder structure should be created
+# under envs folder 
   teams:
     - name: team1
       envs:
