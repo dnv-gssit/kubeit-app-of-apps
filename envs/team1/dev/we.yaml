@@ -1,0 +1,20 @@
+---
+applications:
+  # list of applications to be deployed in logical env
+  # - name: app1
+  #   chart: app1
+  #   repoURL: https://dnv-gssit.github.io/kubeit-charts
+  #   targetRevision: 0.0.1
+  #   values:
+  #     - global.yaml
+  #     - we.yaml
+  #     - blue.yaml
+  - name: standard-workload
+    values:
+      defaultRouting:
+        kubeitDefaultHosts:
+          hostsPrefix: "www-test"      # Application will be available under: https://${hostsPrefix}-${tenantName}.${env}.kubeit.dnv.com/, instead of https://${app}-${tenantName}.${env}.kubeit.dnv.com/
+      
+      env:
+        KUBERNETES_NAMESPACE: standard-test
+        MESSAGE: "Hello on standard-test namespace!"
