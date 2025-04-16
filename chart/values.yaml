@@ -3,7 +3,7 @@
 global:
   appLogicalEnvChart:
     repoURL: https://dnv-gssit.github.io/kubeit-charts
-    chart: apps-in-logical-env
+    chart: kubeit-apps-in-env
     targetRevision: 0.0.2
 
 # here should be list of teams and their logical envs
