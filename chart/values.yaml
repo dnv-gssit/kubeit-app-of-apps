@@ -4,7 +4,7 @@ global:
   appLogicalEnvChart:
     repoURL: https://dnv-gssit.github.io/kubeit-charts
     chart: apps-in-logical-env
-    targetRevision: 0.0.1
+    targetRevision: 0.0.2
 
 # here should be list of teams and their logical envs
 # for each team/logcal env enabled, folder structure should be created
