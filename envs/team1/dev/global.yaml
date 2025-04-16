@@ -21,6 +21,7 @@ applications:
   #     - we.yaml
   #     - blue.yaml
   - name: standard-workload
+    namespace: standard-test
     values:
       # Workload info
       workload:
@@ -38,7 +39,7 @@ applications:
       defaultRouting:
         enabled: true
         kubeitDefaultHosts:
-          hostsPrefix: "www"      # Application will be available under: https://${hostsPrefix}-${tenantName}.${env}.kubeit.dnv.com/, instead of https://${app}-${tenantName}.${env}.kubeit.dnv.com/
+          hostsPrefix: "www-test"      # Application will be available under: https://${hostsPrefix}-${tenantName}.${env}.kubeit.dnv.com/, instead of https://${app}-${tenantName}.${env}.kubeit.dnv.com/
         rewriteUrlPrefix:
           enabled: false
         allHosts: false
@@ -69,7 +70,8 @@ applications:
       
       # https://github.com/paulbouwer/hello-kubernetes/tree/main/src/app
       env:
-        MESSAGE: "Hello on standard workload!"
+        KUBERNETES_NAMESPACE: standard-test
+        MESSAGE: "Hello on standard-test namespace!"
       
       resources:
         requests:

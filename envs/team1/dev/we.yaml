@@ -9,12 +9,13 @@ applications:
   #     - global.yaml
   #     - we.yaml
   #     - blue.yaml
-  - name: standard-workload
-    values:
-      defaultRouting:
-        kubeitDefaultHosts:
-          hostsPrefix: "www-test"      # Application will be available under: https://${hostsPrefix}-${tenantName}.${env}.kubeit.dnv.com/, instead of https://${app}-${tenantName}.${env}.kubeit.dnv.com/
-      
-      env:
-        KUBERNETES_NAMESPACE: standard-test
-        MESSAGE: "Hello on standard-test namespace!"
+  # BIG problem: if it is uncommented, it will override what is defined in global.yaml
+#  - name: standard-workload
+#    values:
+#      defaultRouting:
+#        kubeitDefaultHosts:
+#          hostsPrefix: "www-test"      # Application will be available under: https://${hostsPrefix}-${tenantName}.${env}.kubeit.dnv.com/, instead of https://${app}-${tenantName}.${env}.kubeit.dnv.com/
+#      
+#      env:
+#        KUBERNETES_NAMESPACE: standard-test
+#        MESSAGE: "Hello on standard-test namespace!"
