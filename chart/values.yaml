@@ -42,6 +42,7 @@ applications:
         namespaces:
           - standard
           - standard-test
+          - standard-workshops
         region:
           - westeurope
           - eastus2
