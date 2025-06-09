@@ -33,8 +33,6 @@ serviceAccount:
   # Specifies whether a ServiceAccount should be created
   create: true
 
-workloadIdentity: false
-
 authorizationPolicy:
   enabled: false
 requestAuthentication:

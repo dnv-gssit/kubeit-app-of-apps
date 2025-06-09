@@ -61,5 +61,5 @@ applications:
     useArgoCDimageUpdater: false
     serviceChart:
       repoURL: https://dnv-gssit.github.io/kubeit-charts
-      chart: kubeit-secrets-chart
-      targetRevision: 1.1.0
+      chart: kubeit-deployment-chart
+      targetRevision: 1.2.0
