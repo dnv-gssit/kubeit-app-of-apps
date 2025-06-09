@@ -1,0 +1,106 @@
+---
+app: onegateway-sessionmanager
+
+# Workload info
+workload:
+  type: onegateway      # Required - standard or onegateway
+  state: stateless      # Required - stateful or stateless, for stateless mounting extra volumes is blocked (besides keyvault)
+
+sessionManagerDeployment: true
+
+image:
+  repository: "kubeitglobalsvcauxacrwe.azurecr.io/test/sessionmanager"
+  tag: "07102021"
+  containerPort: 8000
+
+kubeit:
+  gatewayEnabled: true
+
+defaultRouting:
+  enabled: true
+  kubeitDefaultHosts:
+    enabled: false
+  hosts:
+    - "ancris3-test.dev016.kubeit.dnv.com"
+    - "ancris3-test.dev033.kubeit.dnv.com"
+    - "ancris3-test.dev001.kubeit.dnv.com"
+    - "ancris3-test.dev005.kubeit.dnv.com"
+
+  rewriteUrlPrefix:
+    enabled: false
+  urlPrefixes:
+    - session
+  allHosts: false
+  retries:
+    enabled: true
+    settings:
+      attempts: 3
+      perTryTimeout: 15s
+
+requestAuthentication:
+  enabled: false
+
+authorizationPolicy:
+  enabled: false
+
+initContainersExtra:
+  - name: wait-for-redis
+    image: owncloudci/wait-for
+    args:
+      - "-it"
+      - "onegateway-redis-master:6379"
+      - "-t"
+      - "30"
+
+health:
+  livenessProbe:
+    exec:
+      command:
+        - /bin/sh
+        - -c
+        - apk add redis; redis-cli -x -h $REDIS_HOST -a $REDIS_PASSWORD ping
+    initialDelaySeconds: 5
+    periodSeconds: 5
+
+env:
+  ASPNETCORE_ENVIRONMENT: Development
+  ASPNETCORE_URLS: http://*:8000
+  SESSION_MANAGER_ID: ancris3
+  AUTHORITY: https://login.veracity.com/te/dnvglb2cprod.onmicrosoft.com/B2C_1A_SignInWithADFSIdp/v2.0
+  SCOPE: https://dnvglb2cprod.onmicrosoft.com/83054ebf-1d7b-43f5-82ad-b2bde84d7b75/user_impersonation
+  CLIENT_ID: d94fdc94-6dfa-4c3c-9e1a-21bee90c33d1
+  CLIENT_SECRET:
+    valueFrom:
+      secretKeyRef:
+        name: ancris3-session-manager
+        key: client-secret
+  REDIS_HOST: onegateway-redis-master
+  REDIS_PORT: 6379
+  REDIS_PASSWORD:
+    valueFrom:
+      secretKeyRef:
+        name: redis-password
+        key: db-password
+  LOGIN_LANDING_URL: "/"
+  LOGOUT_ENDPOINT: https://www.veracity.com/auth/logout
+  REPLY_URL_SUFFIX: veracity
+
+# azureKeyVaultSecrets:
+#  type: external-secrets
+#  tenantId: "adf10e2b-b6e9-41d6-be2f-c12bb566019c"
+#  clientId: "adf10e2b-b6e9-41d6-be2f-c12bb566019c"
+#  azureKeyVaults:
+#    - azureKeyVaultName: "KubeIT-AUX-KV-SH-WE"
+#      secrets:
+#        - k8sSecretName: ancris3-session-manager
+#          data:
+#            - k8sSecretKey: client-secret
+#              azureKeyVaultSecretName: ancris3-client-secret
+
+resources:
+  requests:
+    cpu: 250m
+    memory: 64Mi
+  limits:
+    cpu: 500m
+    memory: 128Mi

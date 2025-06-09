@@ -1,0 +1,11 @@
+---
+apiVersion: v2
+name: deploy
+description: Deployment tenant's logical env apps using kubeit-logical-envs
+type: application
+version: 0.0.1
+dependencies:
+- name: kubeit-logical-envs
+  alias: bootstrap
+  version: 1.0.0
+  repository: https://dnv-gssit.github.io/kubeit-charts
