@@ -1,0 +1,51 @@
+---
+# optional, app-in-logical-env chart to use to generate application within one logical env
+# appLogicalEnvChart:
+#   repoURL: https://dnv-gssit.github.io/kubeit-charts
+#   chart: kubeit-apps-in-env
+#   targetRevision: 0.0.12
+
+# List of logical environments on KubeIT dev clusters
+dev:
+  - name: dev-we-green
+    shortRegion: we
+    clusterColour: green
+  - name: dev-we-blue
+    shortRegion: we
+    clusterColour: blue
+  - name: dev-eus2-blue
+    shortRegion: eus2
+    clusterColour: blue
+  - name: dev-eus2-green
+    shortRegion: eus2
+    clusterColour: green
+  - name: dev-sea-blue
+    shortRegion: sea
+    clusterColour: blue
+  - name: dev-sea-green
+    shortRegion: sea
+    clusterColour: green
+  - name: dev-we-dev033
+    shortRegion: we
+    clusterColour: dev033
+  - name: dev-we-dev023
+    shortRegion: we
+    clusterColour: dev023
+  - name: dev-we-dev024
+    shortRegion: we
+    clusterColour: dev024
+  - name: dev-we-dev022
+    shortRegion: we
+    clusterColour: dev022
+  - name: dev-we-dev044
+    shortRegion: we
+    clusterColour: dev044
+  - name: dev-we-dev034
+    shortRegion: we
+    clusterColour: dev034
+
+# List of logical environments on KubeIT nonprod clusters
+nonprod: {}
+
+# List of logical environments on KubeIT prod clusters
+prod: {}

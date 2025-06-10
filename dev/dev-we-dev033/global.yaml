@@ -1,0 +1,10 @@
+---
+# global values for all apps in logical env
+azurekeyVaultSecrets:
+  tenantId: "adf10e2b-b6e9-41d6-be2f-c12bb566019c"
+  clientId: "8e8c8d25-ccbe-4c50-a864-e0dc2046d46e"
+
+workloadIdentity: true
+
+serviceAccount:
+  clientId: "8e8c8d25-ccbe-4c50-a864-e0dc2046d46e"

@@ -1,0 +1,5 @@
+# Generate all manifests for all logical environments
+---
+{{- if .Values.env }}
+{{- include "bootstrap.allManifests" . }}
+{{- end }}

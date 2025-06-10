@@ -1,0 +1,75 @@
+---
+# https://github.com/dnv-gssit/kubeit-app-windows
+app: win-api-workload
+
+# Workload info
+workload:
+  type: standard      # Required - standard or onegateway
+  state: stateful     # Required - stateful or stateless, for stateless mounting extra volumes is blocked (besides keyvault)
+
+additionalPodAnnotations:
+  # Istio sidecar is not working on Windows yet
+  sidecar.istio.io/inject: "false"
+
+image:
+  repository: "kubeitglobalsvcauxacrwe.azurecr.io/test/webapplication"
+  tag: "latest"
+  containerPort: 80
+
+defaultRouting:
+  enabled: true
+  kubeitDefaultHosts:
+    hostsPrefix: "win-api"      # Application will be available under: https://${hostsPrefix}-${tenantName}.${env}.kubeit.dnv.com/, instead of https://${app}-${tenantName}.${env}.kubeit.dnv.com/
+  rewriteUrlPrefix:
+    enabled: false
+  allHosts: false
+  redirectOnNoTrailingSlash: false
+  catchAll: true
+  # Windows workloads has no istio sidecar support which is responsible for tls traffic inside istio service mesh
+  tls:
+    mode: DISABLE
+
+serviceAccount:
+  # Specifies whether a ServiceAccount should be created
+  create: true
+
+authorizationPolicy:
+  enabled: false
+requestAuthentication:
+  enabled: false
+
+# TODO: add volumes
+# volumes:
+
+# TODO: add keyvault secrets
+
+# Be Aware! Security contexts configuration is specific to Docker Image, if your workload is not spinning up try disabling settings below and after check what needs to be changed.
+securityContext:
+  # fsGroup: 1000  #Not supported on windows
+  # runAsUser: 1000 #Not supported on windows
+  runAsNonRoot: true
+
+containerSecurityContext:
+  # capabilities:  #Not supported on windows
+  #   drop:
+  #     - ALL
+  # readOnlyRootFilesystem: true  #Not supported on windows
+  runAsNonRoot: true
+
+nodeSelector:
+  kubernetes.io/os: windows
+
+tolerations:
+  - key: "sku"
+    value: "Windows"
+    effect: "NoSchedule"
+
+resources:
+  limits:
+    cpu: 300m
+    memory: 256Mi
+  requests:
+    cpu: 100m
+    memory: 256Mi
+
+workloadIdentity: false

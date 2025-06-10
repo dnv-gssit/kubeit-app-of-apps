@@ -1,0 +1,14 @@
+---
+env: dev
+region: we
+dnsDomain: kubeit.dnv.com
+internalDnsDomain: kubeit-int.dnv.com
+clusterSubdomain: dev001
+clusterColour: blue
+ingressType: default
+shortRegion: we
+tenantName: tenant2
+targetRevision: main
+repoURL: https://github.com/dnv-gssit/kubeit-example-complex.git
+managementNamespace: management-tenant2
+logicalEnvName: dev-we-blue
