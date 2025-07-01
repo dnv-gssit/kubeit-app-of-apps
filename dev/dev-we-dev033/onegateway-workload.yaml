@@ -1,30 +1,34 @@
 ---
 # Workload info
 app: onegateway-workload
-
-workload:
-  type: onegateway      # Required - standard or onegateway
-  state: stateless      # Required - stateful or stateless, for stateless mounting extra volumes is blocked (besides keyvault)
+appVersion: v1
 
 image:
-  repository: "kubeitglobalsvcauxacrwe.azurecr.io/test/ancris3"
+  name: "kubeitglobalsvcauxacrwe.azurecr.io/test/ancris3"
   tag: "main-20210805.6"
+
+serviceAccount:
+  enabled: true
+  annotations:
+    azure.workload.identity/client-id: 8e8c8d25-ccbe-4c50-a864-e0dc2046d46e
+    azure.workload.identity/tenant-id: adf10e2b-b6e9-41d6-be2f-c12bb566019c
+
+service:
   containerPort: 8050
 
 additionalPodLabels:
   session-management: frontend
   session-manager-name: onegateway-sessionmanager
 
-kubeit:
-  gatewayEnabled: true
-
 defaultRouting:
-  catchAll: true
-  kubeitDefaultHosts:
-    enabled: false
-  hosts:
-    - "ancris3-test.dev016.kubeit.dnv.com"
-    - "ancris3-test.dev005.kubeit.dnv.com"
+  enabled: true
+  hosts: []
+  retries:
+    attempts: 3
+    perTryTimeout: 2s
+
+destinationRule:
+  enabled: true
 
 resources:
   requests:
@@ -34,8 +38,9 @@ resources:
     cpu: 500m
     memory: 6Gi
 
-env:
-  CLIENT_ID: "dd3fabfd-fb4b-4ca3-b079-d45341a56fd3"
+envs:
+  - name: CLIENT_ID
+    value: dd3fabfd-fb4b-4ca3-b079-d45341a56fd3
 
 requestAuthentication:
   enabled: true

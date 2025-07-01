@@ -6,7 +6,7 @@ applications:
     serviceChart:
       repoURL: https://dnv-gssit.github.io/kubeit-charts
       chart: kubeit-deployment-chart
-      targetRevision: 1.2.0
+      targetRevision: 2.0.1
 
   - name: onegateway-workload
     namespace: onegateway
@@ -14,7 +14,7 @@ applications:
     serviceChart:
       repoURL: https://dnv-gssit.github.io/kubeit-charts
       chart: kubeit-deployment-chart
-      targetRevision: 1.2.0
+      targetRevision: 2.0.1
 
   - name: onegateway-sessionmanager
     namespace: onegateway
@@ -22,7 +22,7 @@ applications:
     serviceChart:
       repoURL: https://dnv-gssit.github.io/kubeit-charts
       chart: kubeit-deployment-chart
-      targetRevision: 1.2.0
+      targetRevision: 2.0.1
 
   - name: onegateway-redis
     namespace: onegateway
@@ -38,15 +38,15 @@ applications:
     serviceChart:
       repoURL: https://dnv-gssit.github.io/kubeit-charts
       chart: kubeit-deployment-chart
-      targetRevision: 1.2.0
+      targetRevision: 2.0.1
 
-  - name: onegateway-secrets
-    namespace: onegateway
-    useArgoCDimageUpdater: false
-    serviceChart:
-      repoURL: https://dnv-gssit.github.io/kubeit-charts
-      chart: kubeit-secrets-chart
-      targetRevision: 1.1.0
+#  - name: onegateway-secrets
+#    namespace: onegateway
+#    useArgoCDimageUpdater: false
+#    serviceChart:
+#      repoURL: https://dnv-gssit.github.io/kubeit-charts
+#      chart: kubeit-secrets-chart
+#      targetRevision: 1.1.0
 
   - name: win-standard-workload
     namespace: win-standard-workload
@@ -54,7 +54,7 @@ applications:
     serviceChart:
       repoURL: https://dnv-gssit.github.io/kubeit-charts
       chart: kubeit-deployment-chart
-      targetRevision: 1.2.0
+      targetRevision: 2.0.1
 
   - name: win-api-workload
     namespace: win-standard-workload
@@ -62,4 +62,4 @@ applications:
     serviceChart:
       repoURL: https://dnv-gssit.github.io/kubeit-charts
       chart: kubeit-deployment-chart
-      targetRevision: 1.2.0
+      targetRevision: 2.0.1
