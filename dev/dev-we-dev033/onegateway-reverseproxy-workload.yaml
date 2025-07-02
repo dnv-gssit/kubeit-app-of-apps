@@ -1,30 +1,26 @@
 ---
-# This workload can be combained with windows workload to be able to use session manager.
-# This is a workaround for currently istio-proxy not supported for windows container.
 app: onegateway-reverseproxy-workload
+appVersion: v1
 
-# Workload info
-workload:
-  type: onegateway      # Required - standard or onegateway
-  state: stateless      # Required - stateful or stateless, for stateless mounting extra volumes is blocked (besides keyvault)
-
-# This is example nginx image with simplest config to be able to proxy_pass a requests to windows workloads
 image:
-  repository: "nginxinc/nginx-unprivileged"
+  name: "nginxinc/nginx-unprivileged"
   tag: "1.23.2"
+
+service:
   containerPort: 8080
 
 additionalPodLabels:
   session-management: frontend
   session-manager-name: onegateway-sessionmanager
 
-# change to your workload service, which to be proxied to
 env:
-  PROXY_PASS_HOST: win-standard-workload.win-standard-workload.svc.cluster.local
+  - name: PROXY_PASS_HOST
+    value: win-standard-workload.win-standard-workload.svc.cluster.local
 
 # Simplests reverse proxy config - to be updated with security configs
 configMap:
   enabled: true
+  name: onegateway-reverseproxy-workload
   data: |
     default.conf.template: |
       server {
@@ -40,24 +36,21 @@ configMap:
         }
       }
 
-volumes:
+volumeMounts:
   - name: configmap-volume
     mountPath: /etc/nginx/templates/default.conf.template
     subPath: default.conf.template
-    volumeDefinition: |
-      configMap:
-        name: onegateway-reverseproxy-workload-config-map
 
-kubeit:
-  gatewayEnabled: true
+volumes:
+  - name: configmap-volume
+    configMap:
+      name: onegateway-reverseproxy-workload
 
-# change to your veracity app fqdn
 defaultRouting:
-  catchAll: true
-  kubeitDefaultHosts:
-    enabled: false
-  hosts:
-    - "onegateway-win-workload.kubeit.dnv.com"
+  enabled: true
+  retries:
+    attempts: 3
+    perTryTimeout: 2s
 
 resources:
   requests:
@@ -66,6 +59,22 @@ resources:
   limits:
     cpu: 500m
     memory: 6Gi
+
+destinationRule:
+  enabled: true
+
+authorizationPolicy:
+  enabled: true
+  spec:
+    selector:
+      matchLabels:
+        app.kubernetes.io/name: onegateway-reverseproxy-workload
+    action: ALLOW
+    rules:
+      - from:
+          - source:
+              namespaces: ["istio-system"]
+              requestPrincipals: ["*"]
 
 requestAuthentication:
   enabled: true

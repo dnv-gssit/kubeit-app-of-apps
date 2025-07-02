@@ -40,14 +40,6 @@ applications:
       chart: kubeit-deployment-chart
       targetRevision: 2.0.1
 
-#  - name: onegateway-secrets
-#    namespace: onegateway
-#    useArgoCDimageUpdater: false
-#    serviceChart:
-#      repoURL: https://dnv-gssit.github.io/kubeit-charts
-#      chart: kubeit-secrets-chart
-#      targetRevision: 1.1.0
-
   - name: win-standard-workload
     namespace: win-standard-workload
     useArgoCDimageUpdater: false
