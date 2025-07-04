@@ -32,6 +32,12 @@ initContainers:
       - "onegateway-redis-master:6379"
       - "-t"
       - "30"
+    resources:
+      requests:
+        cpu: "5m"
+        memory: "32Mi"
+      limits:
+        memory: "128i"
 
 health:
   livenessProbe:
