@@ -12,7 +12,7 @@ If you want to use it on your dev cluster:
 * create User Managed Ideentity (MI) at [dev-shared-services resource group](https://portal.azure.com/#@dnv.onmicrosoft.com/resource/subscriptions/e5948a9c-7103-4629-98f8-798fa9a0d9aa/resourceGroups/KubeITSharedSVC-DEV-RG-WE/overview), name must ends with `-dev-tenant2`.
 * grand access `get,list` on secrects on [dev KV](https://portal.azure.com/#@dnv.onmicrosoft.com/resource/subscriptions/e5948a9c-7103-4629-98f8-798fa9a0d9aa/resourceGroups/KubeITSharedSVC-DEV-RG-WE/providers/Microsoft.KeyVault/vaults/KubeIT-DEV-KV-SH-WE/overview) for this MI
 * asssign role `Managed Identity Contributor` for security group `Az_KubeIT_AcrReader_Env_Dev` at created MI
-* update files `dev/<your logical env name>/*.yaml` with `clientId: <your MI clientId>`
+* update files `dev/<your logical env name>/global.yaml` with `serviceAccount.annotations.azure.workload.identity/client-id: <your MI clientId>`
 
 # Repository structure
 
