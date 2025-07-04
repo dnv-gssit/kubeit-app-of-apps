@@ -2,11 +2,6 @@
 redis:
   global:
     imageRegistry: kubeitglobalsvcauxacrwe.azurecr.io
-  sysctl:
-    image:
-      registry: kubeitglobalsvcauxacrwe.azurecr.io
-      repository: bitnami/os-shell
-      tag: 11-debian-11-r112
   fullnameOverride: "onegateway-redis"
   master:
     persistence:
@@ -19,6 +14,10 @@ redis:
         cpu: 200m
         memory: 256Mi
   sysctl:
+    image:
+      registry: kubeitglobalsvcauxacrwe.azurecr.io
+      repository: bitnami/os-shell
+      tag: 11-debian-11-r112
     resources:
       requests:
         cpu: 100m
