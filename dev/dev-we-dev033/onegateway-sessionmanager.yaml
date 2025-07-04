@@ -37,7 +37,7 @@ initContainers:
         cpu: "5m"
         memory: "32Mi"
       limits:
-        memory: "128i"
+        memory: "128Mi"
 
 health:
   livenessProbe:
