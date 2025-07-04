@@ -17,6 +17,7 @@ additionalPodLabels:
 
 defaultRouting:
   enabled: true
+  hosts: [auto]
   retries:
     attempts: 3
     perTryTimeout: 2s

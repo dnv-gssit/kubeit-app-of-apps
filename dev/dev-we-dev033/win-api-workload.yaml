@@ -1,5 +1,6 @@
 ---
 # https://github.com/dnv-gssit/kubeit-app-windows
+# test using https://<FQDN>/weatherForecast
 app: win-api-workload
 appVersion: v1
 
