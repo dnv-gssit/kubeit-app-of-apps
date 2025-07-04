@@ -13,7 +13,7 @@ additionalPodLabels:
   session-management: frontend
   session-manager-name: onegateway-sessionmanager
 
-env:
+envs:
   - name: PROXY_PASS_HOST
     value: win-standard-workload.win-standard-workload.svc.cluster.local
 
