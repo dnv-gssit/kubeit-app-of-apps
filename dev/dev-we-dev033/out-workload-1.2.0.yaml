@@ -1,0 +1,176 @@
+---
+# Source: kubeit-deployment-chart/templates/service-account.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  annotations:
+    azure.workload.identity/client-id: 850ed0f2-3b12-4334-934f-b1b168a5ea90
+    azure.workload.identity/tenant-id: adf10e2b-b6e9-41d6-be2f-c12bb566019c
+  name: onegateway-workload
+  labels:
+    app: onegateway-workload
+    app.kubernetes.io/name: onegateway-workload
+    helm.sh/chart: kubeit-deployment-chart-1.2.0
+    app.kubernetes.io/instance: release-name
+    version: v1
+    tenant: tenant
+    
+    azure.workload.identity/use: "true"
+---
+# Source: kubeit-deployment-chart/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: onegateway-workload
+  labels:
+    app: onegateway-workload
+    app.kubernetes.io/name: onegateway-workload
+    helm.sh/chart: kubeit-deployment-chart-1.2.0
+    app.kubernetes.io/instance: release-name
+    version: v1
+    tenant: tenant
+    
+    azure.workload.identity/use: "true"
+spec:
+  type: 
+  ports:
+    - port: 80
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app.kubernetes.io/name: onegateway-workload
+    app: onegateway-workload
+---
+# Source: kubeit-deployment-chart/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: release-name-onegateway-workload
+  labels:
+    app: onegateway-workload
+    app.kubernetes.io/name: onegateway-workload
+    helm.sh/chart: kubeit-deployment-chart-1.2.0
+    app.kubernetes.io/instance: release-name
+    version: v1
+    tenant: tenant
+    
+    azure.workload.identity/use: "true"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: onegateway-workload
+      app.kubernetes.io/instance: release-name
+  template:
+    metadata:
+      labels:
+        app: onegateway-workload
+        app.kubernetes.io/name: onegateway-workload
+        helm.sh/chart: kubeit-deployment-chart-1.2.0
+        app.kubernetes.io/instance: release-name
+        version: v1
+        tenant: tenant
+        
+        azure.workload.identity/use: "true"
+        session-management: backend
+        session-management: frontend
+        session-manager-name: onegateway-sessionmanager
+      annotations:
+    spec:
+      serviceAccountName: onegateway-workload
+      securityContext:
+        {}
+      initContainers:
+        []
+      containers:
+
+        - name: onegateway-workload
+          image: "kubeitglobalsvcauxacrwe.azurecr.io/test/ancris3:main-20210805.6"
+          imagePullPolicy: IfNotPresent
+
+          env:
+            - name: CLIENT_ID
+              value: "dd3fabfd-fb4b-4ca3-b079-d45341a56fd3"
+          securityContext:
+            {}
+          ports:
+            - name: http
+              containerPort: 8050
+              protocol: TCP
+          volumeMounts:
+
+          resources:
+            limits:
+              cpu: 500m
+              memory: 6Gi
+            requests:
+              cpu: 100m
+              memory: 2Gi
+      volumes:
+---
+# Source: kubeit-deployment-chart/templates/destinationrules.yaml
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: release-name-onegateway-workload-destrule
+  labels:
+    app: onegateway-workload
+    app.kubernetes.io/name: onegateway-workload
+    helm.sh/chart: kubeit-deployment-chart-1.2.0
+    app.kubernetes.io/instance: release-name
+    version: v1
+    tenant: tenant
+    
+    azure.workload.identity/use: "true"
+spec:
+  host: onegateway-workload.default.svc.cluster.local
+  trafficPolicy:
+    loadBalancer:
+      simple: RANDOM
+    tls:
+      mode: ISTIO_MUTUAL
+---
+# Source: kubeit-deployment-chart/templates/requestAuthentication.yaml
+apiVersion: security.istio.io/v1beta1
+kind: RequestAuthentication
+metadata:
+  name: release-name-onegateway-workload
+  labels:
+    app: onegateway-workload
+    app.kubernetes.io/name: onegateway-workload
+    helm.sh/chart: kubeit-deployment-chart-1.2.0
+    app.kubernetes.io/instance: release-name
+    version: v1
+    tenant: tenant
+    
+    azure.workload.identity/use: "true"
+spec:
+  selector:
+    matchLabels:
+      app: onegateway-workload
+      version: v1
+  jwtRules:
+  - audiences:
+    - 83054ebf-1d7b-43f5-82ad-b2bde84d7b75
+    forwardOriginalToken: true
+    issuer: https://login.veracity.com/a68572e3-63ce-4bc1-acdc-b64943502e9d/v2.0/
+    jwksUri: https://login.veracity.com/te/a68572e3-63ce-4bc1-acdc-b64943502e9d/b2c_1a_signinwithadfsidp/discovery/v2.0/keys
+---
+# Source: kubeit-deployment-chart/templates/virtualservice.yaml
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: onegateway-workload
+spec:
+  hosts:
+  - onegateway-workload.default.svc.cluster.local
+  gateways:
+  - mesh
+  http:
+  - route:
+    - destination:
+        host: "onegateway-workload.default.svc.cluster.local"
+    retries:
+      attempts: 3
+      perTryTimeout: 2s

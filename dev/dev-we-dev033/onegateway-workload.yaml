@@ -11,9 +11,8 @@ service:
   containerPort: 8050
 
 additionalPodLabels:
-  session-management: frontend
+  session-management: backend
   session-manager-name: onegateway-sessionmanager
-  tenant: tenant2
 
 defaultRouting:
   enabled: true
@@ -35,7 +34,7 @@ resources:
 
 envs:
   - name: CLIENT_ID
-    value: dd3fabfd-fb4b-4ca3-b079-d45341a56fd3
+    value: "dd3fabfd-fb4b-4ca3-b079-d45341a56fd3"
 
 requestAuthentication:
   enabled: true
