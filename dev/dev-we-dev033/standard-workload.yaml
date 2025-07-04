@@ -32,13 +32,13 @@ requestAuthentication:
   enabled: false
 
 # Be Aware! Security contexts configuration is specific to Docker Image, if your workload is not spinning up try disabling settings below and after check what needs to be changed.
-securityContext:
+podSecurityContext:
   fsGroup: 1000
   runAsUser: 1000
   runAsNonRoot: true
 
 # readOnlyRootFilesystem should be set as a false because of the issue related to the npm directory creation
-containerSecurityContext:
+securityContext:
   capabilities:
     drop:
       - ALL
