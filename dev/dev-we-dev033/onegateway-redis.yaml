@@ -1,7 +1,7 @@
 ---
 redis:
   global:
-    imageRegistry: kubeitglobalsvcauxacrwe.azurecr.io/bitnami
+    imageRegistry: kubeitglobalsvcauxacrwe.azurecr.io
   fullnameOverride: "onegateway-redis"
   master:
     persistence:
