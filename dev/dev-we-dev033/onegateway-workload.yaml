@@ -11,12 +11,11 @@ service:
   containerPort: 8050
 
 additionalPodLabels:
-  session-management: backend
+  session-management: frontend
   session-manager-name: onegateway-sessionmanager
 
 defaultRouting:
   enabled: true
-  hosts: [auto]
   retries:
     attempts: 3
     perTryTimeout: 2s
@@ -46,3 +45,4 @@ requestAuthentication:
 
 authorizationPolicy:
   enabled: false
+

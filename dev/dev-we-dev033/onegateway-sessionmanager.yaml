@@ -13,7 +13,8 @@ service:
 
 defaultRouting:
   enabled: true
-  hosts: [auto]
+  hosts:
+    - ancris3-test.dev033.kubeit.dnv.com
   retries:
     attempts: 3
     perTryTimeout: 15s
