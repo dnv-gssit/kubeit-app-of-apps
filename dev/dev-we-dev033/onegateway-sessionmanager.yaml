@@ -19,6 +19,9 @@ defaultRouting:
     attempts: 3
     perTryTimeout: 15s
 
+destinationRule:
+  enabled: true
+
 requestAuthentication:
   enabled: false
 
