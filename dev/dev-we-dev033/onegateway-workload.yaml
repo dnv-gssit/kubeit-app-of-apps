@@ -16,6 +16,8 @@ additionalPodLabels:
 
 defaultRouting:
   enabled: true
+  hosts:
+    - ancris3-test.dev033.kubeit.dnv.com
   retries:
     attempts: 3
     perTryTimeout: 2s
@@ -44,5 +46,10 @@ requestAuthentication:
       forwardOriginalToken: true
 
 authorizationPolicy:
-  enabled: false
-
+  enabled: true
+  spec:
+    action: DENY
+    rules:
+    - from:
+      - source:
+          notRequestPrincipals: ["*"]
