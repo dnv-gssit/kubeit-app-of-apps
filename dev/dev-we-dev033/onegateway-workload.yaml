@@ -26,8 +26,8 @@ defaultRouting:
         - uri:
             prefix: /session/
     - match:
-      - uri:
-          exact: /onegateway-workload
+        - uri:
+            exact: /onegateway-workload
       redirect:
         uri: /onegateway-workload/
     - route:
