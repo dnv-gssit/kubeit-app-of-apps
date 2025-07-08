@@ -9,6 +9,8 @@ image:
 
 additionalPodLabels:
   session-management: frontend
+  enabledWithRedirectLabel: "session-management: frontend"
+  enabledWithoutRedirectLabel: "session-management: backend"
 
 service:
   containerPort: 8050
