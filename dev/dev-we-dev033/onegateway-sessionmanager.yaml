@@ -3,10 +3,11 @@ app: onegateway-sessionmanager
 appVersion: v1
 
 sessionManagerDeployment: true
+debugEnvoyFilters: true
 
 image:
   name: "kubeitglobalsvcauxacrwe.azurecr.io/test/sessionmanager"
-  tag: "07102021"
+  tag: "master-20240229.1"
 
 service:
   containerPort: 8000
@@ -104,3 +105,27 @@ externalSecrets:
     refs:
       - keyName: client-secret
         kvSecretName: ancris3-client-secret
+
+redis:
+  enabled: true
+  global:
+    imageRegistry: kubeitglobalsvcauxacrwe.azurecr.io
+  architecture: standalone
+  master:
+    persistence:
+      enabled: false
+    resources:
+      requests:
+        cpu: 10m
+        memory: 128Mi
+      limits:
+        memory: 256Mi
+    containerSecurityContext:
+      readOnlyRootFilesystem: true
+  replica:
+    persistence:
+      enabled: false
+  commonConfiguration: |-
+    appendonly yes
+    save ""
+    loglevel verbose

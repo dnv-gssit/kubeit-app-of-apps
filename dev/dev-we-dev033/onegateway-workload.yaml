@@ -10,14 +10,25 @@ image:
 service:
   containerPort: 8050
 
-additionalPodLabels:
-  session-management: frontend
-  session-manager-name: onegateway-sessionmanager
-
 defaultRouting:
   enabled: true
-  hosts:
-    - ancris3-test.dev033.kubeit.dnv.com
+  hosts: [auto]
+  http:
+    - match:
+        - uri:
+            exact: /session
+      redirect:
+        uri: /session/
+    - route:
+        - destination:
+            host: "onegateway-sessionmanager.onegateway.svc.cluster.local"
+      match:
+        - uri:
+            prefix: /session/
+  headers:
+    request:
+      add:
+        x-appname: session
   retries:
     attempts: 3
     perTryTimeout: 2s
@@ -46,10 +57,11 @@ requestAuthentication:
       forwardOriginalToken: true
 
 authorizationPolicy:
-  enabled: false
+  enabled: true
   spec:
-    action: DENY
+    action: ALLOW
     rules:
-    - from:
-      - source:
-          notRequestPrincipals: ["*"]
+      - from:
+          - source:
+              namespaces: ["istio-system"]
+              requestPrincipals: ["*"]
