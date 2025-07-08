@@ -66,7 +66,7 @@ envs:
   - name: CLIENT_ID
     value: d94fdc94-6dfa-4c3c-9e1a-21bee90c33d1
   - name: REDIS_HOST
-    value: onegateway-redis-master
+    value: onegateway-sessionmanager-redis-master
   - name: REDIS_PORT
     value: 6379
   - name: LOGIN_LANDING_URL
@@ -75,8 +75,6 @@ envs:
     value: https://www.veracity.com/auth/logout
   - name: REPLY_URL_SUFFIX
     value: veracity
-  - name: REDIS_PORT
-    value: "6379"
 
 securityContext:
   allowPrivilegeEscalation: false
