@@ -28,6 +28,11 @@ defaultRouting:
       match:
         - uri:
             prefix: /session/
+    - match:
+        - uri:
+            exact: /
+      rewrite:
+        uri: /session/
   headers:
     request:
       add:
