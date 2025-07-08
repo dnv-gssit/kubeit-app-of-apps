@@ -25,19 +25,6 @@ defaultRouting:
       match:
         - uri:
             prefix: /session/
-    - match:
-        - uri:
-            exact: /onegateway-workload
-      redirect:
-        uri: /onegateway-workload/
-    - route:
-        - destination:
-            host: "onegateway-workload.default.svc.cluster.local"
-      match:
-        - uri:
-            prefix: /onegateway-workload/
-      rewrite:
-        uri: /
   headers:
     request:
       add:
