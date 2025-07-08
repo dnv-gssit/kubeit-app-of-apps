@@ -31,8 +31,11 @@ defaultRouting:
     - match:
         - uri:
             exact: /
+      route:
+        - destination:
+            host: "onegateway-sessionmanager.onegateway.svc.cluster.local"
       rewrite:
-        uri: /session/
+        uri: "/session/"
   headers:
     request:
       add:
