@@ -27,6 +27,31 @@ requestAuthentication:
 authorizationPolicy:
   enabled: false
 
+initContainers:
+  - name: wait-for-redis
+    image: owncloudci/wait-for
+    args:
+      - "-it"
+      - "onegateway-sessionmanager-redis-master:6379"
+      - "-t"
+      - "30"
+    resources:
+      requests:
+        cpu: "5m"
+        memory: "32Mi"
+      limits:
+        memory: "128Mi"
+
+health:
+  livenessProbe:
+    httpGet:
+      path: /healthz
+      port: 8000
+    initialDelaySeconds: 5
+    periodSeconds: 5
+    timeoutSeconds: 1
+    failureThreshold: 3
+
 envs:
   - name: ASPNETCORE_ENVIRONMENT
     value: Development
@@ -50,6 +75,18 @@ envs:
     value: https://www.veracity.com/auth/logout
   - name: REPLY_URL_SUFFIX
     value: veracity
+  - name: REDIS_PORT
+    value: "6379"
+
+securityContext:
+  allowPrivilegeEscalation: false
+  capabilities:
+    drop:
+    - ALL
+  readOnlyRootFilesystem: true
+  runAsGroup: 1654
+  runAsNonRoot: true
+  runAsUser: 1654
 
 envsFrom:
   - name: CLIENT_SECRET
