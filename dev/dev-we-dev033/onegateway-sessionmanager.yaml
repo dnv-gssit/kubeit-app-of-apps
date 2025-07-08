@@ -27,31 +27,6 @@ requestAuthentication:
 authorizationPolicy:
   enabled: false
 
-initContainers:
-  - name: wait-for-redis
-    image: owncloudci/wait-for
-    args:
-      - "-it"
-      - "onegateway-redis-master:6379"
-      - "-t"
-      - "30"
-    resources:
-      requests:
-        cpu: "5m"
-        memory: "32Mi"
-      limits:
-        memory: "128Mi"
-
-health:
-  livenessProbe:
-    exec:
-      command:
-        - /bin/sh
-        - -c
-        - apk add redis; redis-cli -x -h $REDIS_HOST -a $REDIS_PASSWORD ping
-    initialDelaySeconds: 5
-    periodSeconds: 5
-
 envs:
   - name: ASPNETCORE_ENVIRONMENT
     value: Development
