@@ -7,6 +7,9 @@ image:
   name: "kubeitglobalsvcauxacrwe.azurecr.io/test/ancris3"
   tag: "main-20210805.6"
 
+additionalPodLabels:
+  session-management: frontend
+
 service:
   containerPort: 8050
 
@@ -25,6 +28,14 @@ defaultRouting:
       match:
         - uri:
             prefix: /session/
+    - route:
+      - destination:
+          host: "onegateway-workload.default.svc.cluster.local"
+    - match:
+        - uri:
+            prefix: /onegateway-workload/
+        rewrite:
+        uri: /session
   headers:
     request:
       add:
