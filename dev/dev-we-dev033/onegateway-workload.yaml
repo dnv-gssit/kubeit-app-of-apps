@@ -21,6 +21,10 @@ defaultRouting:
   retries:
     attempts: 3
     perTryTimeout: 2s
+  headers:
+    request:
+      add:
+        x-appname: ancris3
 
 destinationRule:
   enabled: true
