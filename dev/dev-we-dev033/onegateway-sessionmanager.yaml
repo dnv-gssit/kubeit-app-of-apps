@@ -28,6 +28,10 @@ defaultRouting:
     - match:
         - uri:
             prefix: /session/
+  headers:
+    request:
+      add:
+        x-appname: session
   retries:
     attempts: 3
     perTryTimeout: 15s
