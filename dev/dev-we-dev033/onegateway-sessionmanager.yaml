@@ -43,18 +43,7 @@ requestAuthentication:
   enabled: false
 
 authorizationPolicy:
-  enabled: true
-  spec:
-    action: ALLOW
-    rules:
-      - from:
-        - source:
-            namespaces:
-              - istio-system
-      - from:
-        - source:
-            namespaces:
-              - onegateway
+  enabled: false
 
 initContainers:
   - name: wait-for-redis
@@ -129,10 +118,9 @@ envsFrom:
 
 resources:
   requests:
-    cpu: 250m
+    cpu: 50m
     memory: 64Mi
   limits:
-    cpu: 500m
     memory: 128Mi
 
 secretStore:
