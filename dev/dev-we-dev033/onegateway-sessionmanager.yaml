@@ -71,15 +71,15 @@ initContainers:
       limits:
         memory: "128Mi"
 
-health:
-  livenessProbe:
-    httpGet:
-      path: /healthz
-      port: 8000
-    initialDelaySeconds: 5
-    periodSeconds: 5
-    timeoutSeconds: 1
-    failureThreshold: 3
+#health:
+#  livenessProbe:
+#    httpGet:
+#      path: /healthz
+#      port: 8000
+#    initialDelaySeconds: 5
+#    periodSeconds: 5
+#    timeoutSeconds: 1
+#   failureThreshold: 3
 
 envs:
   - name: ASPNETCORE_ENVIRONMENT
