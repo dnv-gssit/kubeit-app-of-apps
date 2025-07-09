@@ -9,6 +9,7 @@ image:
 
 additionalPodLabels:
   session-management: frontend
+  authn-redirect: enabled
 
 service:
   containerPort: 8050
