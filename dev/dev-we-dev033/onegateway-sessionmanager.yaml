@@ -58,10 +58,10 @@ authorizationPolicy:
 
 initContainers:
   - name: wait-for-redis
-    image: owncloudci/wait-for
+    image: kubeitglobalsvcauxacrwe.azurecr.io/owncloudci/wait-for
     args:
       - "-it"
-      - "onegateway-sessionmanager-redis-master:6379"
+      - "sm-redis-master:6379"
       - "-t"
       - "30"
     resources:
@@ -95,7 +95,7 @@ envs:
   - name: CLIENT_ID
     value: 1127167f-0330-447d-9744-586987c22603
   - name: REDIS_HOST
-    value: onegateway-sessionmanager-redis-master
+    value: sm-redis-master
   - name: REDIS_PORT
     value: 6379
   - name: LOGIN_LANDING_URL
@@ -124,7 +124,7 @@ envsFrom:
   - name: REDIS_PASSWORD
     valueFrom:
       secretKeyRef:
-        name: onegateway-sessionmanager-redis
+        name: sm-redis
         key: redis-password
 
 resources:
@@ -147,6 +147,7 @@ externalSecrets:
 
 redis:
   enabled: true
+  fullnameOverride: "sm-redis"
   global:
     imageRegistry: kubeitglobalsvcauxacrwe.azurecr.io
   architecture: standalone
