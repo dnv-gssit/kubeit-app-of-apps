@@ -71,15 +71,15 @@ initContainers:
       limits:
         memory: "128Mi"
 
-#health:
-#  livenessProbe:
-#    httpGet:
-#      path: /healthz
-#      port: 8000
-#    initialDelaySeconds: 5
-#    periodSeconds: 5
-#    timeoutSeconds: 1
-#   failureThreshold: 3
+health:
+  livenessProbe:
+    httpGet:
+      path: /healthz
+      port: 8000
+    initialDelaySeconds: 5
+    periodSeconds: 5
+    timeoutSeconds: 1
+   failureThreshold: 3
 
 envs:
   - name: ASPNETCORE_ENVIRONMENT
@@ -105,15 +105,15 @@ envs:
   - name: REPLY_URL_SUFFIX
     value: veracity
 
-#securityContext:
-#  allowPrivilegeEscalation: false
-#  capabilities:
-#    drop:
-#    - ALL
-#  readOnlyRootFilesystem: true
-#  runAsGroup: 1654
-#  runAsNonRoot: true
-#  runAsUser: 1654
+securityContext:
+  allowPrivilegeEscalation: false
+  capabilities:
+    drop:
+    - ALL
+  readOnlyRootFilesystem: true
+  runAsGroup: 1654
+  runAsNonRoot: true
+  runAsUser: 1654
 
 envsFrom:
   - name: CLIENT_SECRET
