@@ -79,7 +79,7 @@ health:
     initialDelaySeconds: 5
     periodSeconds: 5
     timeoutSeconds: 1
-   failureThreshold: 3
+    failureThreshold: 3
 
 envs:
   - name: ASPNETCORE_ENVIRONMENT
