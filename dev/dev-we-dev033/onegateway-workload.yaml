@@ -21,6 +21,9 @@ defaultRouting:
   retries:
     attempts: 3
     perTryTimeout: 2s
+  http:
+    rewrite:
+      uri: /
   headers:
     request:
       add:
@@ -61,4 +64,3 @@ authorizationPolicy:
       - from:
           - source:
               namespaces: ["onegateway"]
-              requestPrincipals: ["*"]
