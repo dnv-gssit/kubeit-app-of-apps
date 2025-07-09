@@ -46,7 +46,7 @@ requestAuthentication:
       forwardOriginalToken: true
 
 authorizationPolicy:
-  enabled: false
+  enabled: true
   spec:
     action: ALLOW
     rules:
