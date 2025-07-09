@@ -35,7 +35,7 @@ resources:
 
 envs:
   - name: CLIENT_ID
-    value: "dd3fabfd-fb4b-4ca3-b079-d45341a56fd3"
+    value: "1127167f-0330-447d-9744-586987c22603"
 
 requestAuthentication:
   enabled: true
