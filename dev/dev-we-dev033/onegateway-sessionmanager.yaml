@@ -105,15 +105,15 @@ envs:
   - name: REPLY_URL_SUFFIX
     value: veracity
 
-securityContext:
-  allowPrivilegeEscalation: false
-  capabilities:
-    drop:
-    - ALL
-  readOnlyRootFilesystem: true
-  runAsGroup: 1654
-  runAsNonRoot: true
-  runAsUser: 1654
+#securityContext:
+#  allowPrivilegeEscalation: false
+#  capabilities:
+#    drop:
+#    - ALL
+#  readOnlyRootFilesystem: true
+#  runAsGroup: 1654
+#  runAsNonRoot: true
+#  runAsUser: 1654
 
 envsFrom:
   - name: CLIENT_SECRET
