@@ -17,6 +17,17 @@ service:
 
 defaultRouting:
   enabled: true
+  hosts:
+   - ancris3-test.dev033.kubeit.dnv.com
+  http:
+    - match:
+        - uri:
+            exact: /session
+      redirect:
+        uri: /session/
+    - match:
+        - uri:
+            prefix: /session/
   retries:
     attempts: 3
     perTryTimeout: 15s

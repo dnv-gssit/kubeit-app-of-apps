@@ -15,29 +15,6 @@ service:
 
 defaultRouting:
   enabled: true
-  hosts: [auto]
-  http:
-    - match:
-        - uri:
-            exact: /session
-      redirect:
-        uri: /session/
-    - route:
-        - destination:
-            host: "onegateway-sessionmanager.onegateway.svc.cluster.local"
-      match:
-        - uri:
-            prefix: /session/
-    - match:
-        - uri:
-            exact: /
-      route:
-        - destination:
-            host: "onegateway-workload.onegateway.svc.cluster.local"
-  headers:
-    request:
-      add:
-        x-appname: session
   retries:
     attempts: 3
     perTryTimeout: 2s
