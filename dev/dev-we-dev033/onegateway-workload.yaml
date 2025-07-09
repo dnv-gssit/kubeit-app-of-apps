@@ -58,3 +58,7 @@ authorizationPolicy:
           - source:
               namespaces: ["istio-system"]
               requestPrincipals: ["*"]
+      - from:
+          - source:
+              namespaces: ["onegateway"]
+              requestPrincipals: ["*"]
