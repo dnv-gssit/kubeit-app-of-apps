@@ -7,7 +7,7 @@ debugEnvoyFilters: true
 
 image:
   name: "kubeitglobalsvcauxacrwe.azurecr.io/test/sessionmanager"
-  tag: "07102021"
+  tag: "master-20240229.1"
 
 additionalPodLabels:
   session-management: backend
