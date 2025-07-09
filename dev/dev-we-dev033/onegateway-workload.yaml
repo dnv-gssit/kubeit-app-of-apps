@@ -24,13 +24,10 @@ defaultRouting:
   http:
     - rewrite:
         uri: /
-  headers:
-    request:
-      add:
-        x-appname: ancris3
 
 destinationRule:
   enabled: true
+  loadBalancerPolicy: "STICKY_SESSIONS"
 
 resources:
   requests:
@@ -61,6 +58,3 @@ authorizationPolicy:
           - source:
               namespaces: ["istio-system"]
               requestPrincipals: ["*"]
-      - from:
-          - source:
-              namespaces: ["onegateway"]
