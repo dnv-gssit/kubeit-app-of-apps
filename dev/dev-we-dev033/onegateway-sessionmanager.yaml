@@ -43,7 +43,18 @@ requestAuthentication:
   enabled: false
 
 authorizationPolicy:
-  enabled: false
+  enabled: true
+  spec:
+    action: ALLOW
+    rules:
+      - from:
+        - source:
+            namespaces:
+              - istio-system
+      - from:
+        - source:
+            namespaces:
+              - onegateway
 
 initContainers:
   - name: wait-for-redis
