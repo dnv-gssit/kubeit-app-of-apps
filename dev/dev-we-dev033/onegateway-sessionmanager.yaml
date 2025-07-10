@@ -17,7 +17,7 @@ service:
 defaultRouting:
   enabled: true
   hosts:
-   - ancris3-test.dev033.kubeit.dnv.com
+    - ancris3-test.dev033.kubeit.dnv.com
   http:
     - match:
         - uri:
@@ -87,7 +87,7 @@ securityContext:
   allowPrivilegeEscalation: false
   capabilities:
     drop:
-    - ALL
+      - ALL
   readOnlyRootFilesystem: true
   runAsGroup: 1654
   runAsNonRoot: true
