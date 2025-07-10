@@ -38,12 +38,6 @@ defaultRouting:
 destinationRule:
   enabled: true
 
-requestAuthentication:
-  enabled: false
-
-authorizationPolicy:
-  enabled: false
-
 initContainers:
   - name: wait-for-redis
     image: kubeitglobalsvcauxacrwe.azurecr.io/owncloudci/wait-for
@@ -74,14 +68,10 @@ envs:
     value: Development
   - name: ASPNETCORE_URLS
     value: http://*:8000
-  - name: SESSION_MANAGER_ID
-    value: ancris3
   - name: AUTHORITY
     value: https://login.veracity.com/te/dnvglb2cprod.onmicrosoft.com/B2C_1A_SignInWithADFSIdp/v2.0
   - name: SCOPE
     value: https://dnvglb2cprod.onmicrosoft.com/83054ebf-1d7b-43f5-82ad-b2bde84d7b75/user_impersonation
-  - name: CLIENT_ID
-    value: 1127167f-0330-447d-9744-586987c22603
   - name: REDIS_HOST
     value: sm-redis-master
   - name: REDIS_PORT
@@ -103,17 +93,21 @@ securityContext:
   runAsNonRoot: true
   runAsUser: 1654
 
+additionalEnvsFrom:
+  - name: REDIS_PASSWORD
+    valueFrom:
+      secretKeyRef:
+        name: sm-redis
+        key: redis-password
+
 envsFrom:
   - name: CLIENT_SECRET
     valueFrom:
       secretKeyRef:
         name: ancris3-session-manager
         key: client-secret
-  - name: REDIS_PASSWORD
-    valueFrom:
-      secretKeyRef:
-        name: sm-redis
-        key: redis-password
+  - name: CLIENT_ID
+    value: 1127167f-0330-447d-9744-586987c22603
 
 resources:
   requests:
