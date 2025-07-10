@@ -24,6 +24,22 @@ applications:
       chart: kubeit-deployment-chart
       targetRevision: 2.1.0
 
+  - name: onegateway-sm2
+    namespace: onegateway2
+    useArgoCDimageUpdater: false
+    serviceChart:
+      repoURL: https://github.com/dnv-gssit/kubeit-charts.git
+      path: charts/kubeit-deployment-chart
+      targetRevision: feature/session-manager
+
+  - name: onegateway-wd2
+    namespace: onegateway2
+    useArgoCDimageUpdater: false
+    serviceChart:
+      repoURL: https://github.com/dnv-gssit/kubeit-charts.git
+      path: charts/kubeit-deployment-chartkubeit-deployment-chart
+      targetRevision: feature/session-manager
+
   - name: win-standard-workload
     namespace: win-standard-workload
     useArgoCDimageUpdater: false
