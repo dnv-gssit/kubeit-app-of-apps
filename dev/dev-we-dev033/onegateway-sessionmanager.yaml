@@ -2,15 +2,14 @@
 app: onegateway-sessionmanager
 appVersion: v1
 
-sessionManagerDeployment: true
-debugEnvoyFilters: true
+sessionManager:
+  deploy: true
+  sessionManagerNname: sm-onegateway
+  debugEnvoyFilters: true
 
 image:
   name: "kubeitglobalsvcauxacrwe.azurecr.io/test/sessionmanager"
   tag: "master-20240229.1"
-
-additionalPodLabels:
-  session-management: backend
 
 service:
   containerPort: 8000

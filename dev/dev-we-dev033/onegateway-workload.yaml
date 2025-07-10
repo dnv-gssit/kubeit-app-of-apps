@@ -7,9 +7,9 @@ image:
   name: "kubeitglobalsvcauxacrwe.azurecr.io/test/ancris3"
   tag: "main-20210805.6"
 
-additionalPodLabels:
-  session-management: frontend
-  authn-redirect: enabled
+sessionManaged:
+  use: true
+  sessionManagerName: sm-onegateway
 
 service:
   containerPort: 8050
@@ -23,7 +23,7 @@ defaultRouting:
     perTryTimeout: 2s
 
 destinationRule:
-  enabled: true
+  enabled: false
   loadBalancerPolicy: "STICKY_SESSIONS"
 
 resources:
@@ -34,24 +34,3 @@ resources:
     cpu: 500m
     memory: 6Gi
 
-envs:
-  - name: CLIENT_ID
-    value: "1127167f-0330-447d-9744-586987c22603"
-
-requestAuthentication:
-  enabled: true
-  jwtRules:
-    - issuer: "https://login.veracity.com/a68572e3-63ce-4bc1-acdc-b64943502e9d/v2.0/"
-      jwksUri: "https://login.veracity.com/te/a68572e3-63ce-4bc1-acdc-b64943502e9d/b2c_1a_signinwithadfsidp/discovery/v2.0/keys"
-      audiences: [83054ebf-1d7b-43f5-82ad-b2bde84d7b75]
-      forwardOriginalToken: true
-
-authorizationPolicy:
-  enabled: true
-  spec:
-    action: ALLOW
-    rules:
-      - from:
-          - source:
-              namespaces: ["istio-system"]
-              requestPrincipals: ["*"]
