@@ -21,9 +21,6 @@ defaultRouting:
   retries:
     attempts: 3
     perTryTimeout: 2s
-  http:
-    - rewrite:
-        uri: /
 
 resources:
   requests:
