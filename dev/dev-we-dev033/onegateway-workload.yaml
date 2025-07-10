@@ -1,5 +1,5 @@
 ---
-# Workload info
+# Workload test for session manager
 app: onegateway-workload
 appVersion: v1
 
@@ -21,10 +21,6 @@ defaultRouting:
   retries:
     attempts: 3
     perTryTimeout: 2s
-
-destinationRule:
-  enabled: false
-  loadBalancerPolicy: "STICKY_SESSIONS"
 
 resources:
   requests:

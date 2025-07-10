@@ -1,154 +1,38 @@
 ---
-app: onegateway-sessionmanager
-appVersion: v1
+deploy:
+  gateway:
+    name: istio-system/global-https-external-default-gateway
 
-sessionManager:
-  deploy: true
-  sessionManagerName: sm-onegateway
-  debugEnvoyFilters: true
+  serviceAccount:
+    enabled: true
+    annotations:
+      azure.workload.identity/tenant-id: adf10e2b-b6e9-41d6-be2f-c12bb566019c
+      azure.workload.identity/client-id: 8e8c8d25-ccbe-4c50-a864-e0dc2046d46e
 
-image:
-  name: "kubeitglobalsvcauxacrwe.azurecr.io/test/sessionmanager"
-  tag: "master-20240229.1"
+  app: onegateway-sessionmanager
+  appVersion: v1
 
-service:
-  containerPort: 8000
+  sessionManager:
+    sessionManagerName: sm-onegateway
 
-defaultRouting:
-  enabled: true
-  hosts:
-    - ancris3-test.dev033.kubeit.dnv.com
-  http:
-    - match:
-        - uri:
-            exact: /session
-      redirect:
-        uri: /session/
-    - match:
-        - uri:
-            prefix: /session/
-  headers:
-    request:
-      add:
-        x-appname: session
-  retries:
-    attempts: 3
-    perTryTimeout: 15s
+  defaultRouting:
+    hosts:
+      - ancris3-test.dev033.kubeit.dnv.com
 
-destinationRule:
-  enabled: true
+  envsFrom:
+    - name: CLIENT_SECRET
+      valueFrom:
+        secretKeyRef:
+          name: ancris3-session-manager
+          key: client-secret
+    - name: CLIENT_ID
+      value: 1127167f-0330-447d-9744-586987c22603
 
-initContainers:
-  - name: wait-for-redis
-    image: kubeitglobalsvcauxacrwe.azurecr.io/owncloudci/wait-for
-    args:
-      - "-it"
-      - "sm-redis-master:6379"
-      - "-t"
-      - "30"
-    resources:
-      requests:
-        cpu: "5m"
-        memory: "32Mi"
-      limits:
-        memory: "128Mi"
+  secretStore:
+    vaultUrl: "https://kubeit-dev-kv-sh-we.vault.azure.net/"
 
-health:
-  livenessProbe:
-    httpGet:
-      path: /healthz
-      port: 8000
-    initialDelaySeconds: 5
-    periodSeconds: 5
-    timeoutSeconds: 1
-    failureThreshold: 3
-
-envs:
-  - name: ASPNETCORE_ENVIRONMENT
-    value: Development
-  - name: ASPNETCORE_URLS
-    value: http://*:8000
-  - name: AUTHORITY
-    value: https://login.veracity.com/te/dnvglb2cprod.onmicrosoft.com/B2C_1A_SignInWithADFSIdp/v2.0
-  - name: SCOPE
-    value: https://dnvglb2cprod.onmicrosoft.com/83054ebf-1d7b-43f5-82ad-b2bde84d7b75/user_impersonation
-  - name: REDIS_HOST
-    value: sm-redis-master
-  - name: REDIS_PORT
-    value: 6379
-  - name: LOGIN_LANDING_URL
-    value: "/"
-  - name: LOGOUT_ENDPOINT
-    value: https://www.veracity.com/auth/logout
-  - name: REPLY_URL_SUFFIX
-    value: veracity
-
-securityContext:
-  allowPrivilegeEscalation: false
-  capabilities:
-    drop:
-      - ALL
-  readOnlyRootFilesystem: true
-  runAsGroup: 1654
-  runAsNonRoot: true
-  runAsUser: 1654
-
-additionalEnvsFrom:
-  - name: REDIS_PASSWORD
-    valueFrom:
-      secretKeyRef:
-        name: sm-redis
-        key: redis-password
-
-envsFrom:
-  - name: CLIENT_SECRET
-    valueFrom:
-      secretKeyRef:
-        name: ancris3-session-manager
-        key: client-secret
-  - name: CLIENT_ID
-    value: 1127167f-0330-447d-9744-586987c22603
-
-resources:
-  requests:
-    cpu: 50m
-    memory: 64Mi
-  limits:
-    memory: 128Mi
-
-secretStore:
-  enabled: true
-  vaultUrl: "https://kubeit-dev-kv-sh-we.vault.azure.net/"
-
-externalSecrets:
-  - name: ancris3-session-manager
-    refs:
-      - keyName: client-secret
-        kvSecretName: ancris3-session-dev033
-
-redis:
-  enabled: true
-  fullnameOverride: "sm-redis"
-  global:
-    imageRegistry: kubeitglobalsvcauxacrwe.azurecr.io
-    security:
-      allowInsecureImages: true
-  architecture: standalone
-  master:
-    persistence:
-      enabled: false
-    resources:
-      requests:
-        cpu: 10m
-        memory: 128Mi
-      limits:
-        memory: 256Mi
-    containerSecurityContext:
-      readOnlyRootFilesystem: true
-  replica:
-    persistence:
-      enabled: false
-  commonConfiguration: |-
-    appendonly yes
-    save ""
-    loglevel verbose
+  externalSecrets:
+    - name: ancris3-session-manager
+      refs:
+        - keyName: client-secret
+          kvSecretName: ancris3-session-dev033
