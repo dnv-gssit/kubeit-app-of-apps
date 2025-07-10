@@ -7,17 +7,3 @@ serviceAccount:
   annotations:
     azure.workload.identity/tenant-id: adf10e2b-b6e9-41d6-be2f-c12bb566019c
     azure.workload.identity/client-id: 8e8c8d25-ccbe-4c50-a864-e0dc2046d46e
-
-kubeit:
-  env: dev
-  region: westeurope
-  dnsDomain: kubeit.dnv.com
-  internalDnsDomain: kubeit-int.dnv.com
-  clusterSubdomain: dev033
-  clusterColour: dev033
-  ingressType: external
-  shortRegion: we
-  tenantName: tenant2
-  targetRevision: feature/use-new-helm
-  repoURL: https://github.com/dnv-gssit/kubeit-app-of-apps.git
-  managementNamespace: management-tenant2
