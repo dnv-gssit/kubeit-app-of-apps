@@ -29,6 +29,6 @@ destinationRule:
 resources:
   requests:
     cpu: 20m
-    memory: 6Gi
-  limits:
     memory: 2Gi
+  limits:
+    memory: 6Gi
