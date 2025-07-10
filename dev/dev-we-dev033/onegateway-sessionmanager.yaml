@@ -112,9 +112,9 @@ envsFrom:
 resources:
   requests:
     cpu: 50m
-    memory: 1Gi
+    memory: 64Mi
   limits:
-    memory: 1Gi
+    memory: 128Mi
 
 secretStore:
   enabled: true
