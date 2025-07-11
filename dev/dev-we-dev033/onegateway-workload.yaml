@@ -1,49 +1,30 @@
 ---
-# Workload info
+# Workload test for session manager
 app: onegateway-workload
-
-workload:
-  type: onegateway      # Required - standard or onegateway
-  state: stateless      # Required - stateful or stateless, for stateless mounting extra volumes is blocked (besides keyvault)
+appVersion: v1
 
 image:
-  repository: "kubeitglobalsvcauxacrwe.azurecr.io/test/ancris3"
+  name: "kubeitglobalsvcauxacrwe.azurecr.io/test/ancris3"
   tag: "main-20210805.6"
+
+sessionManager:
+  use: true
+  name: sm-onegateway
+
+service:
   containerPort: 8050
 
-additionalPodLabels:
-  session-management: frontend
-  session-manager-name: onegateway-sessionmanager
-
-kubeit:
-  gatewayEnabled: true
-
 defaultRouting:
-  catchAll: true
-  kubeitDefaultHosts:
-    enabled: false
+  enabled: true
   hosts:
-    - "ancris3-test.dev016.kubeit.dnv.com"
-    - "ancris3-test.dev005.kubeit.dnv.com"
+    - ancris3-test.dev033.kubeit.dnv.com
+  retries:
+    attempts: 3
+    perTryTimeout: 2s
 
 resources:
   requests:
-    cpu: 100m
+    cpu: 20m
     memory: 2Gi
   limits:
-    cpu: 500m
     memory: 6Gi
-
-env:
-  CLIENT_ID: "dd3fabfd-fb4b-4ca3-b079-d45341a56fd3"
-
-requestAuthentication:
-  enabled: true
-  jwtRules:
-    - issuer: "https://login.veracity.com/a68572e3-63ce-4bc1-acdc-b64943502e9d/v2.0/"
-      jwksUri: "https://login.veracity.com/te/a68572e3-63ce-4bc1-acdc-b64943502e9d/b2c_1a_signinwithadfsidp/discovery/v2.0/keys"
-      audiences: [83054ebf-1d7b-43f5-82ad-b2bde84d7b75]
-      forwardOriginalToken: true
-
-authorizationPolicy:
-  enabled: false

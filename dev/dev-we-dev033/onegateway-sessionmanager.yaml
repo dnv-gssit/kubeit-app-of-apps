@@ -1,106 +1,38 @@
 ---
-app: onegateway-sessionmanager
+deploy:
+  gateway:
+    name: istio-system/global-https-external-default-gateway
 
-# Workload info
-workload:
-  type: onegateway      # Required - standard or onegateway
-  state: stateless      # Required - stateful or stateless, for stateless mounting extra volumes is blocked (besides keyvault)
-
-sessionManagerDeployment: true
-
-image:
-  repository: "kubeitglobalsvcauxacrwe.azurecr.io/test/sessionmanager"
-  tag: "07102021"
-  containerPort: 8000
-
-kubeit:
-  gatewayEnabled: true
-
-defaultRouting:
-  enabled: true
-  kubeitDefaultHosts:
-    enabled: false
-  hosts:
-    - "ancris3-test.dev016.kubeit.dnv.com"
-    - "ancris3-test.dev033.kubeit.dnv.com"
-    - "ancris3-test.dev001.kubeit.dnv.com"
-    - "ancris3-test.dev005.kubeit.dnv.com"
-
-  rewriteUrlPrefix:
-    enabled: false
-  urlPrefixes:
-    - session
-  allHosts: false
-  retries:
+  serviceAccount:
     enabled: true
-    settings:
-      attempts: 3
-      perTryTimeout: 15s
+    annotations:
+      azure.workload.identity/tenant-id: adf10e2b-b6e9-41d6-be2f-c12bb566019c
+      azure.workload.identity/client-id: 8e8c8d25-ccbe-4c50-a864-e0dc2046d46e
 
-requestAuthentication:
-  enabled: false
+  app: onegateway-sessionmanager
+  appVersion: v1
 
-authorizationPolicy:
-  enabled: false
+  sessionManager:
+    name: sm-onegateway
 
-initContainersExtra:
-  - name: wait-for-redis
-    image: owncloudci/wait-for
-    args:
-      - "-it"
-      - "onegateway-redis-master:6379"
-      - "-t"
-      - "30"
+  defaultRouting:
+    hosts:
+      - ancris3-test.dev033.kubeit.dnv.com
 
-health:
-  livenessProbe:
-    exec:
-      command:
-        - /bin/sh
-        - -c
-        - apk add redis; redis-cli -x -h $REDIS_HOST -a $REDIS_PASSWORD ping
-    initialDelaySeconds: 5
-    periodSeconds: 5
+  envsFrom:
+    - name: CLIENT_SECRET
+      valueFrom:
+        secretKeyRef:
+          name: ancris3-session-manager
+          key: client-secret
+    - name: CLIENT_ID
+      value: 1127167f-0330-447d-9744-586987c22603
 
-env:
-  ASPNETCORE_ENVIRONMENT: Development
-  ASPNETCORE_URLS: http://*:8000
-  SESSION_MANAGER_ID: ancris3
-  AUTHORITY: https://login.veracity.com/te/dnvglb2cprod.onmicrosoft.com/B2C_1A_SignInWithADFSIdp/v2.0
-  SCOPE: https://dnvglb2cprod.onmicrosoft.com/83054ebf-1d7b-43f5-82ad-b2bde84d7b75/user_impersonation
-  CLIENT_ID: d94fdc94-6dfa-4c3c-9e1a-21bee90c33d1
-  CLIENT_SECRET:
-    valueFrom:
-      secretKeyRef:
-        name: ancris3-session-manager
-        key: client-secret
-  REDIS_HOST: onegateway-redis-master
-  REDIS_PORT: 6379
-  REDIS_PASSWORD:
-    valueFrom:
-      secretKeyRef:
-        name: redis-password
-        key: db-password
-  LOGIN_LANDING_URL: "/"
-  LOGOUT_ENDPOINT: https://www.veracity.com/auth/logout
-  REPLY_URL_SUFFIX: veracity
+  secretStore:
+    vaultUrl: "https://kubeit-dev-kv-sh-we.vault.azure.net/"
 
-# azureKeyVaultSecrets:
-#  type: external-secrets
-#  tenantId: "adf10e2b-b6e9-41d6-be2f-c12bb566019c"
-#  clientId: "adf10e2b-b6e9-41d6-be2f-c12bb566019c"
-#  azureKeyVaults:
-#    - azureKeyVaultName: "KubeIT-AUX-KV-SH-WE"
-#      secrets:
-#        - k8sSecretName: ancris3-session-manager
-#          data:
-#            - k8sSecretKey: client-secret
-#              azureKeyVaultSecretName: ancris3-client-secret
-
-resources:
-  requests:
-    cpu: 250m
-    memory: 64Mi
-  limits:
-    cpu: 500m
-    memory: 128Mi
+  externalSecrets:
+    - name: ancris3-session-manager
+      refs:
+        - keyName: client-secret
+          kvSecretName: ancris3-session-dev033
