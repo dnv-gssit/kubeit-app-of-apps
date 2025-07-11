@@ -9,7 +9,7 @@ image:
 
 sessionManager:
   use: true
-  sessionManagerName: sm-onegateway
+  name: sm-onegateway
 
 service:
   containerPort: 8050

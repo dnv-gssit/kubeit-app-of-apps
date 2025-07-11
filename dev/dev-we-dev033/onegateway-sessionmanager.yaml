@@ -13,7 +13,7 @@ deploy:
   appVersion: v1
 
   sessionManager:
-    sessionManagerName: sm-onegateway
+    name: sm-onegateway
 
   defaultRouting:
     hosts:
