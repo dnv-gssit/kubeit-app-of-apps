@@ -3,7 +3,7 @@ appVersion: v1
 
 sessionManager:
   deploy: true
-  sessionManagerNname: sm2-onegateway
+  sessionManagerName: sm2-onegateway
   debugEnvoyFilters: true
 
 image:
