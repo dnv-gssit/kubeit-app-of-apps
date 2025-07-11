@@ -37,7 +37,7 @@ applications:
     useArgoCDimageUpdater: false
     serviceChart:
       repoURL: https://github.com/dnv-gssit/kubeit-charts.git
-      path: charts/kubeit-deployment-chartkubeit-deployment-chart
+      path: charts/kubeit-deployment-chart
       targetRevision: feature/session-manager
 
   - name: win-standard-workload
