@@ -14,6 +14,8 @@ If you want to use it on your dev cluster:
 * asssign role `Managed Identity Contributor` for security group `Az_KubeIT_AcrReader_Env_Dev` at created MI
 * update files `dev/<your logical env name>/global.yaml` with `serviceAccount.annotations.azure.workload.identity/client-id: <your MI clientId>`
 
+For session manager testing, please use [Wiki procedure](https://github.com/dnv-gssit/wiki/blob/main/kubeit/procedures/test-session-manager.md).
+
 # Repository structure
 
 ```

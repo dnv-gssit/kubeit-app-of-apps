@@ -6,7 +6,15 @@ applications:
     serviceChart:
       repoURL: https://dnv-gssit.github.io/kubeit-charts
       chart: kubeit-deployment-chart
-      targetRevision: 1.2.0
+      targetRevision: 2.1.1
+
+  - name: onegateway-sessionmanager
+    namespace: onegateway
+    useArgoCDimageUpdater: false
+    serviceChart:
+      repoURL: https://dnv-gssit.github.io/kubeit-charts
+      chart: session-manager
+      targetRevision: 1.0.0
 
   - name: onegateway-workload
     namespace: onegateway
@@ -14,39 +22,7 @@ applications:
     serviceChart:
       repoURL: https://dnv-gssit.github.io/kubeit-charts
       chart: kubeit-deployment-chart
-      targetRevision: 1.2.0
-
-  - name: onegateway-sessionmanager
-    namespace: onegateway
-    useArgoCDimageUpdater: false
-    serviceChart:
-      repoURL: https://dnv-gssit.github.io/kubeit-charts
-      chart: kubeit-deployment-chart
-      targetRevision: 1.2.0
-
-  - name: onegateway-redis
-    namespace: onegateway
-    useArgoCDimageUpdater: false
-    serviceChart:
-      repoURL: https://dnv-gssit.github.io/kubeit-charts
-      chart: kubeit-redis-chart
-      targetRevision: 0.1.3
-
-  - name: onegateway-reverseproxy-workload
-    namespace: onegateway
-    useArgoCDimageUpdater: false
-    serviceChart:
-      repoURL: https://dnv-gssit.github.io/kubeit-charts
-      chart: kubeit-deployment-chart
-      targetRevision: 1.2.0
-
-  - name: onegateway-secrets
-    namespace: onegateway
-    useArgoCDimageUpdater: false
-    serviceChart:
-      repoURL: https://dnv-gssit.github.io/kubeit-charts
-      chart: kubeit-secrets-chart
-      targetRevision: 1.1.0
+      targetRevision: 2.1.1
 
   - name: win-standard-workload
     namespace: win-standard-workload
@@ -54,7 +30,7 @@ applications:
     serviceChart:
       repoURL: https://dnv-gssit.github.io/kubeit-charts
       chart: kubeit-deployment-chart
-      targetRevision: 1.2.0
+      targetRevision: 2.1.1
 
   - name: win-api-workload
     namespace: win-standard-workload
@@ -62,4 +38,4 @@ applications:
     serviceChart:
       repoURL: https://dnv-gssit.github.io/kubeit-charts
       chart: kubeit-deployment-chart
-      targetRevision: 1.2.0
+      targetRevision: 2.1.1
