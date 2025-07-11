@@ -136,6 +136,8 @@ redis:
   fullnameOverride: "sm-redis"
   global:
     imageRegistry: kubeitglobalsvcauxacrwe.azurecr.io
+    security:
+      allowInsecureImages: true
   architecture: standalone
   master:
     persistence:
