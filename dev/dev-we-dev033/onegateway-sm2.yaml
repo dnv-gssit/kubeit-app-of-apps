@@ -80,7 +80,7 @@ envs:
   - name: SCOPE
     value: https://dnvglb2cprod.onmicrosoft.com/83054ebf-1d7b-43f5-82ad-b2bde84d7b75/user_impersonation
   - name: CLIENT_ID
-    value: 1127167f-0330-447d-9744-586987c22603
+    value: 635f072c-6500-438e-ad4c-cdf9b334af71
   - name: REDIS_HOST
     value: sm-redis-master
   - name: REDIS_PORT
@@ -106,7 +106,7 @@ envsFrom:
   - name: CLIENT_SECRET
     valueFrom:
       secretKeyRef:
-        name: ancris3-session-manager
+        name: ancris4-session-manager
         key: client-secret
   - name: REDIS_PASSWORD
     valueFrom:
@@ -126,10 +126,10 @@ secretStore:
   vaultUrl: "https://kubeit-dev-kv-sh-we.vault.azure.net/"
 
 externalSecrets:
-  - name: ancris3-session-manager
+  - name: ancris4-session-manager
     refs:
       - keyName: client-secret
-        kvSecretName: ancris3-session-dev033
+        kvSecretName: ancris4-session-dev033
 
 redis:
   enabled: true
