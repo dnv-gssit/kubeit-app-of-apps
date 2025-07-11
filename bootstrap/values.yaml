@@ -43,6 +43,11 @@ dev:
   - name: dev-we-dev034
     shortRegion: we
     clusterColour: dev034
+  - name: dev033-pure
+    shortRegion: we
+    clusterColour: dev033
+    type: manifest
+    namespace: standard
 
 # List of logical environments on KubeIT nonprod clusters
 nonprod: {}
