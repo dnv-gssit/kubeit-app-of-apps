@@ -3,8 +3,8 @@ env: dev
 region: we
 dnsDomain: "kubeit.dnv.com"
 internalDnsDomain: "kubeit-int.dnv.com"
-clusterSubdomain: "dev001"
-clusterColour: "blue"
+clusterSubdomain: "dev033"
+clusterColour: "dev033"
 ingressType: "default"
 shortRegion: we
 tenantName: tenant2

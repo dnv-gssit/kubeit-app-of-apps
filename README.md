@@ -67,7 +67,8 @@ Details can be found at [KubeIT docs](https://docs.kubeit-int.dnv.com/documentat
 ```bash
 helm repo add kubeit-charts https://dnv-gssit.github.io/kubeit-charts
 helm repo update
-cd <this_repository>/chart
+cd <this_repository>/bootstrap
+# update Chart.yaml to repository: file:///mnt/c/git/kubeit-charts/charts/kubeit-logical-envs
 helm dependency update
 # update test-logical-envs.yaml
 helm tempate -f ../tests/test-logical-envs.yaml . --debug
