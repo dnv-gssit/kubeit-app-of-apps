@@ -20,3 +20,9 @@ spec:
         image: nginx:1.21
         ports:
         - containerPort: 80
+        resource:
+          requests:
+            cpu: 10m
+            memory: 64Mi
+          limits:
+            memory: 64Mi
