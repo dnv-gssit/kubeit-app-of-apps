@@ -17,7 +17,7 @@ service:
 defaultRouting:
   enabled: true
   hosts:
-    - <fqdn for tests>
+    - ancris-test.dev018.kubeit.dnv.com
   retries:
     attempts: 3
     perTryTimeout: 2s
