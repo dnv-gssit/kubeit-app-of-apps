@@ -4,9 +4,9 @@ applications:
     namespace: standard-test
     useArgoCDimageUpdater: false
     serviceChart:
-      repoURL: https://github.com/dnv-gssit/kubeit-charts.git
-      path: charts/kubeit-deployment-chart
-      targetRevision: feature/resize
+      repoURL: https://dnv-gssit.github.io/kubeit-charts
+      chart: kubeit-deployment-chart
+      targetRevision: 2.1.2
 
   - name: onegateway-sessionmanager
     namespace: onegateway
