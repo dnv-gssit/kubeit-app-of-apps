@@ -14,7 +14,7 @@ applications:
     serviceChart:
       repoURL: https://dnv-gssit.github.io/kubeit-charts
       chart: session-manager
-      targetRevision: 1.0.0
+      targetRevision: feature/externalsecres-apiversion-check
 
   - name: onegateway-workload
     namespace: onegateway
