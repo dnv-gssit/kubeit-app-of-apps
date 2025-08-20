@@ -6,7 +6,7 @@ applications:
     serviceChart:
       repoURL: https://dnv-gssit.github.io/kubeit-charts
       chart: kubeit-deployment-chart
-      targetRevision: 2.1.1
+      targetRevision: 2.1.2
 
   - name: onegateway-sessionmanager
     namespace: onegateway
