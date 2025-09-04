@@ -38,10 +38,13 @@ podSecurityContext:
 
 # readOnlyRootFilesystem should be set as a false because of the issue related to the npm directory creation
 securityContext:
+  fsGroup: 1000
+  runAsUser: 1000
   capabilities:
     drop:
       - ALL
   readOnlyRootFilesystem: false
+  allowPrivilegeEscalation: false
   runAsNonRoot: true
 
 # https://github.com/paulbouwer/hello-kubernetes/tree/main/src/app
