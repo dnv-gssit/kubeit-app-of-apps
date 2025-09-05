@@ -62,4 +62,4 @@ additionalPodAnnotations:
     tracing:
       sampling: 100
       zipkin:
-        address: collector.management-<tenant_name>.svc.cluster.local:9411
+        address: collector.management-tenant2.svc.cluster.local:9411
