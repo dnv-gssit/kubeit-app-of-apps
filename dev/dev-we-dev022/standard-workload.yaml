@@ -63,3 +63,10 @@ additionalPodAnnotations:
       sampling: 100
       zipkin:
         address: collector.management-tenant2.svc.cluster.local:9411
+
+additionalContainers:
+  - name: trace-generator
+    image: curlimages/curl:latest
+    command: ["/bin/sh", "-c"]
+    args:
+      - while true; do curl -s http://localhost:8080/; sleep 5; done
