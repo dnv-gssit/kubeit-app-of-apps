@@ -56,10 +56,3 @@ resources:
   limits:
     cpu: 300m
     memory: 128Mi
-
-additionalPodAnnotations:
-  proxy.istio.io/config: |
-    tracing:
-      sampling: 100
-      zipkin:
-        address: collector.management-<tenant_name>.svc.cluster.local:9411
