@@ -43,6 +43,9 @@ dev:
   - name: dev-we-dev034
     shortRegion: we
     clusterColour: dev034
+  - name: dev-we-dev040
+    shortRegion: we
+    clusterColour: dev040
 
 # List of logical environments on KubeIT nonprod clusters
 nonprod: {}

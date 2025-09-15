@@ -1,0 +1,18 @@
+{{- if .Values.scenarios.periodic.podKill.enabled }}
+# Kill random pods every 5 min.
+apiVersion: chaos-mesh.org/v1alpha1
+kind: Schedule
+metadata:
+  name: schedule-pod-kill-long-running
+  namespace: chaos-mesh
+spec:
+  schedule: {{ .Values.scenarios.periodic.podKill.schedule | quote }}
+  historyLimit: 2
+  concurrencyPolicy: Allow
+  type: PodChaos
+  podChaos:
+    action: pod-kill
+    mode: one
+    selector:
+      namespaces: {{- .Values.testNamespaces | toYaml | nindent 8 }}
+{{- end }}

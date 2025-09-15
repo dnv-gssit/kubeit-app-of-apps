@@ -1,0 +1,23 @@
+{{- if .Values.scenarios.periodic.netBandwidth.enabled }}
+# Simulate periodic network lags.
+apiVersion: chaos-mesh.org/v1alpha1
+kind: Schedule
+metadata:
+  name: schedule-net-bandwidth-long-running
+  namespace: chaos-mesh
+spec:
+  schedule: {{ .Values.scenarios.periodic.netBandwidth.schedule | quote }}
+  historyLimit: 2
+  concurrencyPolicy: Allow
+  type: NetworkChaos
+  networkChaos:
+    action: bandwidth
+    mode: all
+    selector:
+      namespaces: {{- .Values.testNamespaces | toYaml | nindent 8 }}
+    bandwidth:
+      rate: {{ .Values.scenarios.periodic.netBandwidth.rate | quote }}
+      limit: 20971520
+      buffer: 10000
+    duration: {{ .Values.scenarios.periodic.netBandwidth.duration | quote }}
+{{- end }}

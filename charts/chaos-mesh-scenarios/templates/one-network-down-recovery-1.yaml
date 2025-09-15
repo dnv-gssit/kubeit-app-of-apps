@@ -1,0 +1,13 @@
+{{- if .Values.scenarios.oneTime.networkDownRecovery1.enabled }}
+apiVersion: chaos-mesh.org/v1alpha1
+kind: NetworkChaos
+metadata:
+  name: one-network-down-and-recovery-1
+  namespace: chaos-mesh
+spec:
+  action: partition
+  mode: all
+  selector:
+    namespaces: {{- .Values.testNamespaces | toYaml | nindent 6 }}
+  duration: {{ .Values.scenarios.oneTime.networkDownRecovery1.downtimeDuration | quote }}
+{{- end }}

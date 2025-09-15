@@ -1,0 +1,22 @@
+{{- if .Values.scenarios.periodic.netLoss.enabled }}
+# Simulate periodic moments with network packet loss.
+apiVersion: chaos-mesh.org/v1alpha1
+kind: Schedule
+metadata:
+  name: schedule-net-loss-long-running
+  namespace: chaos-mesh
+spec:
+  schedule: {{ .Values.scenarios.periodic.netLoss.schedule | quote }}
+  historyLimit: 2
+  concurrencyPolicy: Allow
+  type: NetworkChaos
+  networkChaos:
+    action: loss
+    mode: all
+    selector:
+      namespaces: {{- .Values.testNamespaces | toYaml | nindent 8 }}
+    loss:
+      loss: {{ .Values.scenarios.periodic.netLoss.loss | quote }}
+      correlation: {{ .Values.scenarios.periodic.netLoss.correlation | quote }}
+    duration: {{ .Values.scenarios.periodic.netLoss.duration | quote }}
+{{- end }}
