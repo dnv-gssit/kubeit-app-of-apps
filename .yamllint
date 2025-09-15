@@ -3,6 +3,7 @@ extends: default
 
 ignore: |
   bootstrap/*
+  charts/*
 
 rules:
   line-length: disable
