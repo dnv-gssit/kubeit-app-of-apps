@@ -13,7 +13,7 @@ spec:
       children:
         - 1-network-down
         - 2-network-delay-during-recover
-    
+
     - name: 1-network-down
       templateType: NetworkChaos
       deadline: {{ .Values.scenarios.oneTime.networkDownRecovery2.downtimeDuration | quote }}
@@ -22,7 +22,7 @@ spec:
         mode: all
         selector:
           namespaces: {{- .Values.chaosTestNamespaces | toYaml | nindent 12 }}
-    
+
     - name: 2-network-delay-during-recover
       templateType: NetworkChaos
       deadline: {{ .Values.scenarios.oneTime.networkDownRecovery2.delayRecoveryDuration | quote }}

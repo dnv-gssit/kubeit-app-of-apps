@@ -11,6 +11,6 @@ chaosDaemon:
 dashboard:
   service:
     type: ClusterIP
-  
+
   # if to enable auth
   securityMode: false

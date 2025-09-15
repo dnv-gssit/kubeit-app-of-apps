@@ -12,18 +12,18 @@ testNamespaces:
   - kubeit-krr-forwarder
   - external-dns
   - rabbitmq
-  
+
   # Monitoring namespaces. They might interfere with collecting alerts.
   # Recommend to test it separately.
   # - grafana
   # - loki
   # - prometheus
   # - thanos
-  
+
   # It might interfere cluster stability. Recommend to test it separately.
   # - istio-system
   # - kyverno
-  
+
   # System and AKS managed nodes. Recommend to not test it, or test it separately.
   # - gatekeeper-system
   # - kube-node-lease
@@ -42,7 +42,7 @@ scenarios:
       enabled: false
       schedule: "*/5 * * * *"
       duration: "30s"
-    
+
     # Network chaos scenarios
     netBandwidth:
       enabled: false
@@ -62,25 +62,25 @@ scenarios:
       duration: "30s"
       loss: "50"  # percent
       correlation: "100"  # percent
-  
+
   oneTime:
     # Restart all pods and apply load stress (on CPU and RAM) for a time after restart.
     restartUnderStress:
       enabled: false
       stressDuration: "60s"  # time to stress pods after forced restart
-    
+
     # Network disconnection and partition for a period of time,
     #   to test if workloads will auto-recover.
     networkDownRecovery1:
       enabled: false
       downtimeDuration: "30m"
-    
+
     # Network disconnection and partition, and then newtork delay during recovery phase,
     #   to test if workloads will auto-recover under network stress.
     networkDownRecovery2:
       enabled: false
       downtimeDuration: "30m"
-      
+
       # delay recovery
       delayRecoveryDuration: "30m"
       latency: "500ms"

@@ -13,7 +13,7 @@ spec:
       children:
         - 1-kill-pods
         - 2-stress-on-restart
-    
+
     - name: 1-kill-pods
       templateType: PodChaos
       podChaos:
@@ -21,7 +21,7 @@ spec:
         selector:
           namespaces: {{- .Values.testNamespaces | toYaml | nindent 12 }}
         mode: all
-    
+
     - name: 2-stress-on-restart
       templateType: StressChaos
       deadline: {{ .Values.scenarios.oneTime.restartUnderStress.stressDuration | quote }}
