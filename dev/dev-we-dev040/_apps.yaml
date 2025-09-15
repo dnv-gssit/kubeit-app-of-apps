@@ -41,7 +41,7 @@ applications:
       targetRevision: 2.1.1
 
 
-# chaos-mesh
+  # ===   chaos-mesh   ===
 
   - name: chaos-mesh
     namespace: chaos-mesh
