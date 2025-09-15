@@ -1,0 +1,6 @@
+---
+apiVersion: v2
+name: chaos-mesh-scenarios
+description: KubeIT Chaos Mesh scenarios
+type: application
+version: 0.1.0

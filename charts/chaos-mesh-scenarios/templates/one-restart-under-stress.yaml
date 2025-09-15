@@ -1,0 +1,39 @@
+---
+{{- if .Values.scenarios.oneTime.restartUnderStress.enabled }}
+apiVersion: chaos-mesh.org/v1alpha1
+kind: Workflow
+metadata:
+  name: restart-under-stress
+  namespace: chaos-mesh
+spec:
+  entry: main
+  templates:
+    - name: main
+      templateType: Serial
+      children:
+        - 1-kill-pods
+        - 2-stress-on-restart
+
+    - name: 1-kill-pods
+      templateType: PodChaos
+      podChaos:
+        action: pod-kill
+        selector:
+          namespaces: {{- .Values.testNamespaces | toYaml | nindent 12 }}
+        mode: all
+
+    - name: 2-stress-on-restart
+      templateType: StressChaos
+      deadline: {{ .Values.scenarios.oneTime.restartUnderStress.stressDuration | quote }}
+      stressChaos:
+        selector:
+          namespaces: {{- .Values.testNamespaces | toYaml | nindent 12 }}
+        mode: all
+        stressors:
+          cpu:
+            load: 95
+            workers: 20
+          memory:
+            oomScoreAdj: -64
+            workers: 2
+{{- end }}
