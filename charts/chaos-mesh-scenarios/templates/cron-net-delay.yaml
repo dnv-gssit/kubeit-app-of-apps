@@ -1,3 +1,4 @@
+---
 {{- if .Values.scenarios.periodic.netDelay.enabled }}
 # Simulate periodic network lags.
 apiVersion: chaos-mesh.org/v1alpha1

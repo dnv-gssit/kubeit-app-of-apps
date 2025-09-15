@@ -1,4 +1,4 @@
-
+---
 # WARNING!! Do not include `chaos-mesh` namespace as it may break your cluster.
 testNamespaces:
   - argocd

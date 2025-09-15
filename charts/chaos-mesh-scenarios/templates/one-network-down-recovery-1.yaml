@@ -1,3 +1,4 @@
+---
 {{- if .Values.scenarios.oneTime.networkDownRecovery1.enabled }}
 apiVersion: chaos-mesh.org/v1alpha1
 kind: NetworkChaos

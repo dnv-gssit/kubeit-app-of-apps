@@ -1,3 +1,4 @@
+---
 {{- if .Values.scenarios.periodic.podKill.enabled }}
 # Kill random pods every 5 min.
 apiVersion: chaos-mesh.org/v1alpha1
