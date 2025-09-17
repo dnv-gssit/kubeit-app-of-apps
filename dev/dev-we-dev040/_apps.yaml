@@ -65,3 +65,12 @@ applications:
       chart: chaos-mesh-scenarios
       targetRevision: 0.1.0
       path: apps/chaos-mesh-scenarios
+
+  - name: test-1
+    namespace: standard-test
+    useArgoCDimageUpdater: false
+    serviceChart:
+      repoURL: https://github.com/wsdnv/tmp-zach8c
+      chart: test-1
+      targetRevision: 0.1.0
+      path: test-1
