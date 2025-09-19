@@ -1,7 +1,7 @@
 ---
 deploy:
   gateway:
-    name: istio-system/global-https-external-default-gateway
+    name: istio-system/global-https-internal-default-gateway
 
   serviceAccount:
     enabled: true
