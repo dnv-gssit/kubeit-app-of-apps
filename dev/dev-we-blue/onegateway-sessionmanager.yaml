@@ -26,7 +26,7 @@ deploy:
           name: ancris-session-manager
           key: client-secret
     - name: CLIENT_ID
-      value: d94fdc94-6dfa-4c3c-9e1a-21bee90c33d1
+      value: 09c9245d-9559-449c-9292-4d47ea5cccce
 
   secretStore:
     vaultUrl: "https://kubeit-dev-kv-sh-we.vault.azure.net/"
@@ -35,4 +35,4 @@ deploy:
     - name: ancris-session-manager
       refs:
         - keyName: client-secret
-          kvSecretName: ancris3-client-secret
+          kvSecretName: ancris4-session-dev001
