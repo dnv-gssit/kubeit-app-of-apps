@@ -39,38 +39,3 @@ applications:
       repoURL: https://dnv-gssit.github.io/kubeit-charts
       chart: kubeit-deployment-chart
       targetRevision: 2.1.1
-
-
-  # ===   chaos-mesh   ===
-
-  - name: chaos-mesh
-    namespace: chaos-mesh
-    useArgoCDimageUpdater: false
-    serviceChart:
-      repoURL: https://dnv-gssit.github.io/kubeit-charts
-      chart: kubeit-deployment-chart
-      targetRevision: 2.7.2
-    syncOptions:
-      - Validate=true
-      - CreateNamespace=false
-      - PrunePropagationPolicy=foreground
-      - PruneLast=true
-      - ServerSideApply=true
-
-  - name: chaos-mesh-scenarios
-    namespace: chaos-mesh
-    useArgoCDimageUpdater: false
-    serviceChart:
-      repoURL: https://github.com/dnv-gssit/kubeit-app-of-apps
-      chart: chaos-mesh-scenarios
-      targetRevision: 0.1.0
-      path: apps/chaos-mesh-scenarios
-
-  - name: test-1
-    namespace: standard-test
-    useArgoCDimageUpdater: false
-    serviceChart:
-      repoURL: https://github.com/wsdnv/tmp-zach8c
-      chart: test-1
-      targetRevision: main
-      path: test-1
