@@ -46,4 +46,4 @@ applications:
     serviceChart:
       repoURL: https://dnv-gssit.github.io/kubeit-charts
       chart: kubeit-rabbitmq-chart
-      targetRevision: 0.2.34
+      targetRevision: 0.2.36
