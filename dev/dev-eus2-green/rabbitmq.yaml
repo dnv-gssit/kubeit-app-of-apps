@@ -22,10 +22,10 @@ serviceAccount:
 
 externalSecrets:
   - data:
-    - azureSecretName: rabbitmq-user
-      key: username
-    - azureSecretName: rabbitmq-passwd
-      key: password
-    - azureSecretName: default-test-user-creds
-      key: default_user.conf
+      - azureSecretName: rabbitmq-user
+        key: username
+      - azureSecretName: rabbitmq-passwd
+        key: password
+      - azureSecretName: default-test-user-creds
+        key: default_user.conf
     name: rabbitmq-test-default-user
