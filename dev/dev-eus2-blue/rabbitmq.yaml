@@ -21,9 +21,9 @@ serviceAccount:
 
 externalSecrets:
   - data:
-    - azureSecretName: rabbitmq-user-nonprod-green
+    - azureSecretName: rabbitmq-user
       key: username
-    - azureSecretName: rabbitmq-passwd-nonprod-green
+    - azureSecretName: rabbitmq-passwd
       key: password
     - azureSecretName: default-test-user-creds
       key: default_user.conf
