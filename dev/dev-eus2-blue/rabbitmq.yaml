@@ -7,6 +7,8 @@ secretStore:
   vaultUrl: "https://kubeit-dev-kv-sh-we.vault.azure.net/"
 
 rabbitmqCluster:
+  spec:
+    replicas: 2
   tls:
     enabled: false
 
