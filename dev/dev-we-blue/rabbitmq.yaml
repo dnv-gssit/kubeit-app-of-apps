@@ -17,7 +17,7 @@ serviceAccount:
   create: true
   # Annotations to add to the service account using workload identity
   annotations:
-    azure.workload.identity/client-id: <id>
+    azure.workload.identity/client-id: 98083409-83f6-4321-811d-de791690d15a
     azure.workload.identity/tenant-id: adf10e2b-b6e9-41d6-be2f-c12bb566019c
 
 externalSecrets:
