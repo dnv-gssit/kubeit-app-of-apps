@@ -1,0 +1,31 @@
+---
+persistentVolume:
+  external: false
+
+secretStore:
+  create: true
+  vaultUrl: "https://kubeit-dev-kv-sh-we.vault.azure.net/"
+
+rabbitmqCluster:
+  spec:
+    replicas: 1
+  tls:
+    enabled: false
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # Annotations to add to the service account using workload identity
+  annotations:
+    azure.workload.identity/client-id: 45fe5a01-c1dd-4b34-beb1-e38496e41c7b
+    azure.workload.identity/tenant-id: adf10e2b-b6e9-41d6-be2f-c12bb566019c
+
+externalSecrets:
+  - data:
+      - azureSecretName: rabbitmq-user
+        key: username
+      - azureSecretName: rabbitmq-passwd
+        key: password
+      - azureSecretName: default-test-user-creds
+        key: default_user.conf
+    name: rabbitmq-test-default-user
