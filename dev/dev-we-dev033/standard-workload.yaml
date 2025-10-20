@@ -3,8 +3,8 @@ app: standard-workload
 appVersion: v1
 
 image:
-  name: "paulbouwer/hello-kubernetes"
-  tag: "1.10"
+  name: "kubeitglobalsvcauxacrwe.azurecr.io/test/hello-kubernetes"
+  tag: "1.11"
 
 service:
   containerPort: 8080
