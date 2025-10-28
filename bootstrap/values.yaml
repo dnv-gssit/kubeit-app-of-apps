@@ -18,7 +18,7 @@ dev:
     clusterColour: blue
   - name: dev-eus2-green
     shortRegion: eus2
-    clusterColour: green
+    clusterColour: dev018
   - name: dev-sea-blue
     shortRegion: sea
     clusterColour: blue
