@@ -55,7 +55,7 @@ nodeSelector:
 
 tolerations:
   - key: "sku"
-    value: "Windows2025"
+    value: "Windows"
     effect: "NoSchedule"
 
 resources:
