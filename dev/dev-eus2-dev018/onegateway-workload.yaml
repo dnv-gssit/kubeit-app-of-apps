@@ -1,0 +1,30 @@
+---
+# Workload test for session manager
+app: onegateway-workload
+appVersion: v1
+
+image:
+  name: "kubeitglobalsvcauxacrwe.azurecr.io/test/ancris3"
+  tag: "main-20210805.6"
+
+sessionManager:
+  use: true
+  name: sm-onegateway
+
+service:
+  containerPort: 8050
+
+defaultRouting:
+  enabled: true
+  hosts:
+    - <fqdn for tests>
+  retries:
+    attempts: 3
+    perTryTimeout: 2s
+
+resources:
+  requests:
+    cpu: 20m
+    memory: 2Gi
+  limits:
+    memory: 6Gi
