@@ -40,10 +40,10 @@ applications:
       chart: kubeit-deployment-chart
       targetRevision: 2.2.0
 
-  - name: win-standard-w2025
-    namespace: tenant2-win-standard-workload
-    useArgoCDimageUpdater: false
-    serviceChart:
-      repoURL: https://dnv-gssit.github.io/kubeit-charts
-      chart: kubeit-deployment-chart
-      targetRevision: 2.2.0
+#  - name: win-standard-w2025
+#    namespace: tenant2-win-standard-workload
+#    useArgoCDimageUpdater: false
+#    serviceChart:
+#      repoURL: https://dnv-gssit.github.io/kubeit-charts
+#      chart: kubeit-deployment-chart
+#      targetRevision: 2.2.0
