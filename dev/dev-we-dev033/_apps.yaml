@@ -14,7 +14,7 @@ applications:
     serviceChart:
       repoURL: https://dnv-gssit.github.io/kubeit-charts
       chart: session-manager
-      targetRevision: 1.1.0
+      targetRevision: 1.2.1
 
   - name: onegateway-workload
     namespace: tenant2-onegateway
