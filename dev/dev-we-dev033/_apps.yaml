@@ -25,7 +25,7 @@ applications:
         kind: StatefulSet
         name: "sm-redis-master"
         jsonPointers:
-          - /metadata/annotations
+          - /spec/template/metadata/annotations
 
   - name: onegateway-workload
     namespace: tenant2-onegateway
