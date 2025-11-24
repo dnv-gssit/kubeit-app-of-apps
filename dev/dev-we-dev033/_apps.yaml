@@ -15,6 +15,17 @@ applications:
       repoURL: https://dnv-gssit.github.io/kubeit-charts
       chart: session-manager
       targetRevision: 1.2.1
+    ignoreDifferences:
+      - group: ""
+        kind: Secret
+        name: "sm-redis"
+        jsonPointers:
+          - /data
+      - group: apps
+        kind: StatefulSet
+        name: "sm-redis-master"
+        jsonPointers:
+          - /metadata/annotations
 
   - name: onegateway-workload
     namespace: tenant2-onegateway
