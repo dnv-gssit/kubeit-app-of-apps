@@ -14,7 +14,8 @@ applications:
     serviceChart:
       repoURL: https://dnv-gssit.github.io/kubeit-charts
       chart: session-manager
-      targetRevision: 1.0.0
+      targetRevision: support-apiversions-argocd
+      path: charts/session-manager
 
   - name: onegateway-workload
     namespace: tenant2-onegateway
@@ -22,7 +23,8 @@ applications:
     serviceChart:
       repoURL: https://dnv-gssit.github.io/kubeit-charts
       chart: kubeit-deployment-chart
-      targetRevision: 2.1.1
+      targetRevision: support-apiversions-argocd
+      path: charts/session-manager
 
   - name: win-standard-workload
     namespace: tenant2-win-standard-workload
