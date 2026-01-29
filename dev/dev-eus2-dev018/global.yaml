@@ -1,4 +1,7 @@
 ---
+helmApiVersions:
+  - external-secrets.io/v1/ExternalSecret
+  - external-secrets.io/v1/SecretStore
 gateway:
   name: istio-system/global-https-external-default-gateway
 
