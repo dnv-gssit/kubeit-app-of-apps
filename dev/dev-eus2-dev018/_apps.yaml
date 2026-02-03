@@ -20,9 +20,8 @@ applications:
     namespace: tenant2-onegateway
     useArgoCDimageUpdater: false
     serviceChart:
-      repoURL: https://dnv-gssit.github.io/kubeit-charts.git
-      targetRevision: support-apiversions-argocd
-      path: charts/kubeit-deployment-chart
+      repoURL: https://dnv-gssit.github.io/kubeit-charts
+      targetRevision: 2.1.1
 
   - name: win-standard-workload
     namespace: tenant2-win-standard-workload
