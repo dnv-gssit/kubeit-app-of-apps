@@ -1,0 +1,58 @@
+---
+app: standard-workload
+appVersion: v1
+
+image:
+  name: "paulbouwer/hello-kubernetes"
+  tag: "1.10"
+
+service:
+  containerPort: 8080
+  port: 8080
+
+defaultRouting:
+  enabled: true
+  hosts: [auto]
+  retries:
+    attempts: 3
+    perTryTimeout: 2s
+  headers:
+    request:
+      add:
+        x-appname: standard-workload
+
+destinationRule:
+  enabled: true
+
+authorizationPolicy:
+  enabled: false
+
+requestAuthentication:
+  enabled: false
+
+# Be Aware! Security contexts configuration is specific to Docker Image, if your workload is not spinning up try disabling settings below and after check what needs to be changed.
+podSecurityContext:
+  fsGroup: 1000
+  runAsUser: 1000
+  runAsNonRoot: true
+
+# readOnlyRootFilesystem should be set as a false because of the issue related to the npm directory creation
+securityContext:
+  capabilities:
+    drop:
+      - ALL
+  readOnlyRootFilesystem: false
+  runAsNonRoot: true
+
+# https://github.com/paulbouwer/hello-kubernetes/tree/main/src/app
+envs:
+  - name: MESSAGE
+    value: "Hello on standard-test workload on dev!"
+
+resources:
+  requests:
+    cpu: 50m
+    memory: 64Mi
+  limits:
+    cpu: 300m
+    memory: 128Mi
