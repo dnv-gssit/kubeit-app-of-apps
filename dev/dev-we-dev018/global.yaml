@@ -1,0 +1,9 @@
+---
+gateway:
+  name: istio-system/global-https-external-default-gateway
+
+serviceAccount:
+  enabled: true
+  annotations:
+    azure.workload.identity/tenant-id: adf10e2b-b6e9-41d6-be2f-c12bb566019c
+    azure.workload.identity/client-id: c8cd7e15-1e45-4b6a-9386-753d6a6ea2b8

@@ -1,0 +1,67 @@
+---
+# https://kubernetes.io/docs/setup/production-environment/windows/user-guide-windows-containers/
+app: win-standard-workload
+appVersion: v1
+
+additionalPodAnnotations:
+  # Istio sidecar is not working on Windows yet
+  sidecar.istio.io/inject: "false"
+
+image:
+  name: "mcr.microsoft.com/windows/servercore/iis"
+  tag: "windowsservercore-ltsc2022"
+
+service:
+  containerPort: 80
+
+defaultRouting:
+  enabled: true
+  hosts: [auto]
+  retries:
+    attempts: 3
+    perTryTimeout: 2s
+  headers:
+    request:
+      add:
+        x-appname: win-standard-workload
+
+destinationRule:
+  enabled: true
+  # Windows workloads has no istio sidecar support which is responsible for tls traffic inside istio service mesh
+  tls:
+    mode: DISABLE
+
+authorizationPolicy:
+  enabled: false
+
+requestAuthentication:
+  enabled: false
+
+# Be Aware! Security contexts configuration is specific to Docker Image, if your workload is not spinning up try disabling settings below and after check what needs to be changed.
+podSecurityContext:
+  # fsGroup: 1000  #Not supported on windows
+  # runAsUser: 1000 #Not supported on windows
+  runAsNonRoot: true
+
+securityContext:
+  # capabilities:  #Not supported on windows
+  #   drop:
+  #     - ALL
+  # readOnlyRootFilesystem: true  #Not supported on windows
+  runAsNonRoot: true
+
+nodeSelector:
+  kubernetes.io/os: windows
+
+tolerations:
+  - key: "sku"
+    value: "Windows"
+    effect: "NoSchedule"
+
+resources:
+  limits:
+    cpu: 300m
+    memory: 256Mi
+  requests:
+    cpu: 100m
+    memory: 256Mi
