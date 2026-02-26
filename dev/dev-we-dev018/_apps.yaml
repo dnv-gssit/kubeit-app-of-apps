@@ -15,7 +15,7 @@ applications:
       repoURL: https://dnv-gssit.github.io/kubeit-charts
       chart: session-manager
       targetRevision: 1.0.0
-      
+
   - name: onegateway-workload
     namespace: tenant2-onegateway
     useArgoCDimageUpdater: false
