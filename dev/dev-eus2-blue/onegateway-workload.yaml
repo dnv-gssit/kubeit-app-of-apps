@@ -17,7 +17,7 @@ service:
 defaultRouting:
   enabled: true
   hosts:
-    - <fqdn for tests>
+    - onegateway.blue.eus2.dev.kubeit.dnv.com
   retries:
     attempts: 3
     perTryTimeout: 2s
