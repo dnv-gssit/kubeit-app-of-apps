@@ -3,11 +3,11 @@ app: standard-workload
 appVersion: v1
 
 image:
-  name: "paulbouwer/hello-kubernetes"
-  tag: "1.10"
+  name: "hashicorp/http-echo"
+  tag: "latest"
 
 service:
-  containerPort: 8080
+  containerPort: 5678
   port: 8080
 
 defaultRouting:
@@ -44,10 +44,8 @@ securityContext:
   readOnlyRootFilesystem: false
   runAsNonRoot: true
 
-# https://github.com/paulbouwer/hello-kubernetes/tree/main/src/app
-envs:
-  - name: MESSAGE
-    value: "Hello on standard-test workload on dev!"
+args:
+  - "-text=Hello Kubernetes!"
 
 resources:
   requests:
