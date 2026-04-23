@@ -4,9 +4,9 @@ applications:
     namespace: tenant2-standard-test
     useArgoCDimageUpdater: false
     serviceChart:
-      repoURL: https://github.com/dnv-gssit/kubeit-charts.git
-      path: kubeit-deployment-chart
-      targetRevision: test-server-side-apply
+      repoURL: https://dnv-gssit.github.io/kubeit-charts
+      chart: kubeit-deployment-chart
+      targetRevision: 2.1.1
 
   # - name: onegateway-sessionmanager
   #   namespace: tenant2-onegateway
@@ -20,22 +20,21 @@ applications:
     namespace: tenant2-onegateway
     useArgoCDimageUpdater: false
     serviceChart:
-      repoURL: https://github.com/dnv-gssit/kubeit-charts.git
-      path: kubeit-deployment-chart
-      targetRevision: test-server-side-apply
+      repoURL: https://dnv-gssit.github.io/kubeit-charts
+      targetRevision: 2.1.1
 
   - name: win-standard-workload
     namespace: tenant2-win-standard-workload
     useArgoCDimageUpdater: false
     serviceChart:
-      repoURL: https://github.com/dnv-gssit/kubeit-charts.git
-      path: kubeit-deployment-chart
-      targetRevision: test-server-side-apply
+      repoURL: https://dnv-gssit.github.io/kubeit-charts
+      chart: kubeit-deployment-chart
+      targetRevision: 2.1.1
 
   - name: win-api-workload
     namespace: tenant2-win-standard-workload
     useArgoCDimageUpdater: false
     serviceChart:
-      repoURL: https://github.com/dnv-gssit/kubeit-charts.git
-      path: kubeit-deployment-chart
-      targetRevision: test-server-side-apply
+      repoURL: https://dnv-gssit.github.io/kubeit-charts
+      chart: kubeit-deployment-chart
+      targetRevision: 2.1.1
