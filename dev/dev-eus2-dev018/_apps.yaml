@@ -5,7 +5,7 @@ applications:
     useArgoCDimageUpdater: false
     serviceChart:
       repoURL: https://github.com/dnv-gssit/kubeit-charts.git
-      chart: kubeit-deployment-chart
+      path: kubeit-deployment-chart
       targetRevision: test-server-side-apply
 
   # - name: onegateway-sessionmanager
@@ -21,6 +21,7 @@ applications:
     useArgoCDimageUpdater: false
     serviceChart:
       repoURL: https://github.com/dnv-gssit/kubeit-charts.git
+      path: kubeit-deployment-chart
       targetRevision: test-server-side-apply
 
   - name: win-standard-workload
@@ -28,7 +29,7 @@ applications:
     useArgoCDimageUpdater: false
     serviceChart:
       repoURL: https://github.com/dnv-gssit/kubeit-charts.git
-      chart: kubeit-deployment-chart
+      path: kubeit-deployment-chart
       targetRevision: test-server-side-apply
 
   - name: win-api-workload
@@ -36,5 +37,5 @@ applications:
     useArgoCDimageUpdater: false
     serviceChart:
       repoURL: https://github.com/dnv-gssit/kubeit-charts.git
-      chart: kubeit-deployment-chart
+      path: kubeit-deployment-chart
       targetRevision: test-server-side-apply
