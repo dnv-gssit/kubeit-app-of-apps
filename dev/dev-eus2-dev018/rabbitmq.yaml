@@ -30,7 +30,7 @@ persistentVolume:
     clientID: c8cd7e15-1e45-4b6a-9386-753d6a6ea2b8
     # false = account-key flow (Storage Account Contributor)
     # true  = token-only flow (Storage File Data SMB MI Admin + SMBOauth)
-    mountWithWorkloadIdentityToken: false
+    mountWithWorkloadIdentityToken: true
 
 # The RabbitMQ pods run under this service account; the federated identity
 # credential subject must be system:serviceaccount:<namespace>:rabbitmq-sa
