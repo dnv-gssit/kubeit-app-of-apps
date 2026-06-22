@@ -27,7 +27,7 @@ persistentVolume:
   workloadIdentity:
     enabled: true
     # Client ID of the managed identity with access to the storage account
-    clientID: 00000000-0000-0000-0000-000000000000
+    clientID: c8cd7e15-1e45-4b6a-9386-753d6a6ea2b8
     # false = account-key flow (Storage Account Contributor)
     # true  = token-only flow (Storage File Data SMB MI Admin + SMBOauth)
     mountWithWorkloadIdentityToken: false
@@ -40,5 +40,5 @@ serviceAccount:
   annotations:
     # Used for app-level workload identity (e.g. Key Vault). Point at the SAME
     # managed identity as persistentVolume.workloadIdentity.clientID.
-    azure.workload.identity/client-id: 00000000-0000-0000-0000-000000000000
-    azure.workload.identity/tenant-id: 00000000-0000-0000-0000-000000000000
+    azure.workload.identity/client-id: c8cd7e15-1e45-4b6a-9386-753d6a6ea2b8
+    azure.workload.identity/tenant-id: 6208f21b-db00-429b-8bf1-bc018c308c89
