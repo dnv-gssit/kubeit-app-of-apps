@@ -1,5 +1,8 @@
 tenantName: tenant2
 
+secretStore:
+  create: true
+  
 persistentVolume:
   # Use an external Azure File Share (file.csi.azure.com)
   external: true
