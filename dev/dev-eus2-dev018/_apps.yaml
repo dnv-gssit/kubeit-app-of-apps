@@ -38,3 +38,11 @@ applications:
       repoURL: https://dnv-gssit.github.io/kubeit-charts
       chart: kubeit-deployment-chart
       targetRevision: 2.1.1
+      
+  - name: rabbitmq
+    namespace: tenant2-standard-test
+    useArgoCDimageUpdater: false
+    serviceChart:
+      repoURL: https://dnv-gssit.github.io/kubeit-charts
+      chart: kubeit-rabbitmq-chart
+      targetRevision: 0.2.50
