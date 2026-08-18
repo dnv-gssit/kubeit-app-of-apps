@@ -11,6 +11,17 @@ sessionManager:
   use: true
   name: sm-onegateway
 
+podSecurityContext:
+  runAsNonRoot: true
+
+securityContext:
+  allowPrivilegeEscalation: false
+  capabilities:
+    drop:
+      - ALL
+  readOnlyRootFilesystem: true
+  runAsNonRoot: true
+
 service:
   containerPort: 8050
 
