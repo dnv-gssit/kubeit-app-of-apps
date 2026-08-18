@@ -3,8 +3,8 @@ app: standard-workload
 appVersion: v1
 
 image:
-  name: "paulbouwer/hello-kubernetes"
-  tag: "1.10"
+  name: "nginxinc/nginx-unprivileged"
+  tag: "stable"
 
 service:
   containerPort: 8080
