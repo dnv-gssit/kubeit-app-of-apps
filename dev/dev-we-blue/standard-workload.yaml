@@ -43,6 +43,7 @@ securityContext:
       - ALL
   readOnlyRootFilesystem: false
   runAsNonRoot: true
+  allowPrivilegeEscalation: false
 
 # https://github.com/paulbouwer/hello-kubernetes/tree/main/src/app
 envs:
