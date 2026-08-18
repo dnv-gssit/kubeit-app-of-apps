@@ -39,6 +39,7 @@ podSecurityContext:
 
 # readOnlyRootFilesystem should be set as a false because of the issue related to the npm directory creation
 securityContext:
+  allowPrivilegeEscalation: false
   capabilities:
     drop:
       - ALL
