@@ -3,7 +3,7 @@ app: standard-workload
 appVersion: v1
 
 image:
-  name: "gcr.io/google-samples/hello-app"
+  name: "kubeitglobalsvcauxacrwe.azurecr.io/gcr.io/google-samples/hello-app"
   tag: "1.0"
 
 service:

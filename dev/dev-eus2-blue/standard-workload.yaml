@@ -3,8 +3,8 @@ app: standard-workload
 appVersion: v1
 
 image:
-  name: "hashicorp/http-echo"
-  tag: "latest"
+  name: "kubeitglobalsvcauxacrwe.azurecr.io/gcr.io/google-samples/hello-app"
+  tag: "1.0"
 
 service:
   containerPort: 5678
