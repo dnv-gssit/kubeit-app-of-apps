@@ -3,7 +3,7 @@ app: standard-workload
 appVersion: v1
 
 image:
-  name: "paulbouwer/hello-kubernetes"
+  name: "nginxinc/nginx-unprivileged"
   tag: "1.10"
 
 service:
@@ -42,7 +42,7 @@ securityContext:
   capabilities:
     drop:
       - ALL
-  readOnlyRootFilesystem: true
+  readOnlyRootFilesystem: false
   runAsNonRoot: true
 
 # https://github.com/paulbouwer/hello-kubernetes/tree/main/src/app
