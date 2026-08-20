@@ -2,6 +2,10 @@
 app: standard-workload
 appVersion: v1
 
+
+defaultRouting:
+  annotations:
+    f5xc/regions: sea
 image:
   name: "kubeitglobalsvcauxacrwe.azurecr.io/gcr.io/google-samples/hello-app"
   tag: "1.0"
