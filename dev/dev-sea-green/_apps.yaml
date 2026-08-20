@@ -1,7 +1,7 @@
 ---
 applications:
   - name: standard-workload
-    namespace: standard-test
+    namespace: tenant2-standard-test
     useArgoCDimageUpdater: false
     serviceChart:
       repoURL: https://dnv-gssit.github.io/kubeit-charts
@@ -9,7 +9,7 @@ applications:
       targetRevision: 2.1.1
 
   - name: onegateway-sessionmanager
-    namespace: onegateway
+    namespace: tenant2-onegateway
     useArgoCDimageUpdater: false
     serviceChart:
       repoURL: https://dnv-gssit.github.io/kubeit-charts
@@ -17,7 +17,7 @@ applications:
       targetRevision: 1.0.0
 
   - name: onegateway-workload
-    namespace: onegateway
+    namespace: tenant2-onegateway
     useArgoCDimageUpdater: false
     serviceChart:
       repoURL: https://dnv-gssit.github.io/kubeit-charts
@@ -25,7 +25,7 @@ applications:
       targetRevision: 2.1.1
 
   - name: win-standard-workload
-    namespace: win-standard-workload
+    namespace: tenant2-win-standard-workload
     useArgoCDimageUpdater: false
     serviceChart:
       repoURL: https://dnv-gssit.github.io/kubeit-charts
@@ -33,7 +33,7 @@ applications:
       targetRevision: 2.1.1
 
   - name: win-api-workload
-    namespace: win-standard-workload
+    namespace: tenant2-win-standard-workload
     useArgoCDimageUpdater: false
     serviceChart:
       repoURL: https://dnv-gssit.github.io/kubeit-charts
