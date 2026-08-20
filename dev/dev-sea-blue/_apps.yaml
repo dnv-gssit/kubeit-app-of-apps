@@ -6,7 +6,7 @@ applications:
     serviceChart:
       repoURL: https://dnv-gssit.github.io/kubeit-charts
       chart: kubeit-deployment-chart
-      targetRevision: 2.1.1
+      targetRevision: 2.2.6
 
   - name: onegateway-sessionmanager
     namespace: tenant2-onegateway
@@ -14,7 +14,7 @@ applications:
     serviceChart:
       repoURL: https://dnv-gssit.github.io/kubeit-charts
       chart: session-manager
-      targetRevision: 1.0.0
+      targetRevision: 1.2.1
 
   - name: onegateway-workload
     namespace: tenant2-onegateway
@@ -22,7 +22,7 @@ applications:
     serviceChart:
       repoURL: https://dnv-gssit.github.io/kubeit-charts
       chart: kubeit-deployment-chart
-      targetRevision: 2.1.1
+      targetRevision: 2.2.6
 
   - name: win-standard-workload
     namespace: tenant2-win-standard-workload
@@ -30,7 +30,7 @@ applications:
     serviceChart:
       repoURL: https://dnv-gssit.github.io/kubeit-charts
       chart: kubeit-deployment-chart
-      targetRevision: 2.1.1
+      targetRevision: 2.2.6
 
   - name: win-api-workload
     namespace: tenant2-win-standard-workload
@@ -38,4 +38,4 @@ applications:
     serviceChart:
       repoURL: https://dnv-gssit.github.io/kubeit-charts
       chart: kubeit-deployment-chart
-      targetRevision: 2.1.1
+      targetRevision: 2.2.6
