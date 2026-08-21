@@ -12,6 +12,8 @@ service:
 
 defaultRouting:
   enabled: true
+  annotations:
+    f5xc/regions: sea,we
   hosts: [auto]
   retries:
     attempts: 3
