@@ -13,7 +13,7 @@ service:
 defaultRouting:
   enabled: true
   annotations:
-    f5xc/regions: sea
+    f5xc/regions: sea.we
   hosts: [auto]
   gateway:
     name: istio-system/global-https-internal-default-gateway
