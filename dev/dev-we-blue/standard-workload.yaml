@@ -13,8 +13,7 @@ service:
 defaultRouting:
   enabled: true
   hosts:
-    - standard-workload.blue.we.dev.kubeit.dnv.com
-    - standard-workload.blue.sea.dev.kubeit.dnv.com
+    - standard-workload.blue.dev.kubeit.dnv.com
   annotations:
     f5xc/regions: sea,we
   retries:
