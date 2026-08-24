@@ -14,7 +14,8 @@ defaultRouting:
   enabled: true
   annotations:
     f5xc/regions: sea,we
-  hosts: [auto]
+  hosts:
+    - standard-workload.blue.dev.kubeit.dnv.com
   gateway:
     name: istio-system/global-https-internal-default-gateway
   retries:
