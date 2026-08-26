@@ -14,8 +14,6 @@ defaultRouting:
   enabled: true
   hosts:
     - standard-workload.blue.dev.kubeit.dnv.com
-  annotations:
-    f5xc/regions: sea,we
   retries:
     attempts: 3
     perTryTimeout: 2s
