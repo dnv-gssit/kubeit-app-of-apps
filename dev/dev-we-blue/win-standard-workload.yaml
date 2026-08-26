@@ -37,18 +37,6 @@ authorizationPolicy:
 requestAuthentication:
   enabled: false
 
-# Be Aware! Security contexts configuration is specific to Docker Image, if your workload is not spinning up try disabling settings below and after check what needs to be changed.
-podSecurityContext:
-  # fsGroup: 1000  #Not supported on windows
-  # runAsUser: 1000 #Not supported on windows
-  runAsNonRoot: true
-
-securityContext:
-  # capabilities:  #Not supported on windows
-  #   drop:
-  #     - ALL
-  # readOnlyRootFilesystem: true  #Not supported on windows
-  runAsNonRoot: true
 
 nodeSelector:
   kubernetes.io/os: windows
