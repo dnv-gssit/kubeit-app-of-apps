@@ -16,7 +16,8 @@ service:
 
 defaultRouting:
   enabled: true
-  hosts: [auto]
+  hosts:
+    - win-standard-workload.blue.dev.kubeit.dnv.com
   retries:
     attempts: 3
     perTryTimeout: 2s
