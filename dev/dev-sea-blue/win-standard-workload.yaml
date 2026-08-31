@@ -16,6 +16,8 @@ service:
 
 defaultRouting:
   enabled: true
+  annotations:
+    f5xc/regions: sea,we
   hosts:
     - win-standard-workload.blue.dev.kubeit.dnv.com
   retries:
