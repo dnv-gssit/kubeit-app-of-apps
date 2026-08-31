@@ -40,6 +40,9 @@ authorizationPolicy:
 requestAuthentication:
   enabled: false
 
+podSecurityContext: null
+
+securityContext: null
 
 nodeSelector:
   kubernetes.io/os: windows
