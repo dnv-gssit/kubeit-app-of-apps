@@ -43,9 +43,9 @@ requestAuthentication:
 nodeSelector:
   kubernetes.io/os: windows
 
-podSecurityContext: {}
+podSecurityContext: null
 
-securityContext: {}
+securityContext: null
 
 tolerations:
   - key: "sku"
