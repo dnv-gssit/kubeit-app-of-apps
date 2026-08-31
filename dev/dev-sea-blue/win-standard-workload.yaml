@@ -43,6 +43,10 @@ requestAuthentication:
 nodeSelector:
   kubernetes.io/os: windows
 
+podSecurityContext: {}
+
+securityContext: {}
+
 tolerations:
   - key: "sku"
     value: "Windows"
