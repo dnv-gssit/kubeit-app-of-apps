@@ -12,8 +12,8 @@ service:
 
 defaultRouting:
   enabled: true
-  # annotations:
-  #   f5xc/regions: we,sea,eus2
+  annotations:
+    f5xc/regions: we,sea
   hosts:
     - standard-workload.blue.dev.kubeit.dnv.com
   gateway:
