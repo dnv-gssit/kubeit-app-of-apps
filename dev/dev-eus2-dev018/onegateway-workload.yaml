@@ -39,3 +39,8 @@ resources:
     memory: 2Gi
   limits:
     memory: 6Gi
+redis:
+  image:
+    registry: kubeitglobalsvcauxacrwe.azurecr.io
+    repository: kubeit/bitnami/redis
+    tag: 8.10.1-debian-12
