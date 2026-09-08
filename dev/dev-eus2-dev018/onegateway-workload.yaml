@@ -12,6 +12,8 @@ sessionManager:
   name: sm-onegateway
 
 podSecurityContext:
+  fsGroup: 1000
+  runAsUser: 1000
   runAsNonRoot: true
 
 securityContext:
@@ -21,7 +23,6 @@ securityContext:
       - ALL
   readOnlyRootFilesystem: true
   runAsNonRoot: true
-
 service:
   containerPort: 8050
 
