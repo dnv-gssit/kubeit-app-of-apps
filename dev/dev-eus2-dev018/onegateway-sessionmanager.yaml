@@ -48,8 +48,8 @@ deploy:
     readOnlyRootFilesystem: true
     runAsNonRoot: true
     
-  redis:
-    image:
-      registry: kubeitglobalsvcauxacrwe.azurecr.io
-      repository: kubeit/bitnami/redis
-      tag: 8.10.1-debian-12
+redis:
+  image:
+    registry: kubeitglobalsvcauxacrwe.azurecr.io
+    repository: kubeit/bitnami/redis
+    tag: 8.10.1-debian-12
