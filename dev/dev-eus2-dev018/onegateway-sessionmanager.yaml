@@ -19,6 +19,15 @@ deploy:
     hosts:
       - <fqdn for test>
 
+  initContainers:
+    - name: wait-for-redis
+      securityContext:
+        allowPrivilegeEscalation: false
+        readOnlyRootFilesystem: true
+        runAsNonRoot: true
+         capabilities:
+           drop:
+            - ALL
   envsFrom:
     - name: CLIENT_SECRET
       valueFrom:
