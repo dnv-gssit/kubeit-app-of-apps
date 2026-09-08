@@ -36,3 +36,14 @@ deploy:
       refs:
         - keyName: client-secret
           kvSecretName: <kv-secret-name>
+          
+  podSecurityContext:
+    runAsNonRoot: true
+
+  securityContext:
+    allowPrivilegeEscalation: false
+    capabilities:
+      drop:
+        - ALL
+    readOnlyRootFilesystem: true
+    runAsNonRoot: true
