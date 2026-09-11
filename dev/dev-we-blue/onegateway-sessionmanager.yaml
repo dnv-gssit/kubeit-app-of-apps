@@ -36,3 +36,9 @@ deploy:
       refs:
         - keyName: client-secret
           kvSecretName: ancris4-session-dev001
+
+redis:
+  image:
+    registry: kubeitglobalsvcauxacrwe.azurecr.io
+    repository: bitnami/redis
+    tag: 8.2.1-debian-12-r0

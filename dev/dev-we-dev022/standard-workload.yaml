@@ -42,7 +42,7 @@ securityContext:
   capabilities:
     drop:
       - ALL
-  readOnlyRootFilesystem: false
+  readOnlyRootFilesystem: true
   runAsNonRoot: true
 
 # https://github.com/paulbouwer/hello-kubernetes/tree/main/src/app

@@ -25,8 +25,8 @@ deploy:
         allowPrivilegeEscalation: false
         readOnlyRootFilesystem: true
         runAsNonRoot: true
-         capabilities:
-           drop:
+        capabilities:
+          drop:
             - ALL
   envsFrom:
     - name: CLIENT_SECRET
@@ -61,8 +61,7 @@ deploy:
     runAsNonRoot: true
     
 redis:
-  globalimage:
-    imageRegistry: kubeitglobalsvcauxacrwe.azurecr.io
-  image: kubeitglobalsvcauxacrwe.azurecr.io
-  repository: bitnami/redis
-  tag: 8.2.1-debian-12-r0
+  image:
+    registry: kubeitglobalsvcauxacrwe.azurecr.io
+    repository: bitnami/redis
+    tag: 8.2.1-debian-12-r0
