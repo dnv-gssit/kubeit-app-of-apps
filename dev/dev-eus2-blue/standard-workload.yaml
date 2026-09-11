@@ -5,8 +5,8 @@ appVersion: v1
 image:
   name: "kubeitglobalsvcauxacrwe.azurecr.io/gcr.io/google-samples/hello-app"
   tag: "1.0"
-  
-command: ["-text=Hello Kubernetes!"]
+
+command: ["/hello-app"]
 service:
   containerPort: 5678
   port: 8080

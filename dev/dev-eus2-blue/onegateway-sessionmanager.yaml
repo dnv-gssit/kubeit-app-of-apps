@@ -1,5 +1,26 @@
 ---
 deploy:
+  initContainers:
+    - name: wait-for-redis
+      image: kubeitglobalsvcauxacrwe.azurecr.io/owncloudci/wait-for
+      args:
+        - "-it"
+        - "sm-redis-master:6379"
+        - "-t"
+        - "30"
+      resources:
+        requests:
+          cpu: "5m"
+          memory: "32Mi"
+        limits:
+          memory: "128Mi"
+      securityContext:
+        allowPrivilegeEscalation: false
+        readOnlyRootFilesystem: true
+        runAsNonRoot: true
+        capabilities:
+          drop:
+            - ALL
   serviceAccount:
     enabled: true
     annotations:

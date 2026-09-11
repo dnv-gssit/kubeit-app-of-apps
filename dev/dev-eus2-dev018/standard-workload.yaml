@@ -19,6 +19,8 @@ defaultRouting:
     request:
       add:
         x-appname: standard-workload
+command:
+  - /hello-app
 args:
   - -text=Hello Kubernetes!
   
