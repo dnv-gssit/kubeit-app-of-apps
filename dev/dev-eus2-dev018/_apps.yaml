@@ -21,15 +21,15 @@ applications:
     useArgoCDimageUpdater: false
     serviceChart:
       repoURL: https://dnv-gssit.github.io/kubeit-charts
-      targetRevision: 2.1.1
-
+      targetRevision: 2.2.3
+      
   - name: win-standard-workload
     namespace: tenant2-win-standard-workload
     useArgoCDimageUpdater: false
     serviceChart:
       repoURL: https://dnv-gssit.github.io/kubeit-charts
       chart: kubeit-deployment-chart
-      targetRevision: 2.1.1
+      targetRevision: 2.2.3
 
   - name: win-api-workload
     namespace: tenant2-win-standard-workload
@@ -37,7 +37,7 @@ applications:
     serviceChart:
       repoURL: https://dnv-gssit.github.io/kubeit-charts
       chart: kubeit-deployment-chart
-      targetRevision: 2.1.1
+      targetRevision: 2.2.3
       
   - name: rabbitmq
     namespace: tenant2-standard-test
