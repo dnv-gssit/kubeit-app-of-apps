@@ -63,4 +63,6 @@ deploy:
 redis:
   globalimage:
     imageRegistry: kubeitglobalsvcauxacrwe.azurecr.io
-    tag: 8.10.1-debian-12
+  image: kubeitglobalsvcauxacrwe.azurecr.io
+  repository: bitnami/redis
+  tag: 8.2.1-debian-12-r0
