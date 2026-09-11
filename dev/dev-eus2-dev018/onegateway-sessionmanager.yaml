@@ -48,7 +48,10 @@ deploy:
           
   podSecurityContext:
     runAsNonRoot: true
-
+    fsGroup: 1000
+    runAsUser: 1000
+    runAsNonRoot: true
+    
   securityContext:
     allowPrivilegeEscalation: false
     capabilities:
