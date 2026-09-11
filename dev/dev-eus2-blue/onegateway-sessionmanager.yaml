@@ -33,3 +33,5 @@ deploy:
       refs:
         - keyName: client-secret
           kvSecretName: ancris3-session-dev002
+redis:
+  tag: 8.2.1-debian-12-r0
