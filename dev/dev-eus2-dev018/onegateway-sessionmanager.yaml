@@ -58,7 +58,6 @@ deploy:
     runAsNonRoot: true
     
 redis:
-  image:
-    registry: kubeitglobalsvcauxacrwe.azurecr.io
-    repository: kubeit/bitnami/redis
+  globalimage:
+    imageRegistry: kubeitglobalsvcauxacrwe.azurecr.io
     tag: 8.10.1-debian-12
