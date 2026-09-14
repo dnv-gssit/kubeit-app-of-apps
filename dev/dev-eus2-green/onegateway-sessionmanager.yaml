@@ -33,6 +33,10 @@ deploy:
   app: onegateway-sessionmanager
   appVersion: v1
 
+  image:
+    name: "kubeitglobalsvcauxacrwe.azurecr.io/onegateway/sessionmanager"
+    tag: "master-20260910.1"
+
   sessionManager:
     name: sm-onegateway
 
