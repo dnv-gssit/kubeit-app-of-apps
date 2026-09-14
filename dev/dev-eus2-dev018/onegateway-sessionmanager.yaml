@@ -2,7 +2,7 @@
 deploy:
   initContainers:
     - name: wait-for-redis
-      image: kubeitglobalsvcauxacrwe.azurecr.io/owncloudci/wait-for:9-fpm
+      image: kubeitglobalsvcauxacrwe.azurecr.io/owncloud/server:11.0.0
       args:
         - "-it"
         - "sm-redis-master:6379"
@@ -57,13 +57,13 @@ deploy:
       refs:
         - keyName: client-secret
           kvSecretName: <kv-secret-name>
-          
+
   podSecurityContext:
     runAsNonRoot: true
     fsGroup: 1000
     runAsUser: 1000
     runAsNonRoot: true
-    
+
   securityContext:
     allowPrivilegeEscalation: false
     capabilities:
@@ -71,7 +71,7 @@ deploy:
         - ALL
     readOnlyRootFilesystem: true
     runAsNonRoot: true
-    
+
 redis:
   image:
     registry: kubeitglobalsvcauxacrwe.azurecr.io

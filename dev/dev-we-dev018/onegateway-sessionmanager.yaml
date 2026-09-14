@@ -2,7 +2,7 @@
 deploy:
   initContainers:
     - name: wait-for-redis
-      image: kubeitglobalsvcauxacrwe.azurecr.io/owncloudci/wait-for:9-fpm
+      image: kubeitglobalsvcauxacrwe.azurecr.io/owncloud/server:11.0.0
       args:
         - "-it"
         - "sm-redis-master:6379"
