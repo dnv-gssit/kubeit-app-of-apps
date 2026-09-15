@@ -6,7 +6,7 @@ image:
   name: "kubeitglobalsvcauxacrwe.azurecr.io/gcr.io/google-samples/hello-app"
   tag: "1.0"
 service:
-  containerPort: 5678
+  containerPort: 8080
   port: 8080
 
 defaultRouting:
@@ -23,7 +23,7 @@ command:
   - /hello-app
 args:
   - -text=Hello Kubernetes!
-  
+
 destinationRule:
   enabled: true
 
