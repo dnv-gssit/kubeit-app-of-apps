@@ -27,13 +27,13 @@ applications:
         jsonPointers:
           - /spec/template/metadata/annotations
 
-  - name: onegateway-workload
-    namespace: tenant2-onegateway
-    useArgoCDimageUpdater: false
-    serviceChart:
-      repoURL: https://dnv-gssit.github.io/kubeit-charts
-      chart: kubeit-deployment-chart
-      targetRevision: 2.2.3
+  # - name: onegateway-workload
+  #   namespace: tenant2-onegateway
+  #   useArgoCDimageUpdater: false
+  #   serviceChart:
+  #     repoURL: https://dnv-gssit.github.io/kubeit-charts
+  #     chart: kubeit-deployment-chart
+  #     targetRevision: 2.2.3
 
 #  - name: win-standard-workload
 #    namespace: tenant2-win-standard-workload
