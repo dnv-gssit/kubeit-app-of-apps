@@ -32,3 +32,7 @@ serviceAccount:
     # managed identity as persistentVolume.workloadIdentity.clientID.
     azure.workload.identity/client-id: 00000000-0000-0000-0000-000000000000
     azure.workload.identity/tenant-id: 00000000-0000-0000-0000-000000000000
+
+secretStore:
+  create: true
+  vaultUrl: https://kubeit-dev-kv-sh-we.vault.azure.net/
