@@ -1,6 +1,7 @@
 ---
 tenantName: tenant2
-
+rabbitmqCluster:
+  image: kubeitglobalsvcauxacrwe.azurecr.io/library/rabbitmq:4.3-management
 persistentVolume:
   external: false
   storageClassName: azurefile-csi
