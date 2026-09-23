@@ -5,8 +5,7 @@ persistentVolume:
   # Use an external Azure File Share (file.csi.azure.com)
   external: true
 
-  # Static provisioning: reference a pre-created share. The chart does not
-  # create a StorageClass or Azure File share for this configuration.
+  # Static provisioning: reference a pre-created share
   static:
     enabled: true
     resourceGroup: rg-rabbitmq-we-dev
@@ -18,7 +17,7 @@ persistentVolume:
   workloadIdentity:
     enabled: true
     # Client ID of the managed identity that holds the role on the storage account
-    clientID: 00000000-0000-0000-0000-000000000000
+    clientID: 811a14f5-07e6-45c3-bcaa-465dcb8a5139
     # Token-only mount (no account key). Requires the SMB MI Admin role + SMBOauth.
     mountWithWorkloadIdentityToken: true
 
@@ -30,8 +29,8 @@ serviceAccount:
   annotations:
     # Used for app-level workload identity (e.g. Key Vault). Point at the SAME
     # managed identity as persistentVolume.workloadIdentity.clientID.
-    azure.workload.identity/client-id: 00000000-0000-0000-0000-000000000000
-    azure.workload.identity/tenant-id: 00000000-0000-0000-0000-000000000000
+    azure.workload.identity/client-id: 811a14f5-07e6-45c3-bcaa-465dcb8a5139
+    azure.workload.identity/tenant-id: adf10e2b-b6e9-41d6-be2f-c12bb566019c
 
 secretStore:
   create: true
