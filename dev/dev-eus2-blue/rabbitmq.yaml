@@ -5,7 +5,6 @@ persistentVolume:
   external: false
   storageClassName: azurefile-csi
 
-  # Not used for dynamic provisioning
   static:
     enabled: false
 
