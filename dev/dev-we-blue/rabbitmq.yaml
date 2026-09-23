@@ -1,30 +1,31 @@
 ---
+tenantName: tenant2
+
 persistentVolume:
   external: false
+  storageClassName: azurefile-csi
+
+  static:
+    enabled: false
+
+  capacity:
+    storage: 2Gi
+  accessModes:
+    - ReadWriteMany
+
+serviceAccount:
+  create: true
+  name: rabbitmq-sa
+  annotations:
+    azure.workload.identity/client-id: 5512dad8-0704-439c-9f5b-78da63c15875
+    azure.workload.identity/tenant-id: adf10e2b-b6e9-41d6-be2f-c12bb566019c
 
 secretStore:
   create: true
-
-rabbitmqCluster:
-  spec:
-    replicas: 3
-  tls:
-    enabled: false
-
-serviceAccount:
-  # Specifies whether a service account should be created
-  create: true
-  # Annotations to add to the service account using workload identity
-  annotations:
-    azure.workload.identity/client-id: 98083409-83f6-4321-811d-de791690d15a
-    azure.workload.identity/tenant-id: adf10e2b-b6e9-41d6-be2f-c12bb566019c
+  vaultUrl: https://kubeit-dev-kv-sh-we.vault.azure.net/
 
 externalSecrets:
   - data:
-      - azureSecretName: rabbitmq-user
-        key: username
-      - azureSecretName: rabbitmq-passwd
-        key: password
-      - azureSecretName: default-test-user-creds
-        key: default_user.conf
+    - azureSecretName: rabbitmq-test-default-user
+      key: default_user.conf
     name: rabbitmq-test-default-user
