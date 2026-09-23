@@ -33,7 +33,7 @@ applications:
     serviceChart:
       repoURL: https://dnv-gssit.github.io/kubeit-charts
       chart: kubeit-rabbitmq-chart
-      targetRevision: 0.2.57
+      targetRevision: 0.2.58
   # - name: onegateway-workload
   #   namespace: tenant2-onegateway
   #   useArgoCDimageUpdater: false
