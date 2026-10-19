@@ -14,6 +14,8 @@ service:
 defaultRouting:
   enabled: true
   hosts: [auto]
+  annotations:
+    f5xc/priority: "2"
   retries:
     attempts: 3
     perTryTimeout: 2s
