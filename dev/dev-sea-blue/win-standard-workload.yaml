@@ -40,12 +40,13 @@ authorizationPolicy:
 requestAuthentication:
   enabled: false
 
+os:
+  windows: true
+
 nodeSelector:
   kubernetes.io/os: windows
 
-podSecurityContext: null
 
-securityContext: null
 
 tolerations:
   - key: "sku"

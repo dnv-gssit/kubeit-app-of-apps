@@ -38,8 +38,9 @@ requestAuthentication:
   enabled: false
 
 # Linux security context fields are unsupported by Windows containers.
-podSecurityContext: null
-securityContext: null
+
+os:
+  windows: true
 
 nodeSelector:
   kubernetes.io/os: windows
