@@ -48,7 +48,7 @@ nodeSelector:
 podSecurityContext:
   windowsOptions:
     hostProcess: false
-    runAsUserName: "ContainerUser"
+    runAsUserName: ContainerAdministrator
 
 tolerations:
   - key: "sku"
