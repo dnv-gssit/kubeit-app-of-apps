@@ -45,6 +45,11 @@ os:
 nodeSelector:
   kubernetes.io/os: windows
 
+podSecurityContext:
+  windowsOptions:
+    hostProcess: false
+    runAsUserName: "ContainerUser"
+
 tolerations:
   - key: "sku"
     value: "Windows"
