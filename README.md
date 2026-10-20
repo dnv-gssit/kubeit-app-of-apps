@@ -96,7 +96,7 @@ helm repo update
 cd <this_repository>/tests
 
 # fetch helm chart used to deploy application, set chart or version as expected
-helm fetch --untar kubeit-charts/kubeit-deployment-chart --version 1.2.0
+helm fetch --untar kubeit-charts/kubeit-deployment-chart --version 2.2.6
 # or platform-service chart
 helm fetch --untar service-mesh/platform-service --version 1.4.2
 

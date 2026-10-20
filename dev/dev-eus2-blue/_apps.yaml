@@ -6,7 +6,7 @@ applications:
     serviceChart:
       repoURL: https://dnv-gssit.github.io/kubeit-charts
       chart: kubeit-deployment-chart
-      targetRevision: 2.2.3
+      targetRevision: 2.2.6
 
   - name: onegateway-sessionmanager
     namespace: tenant2-onegateway
@@ -29,26 +29,27 @@ applications:
 
   - name: rabbitmq
     namespace: tenant2-standard-test
-    useArgoCDimageUpdater: false
+    useArgoCDimageUpdater: true
     serviceChart:
       repoURL: https://dnv-gssit.github.io/kubeit-charts
       chart: kubeit-rabbitmq-chart
       targetRevision: 0.2.61
+
   # - name: onegateway-workload
   #   namespace: tenant2-onegateway
   #   useArgoCDimageUpdater: false
   #   serviceChart:
   #     repoURL: https://dnv-gssit.github.io/kubeit-charts
   #     chart: kubeit-deployment-chart
-  #     targetRevision: 2.2.3
+  #     targetRevision: 2.2.6
 
-#  - name: win-standard-workload
-#    namespace: tenant2-win-standard-workload
-#    useArgoCDimageUpdater: false
-#    serviceChart:
-#      repoURL: https://dnv-gssit.github.io/kubeit-charts
-#      chart: kubeit-deployment-chart
-#      targetRevision: 2.2.3
+  - name: win-standard-workload
+    namespace: tenant2-win-standard-workload
+    useArgoCDimageUpdater: true
+    serviceChart:
+      repoURL: https://dnv-gssit.github.io/kubeit-charts
+      chart: kubeit-deployment-chart
+      targetRevision: 2.2.6
 
 #  - name: win-api-workload
 #    namespace: tenant2-win-standard-workload
@@ -56,7 +57,7 @@ applications:
 #    serviceChart:
 #      repoURL: https://dnv-gssit.github.io/kubeit-charts
 #      chart: kubeit-deployment-chart
-#      targetRevision: 2.2.3
+#      targetRevision: 2.2.6
 
 #  - name: win-standard-w2025
 #    namespace: tenant2-win-standard-workload
@@ -64,4 +65,4 @@ applications:
 #    serviceChart:
 #      repoURL: https://dnv-gssit.github.io/kubeit-charts
 #      chart: kubeit-deployment-chart
-#      targetRevision: 2.2.3
+#      targetRevision: 2.2.6
