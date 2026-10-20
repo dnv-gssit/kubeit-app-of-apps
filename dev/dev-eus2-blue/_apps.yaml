@@ -29,7 +29,7 @@ applications:
 
   - name: rabbitmq
     namespace: tenant2-standard-test
-    useArgoCDimageUpdater: true
+    useArgoCDimageUpdater: false
     serviceChart:
       repoURL: https://dnv-gssit.github.io/kubeit-charts
       chart: kubeit-rabbitmq-chart
@@ -46,6 +46,9 @@ applications:
   - name: win-standard-workload
     namespace: tenant2-win-standard-workload
     useArgoCDimageUpdater: true
+    image:
+      name: "mcr.microsoft.com/windows/servercore/iis"
+      tag: "windowsservercore-ltsc2022"
     serviceChart:
       repoURL: https://dnv-gssit.github.io/kubeit-charts
       chart: kubeit-deployment-chart
