@@ -42,6 +42,10 @@ requestAuthentication:
 os:
   windows: true
 
+podSecurityContext:
+  windowsOptions:
+    hostProcess: false
+
 nodeSelector:
   kubernetes.io/os: windows
 
