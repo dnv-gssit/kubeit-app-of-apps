@@ -38,8 +38,6 @@ authorizationPolicy:
 requestAuthentication:
   enabled: false
 
-
-
 os:
   windows: true
 

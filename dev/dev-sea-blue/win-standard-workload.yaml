@@ -50,8 +50,6 @@ podSecurityContext:
 nodeSelector:
   kubernetes.io/os: windows
 
-
-
 tolerations:
   - key: "sku"
     value: "Windows"
