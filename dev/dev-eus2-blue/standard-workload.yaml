@@ -13,7 +13,7 @@ service:
 
 defaultRouting:
   enabled: true
-  hosts: [auto]
+  internalHosts: [auto]
   annotations:
     f5xc/priority: "2"
   retries:

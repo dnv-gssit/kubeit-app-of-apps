@@ -27,7 +27,7 @@ service:
 
 defaultRouting:
   enabled: true
-  hosts:
+  internalHosts:
     - <fqdn for tests>
   retries:
     attempts: 3

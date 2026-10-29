@@ -17,7 +17,7 @@ service:
 
 defaultRouting:
   enabled: true
-  hosts: [auto]
+  internalHosts: [auto]
   retries:
     attempts: 3
     perTryTimeout: 2s
@@ -37,8 +37,6 @@ authorizationPolicy:
 
 requestAuthentication:
   enabled: false
-
-
 
 os:
   windows: true

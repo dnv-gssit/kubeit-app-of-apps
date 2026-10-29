@@ -27,6 +27,6 @@ secretStore:
 
 externalSecrets:
   - data:
-    - azureSecretName: rabbitmq-test-default-user
-      key: default_user.conf
+      - azureSecretName: rabbitmq-test-default-user
+        key: default_user.conf
     name: rabbitmq-test-default-user

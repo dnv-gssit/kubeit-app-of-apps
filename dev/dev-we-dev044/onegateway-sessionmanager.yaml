@@ -41,8 +41,8 @@ deploy:
     name: sm-onegateway
 
   defaultRouting:
-    hosts:
-      - ancris44-test.dev044.kubeit.dnv.com
+    internalHosts:
+      - ancris44-test.dev044.kubeit-int.dnv.com
 
   envsFrom:
     - name: CLIENT_SECRET

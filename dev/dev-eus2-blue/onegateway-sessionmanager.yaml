@@ -38,8 +38,8 @@ deploy:
     name: sm-onegateway
 
   defaultRouting:
-    hosts:
-      - onegateway.blue.eus2.dev.kubeit.dnv.com
+    internalHosts:
+      - onegateway.blue.eus2.dev.kubeit-int.dnv.com
 
   envsFrom:
     - name: CLIENT_SECRET

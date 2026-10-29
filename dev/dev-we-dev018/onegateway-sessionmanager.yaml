@@ -41,7 +41,7 @@ deploy:
     name: sm-onegateway
 
   defaultRouting:
-    hosts:
+    internalHosts:
       - <fqdn for test>
 
   envsFrom:

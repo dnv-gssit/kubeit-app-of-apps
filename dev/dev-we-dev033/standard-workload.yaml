@@ -12,8 +12,8 @@ service:
 
 defaultRouting:
   enabled: true
-  hosts:
-    - www-test-tenant.dev033.kubeit.dnv.com
+  internalHosts:
+    - www-test-tenant.dev033.kubeit-int.dnv.com
   retries:
     attempts: 3
     perTryTimeout: 2s
