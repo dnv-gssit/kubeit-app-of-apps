@@ -13,8 +13,11 @@ If you want to use it on your dev cluster:
 * grand access `get,list` on secrects on [dev KV](https://portal.azure.com/#@dnv.onmicrosoft.com/resource/subscriptions/e5948a9c-7103-4629-98f8-798fa9a0d9aa/resourceGroups/KubeITSharedSVC-DEV-RG-WE/providers/Microsoft.KeyVault/vaults/KubeIT-DEV-KV-SH-WE/overview) for this MI
 * asssign role `Managed Identity Contributor` for security group `Az_KubeIT_AcrReader_Env_Dev` at created MI
 * update files `dev/<your logical env name>/global.yaml` with `serviceAccount.annotations.azure.workload.identity/client-id: <your MI clientId>`
+* try to do not expose services to internet via F5 XC, if must be, please remove them after usage
 
 For session manager testing, please use [Wiki procedure](https://github.com/dnv-gssit/wiki/blob/main/kubeit/procedures/test-session-manager.md).
+
+
 
 # Repository structure
 

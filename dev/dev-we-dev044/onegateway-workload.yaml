@@ -27,8 +27,8 @@ service:
 
 defaultRouting:
   enabled: true
-  hosts:
-    - ancris44-test.dev044.kubeit.dnv.com
+  internalHosts:
+    - ancris44-test.dev044.kubeit-int.dnv.com
   retries:
     attempts: 3
     perTryTimeout: 2s

@@ -27,8 +27,8 @@ service:
 
 defaultRouting:
   enabled: true
-  hosts:
-    - onegateway.blue.eus2.dev.kubeit.dnv.com
+  internalHosts:
+    - onegateway.blue.eus2.dev.kubeit-int.dnv.com
   retries:
     attempts: 3
     perTryTimeout: 2s
